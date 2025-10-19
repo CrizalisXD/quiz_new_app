@@ -1,0 +1,1181 @@
+{
+  "country": "Japan",
+  "pack": "Transport",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Как называется японский высокоскоростной поезд?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синкансен"
+            },
+            {
+              "correct": false,
+              "text": "ICE"
+            },
+            {
+              "correct": false,
+              "text": "TGV"
+            },
+            {
+              "correct": false,
+              "text": "Eurostar"
+            }
+          ],
+          "fact": "Shinkansen — символ японской железной дороги."
+        },
+        {
+          "id": 2,
+          "q": "В каком году в Японии впервые запустили синкансен?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "1964"
+            },
+            {
+              "correct": false,
+              "text": "1972"
+            },
+            {
+              "correct": false,
+              "text": "1958"
+            },
+            {
+              "correct": false,
+              "text": "1980"
+            }
+          ],
+          "fact": "Первый синкансен запущен к Олимпиаде 1964."
+        },
+        {
+          "id": 3,
+          "q": "Какой город первым получил линию синкансена?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Токио-Осака"
+            },
+            {
+              "correct": false,
+              "text": "Токио-Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Токио-Киото"
+            },
+            {
+              "correct": false,
+              "text": "Токио-Фукуока"
+            }
+          ],
+          "fact": "Линия Токайдо связала Токио и Осаку."
+        },
+        {
+          "id": 4,
+          "q": "В каком японском городе впервые построили метро в 1927 году?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            }
+          ],
+          "fact": "Первое метро в Японии появилось в Осаке."
+        },
+        {
+          "id": 5,
+          "q": "Какой японский автоконцерн выпускает модель Supra?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            },
+            {
+              "correct": false,
+              "text": "Mitsubishi"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            }
+          ],
+          "fact": "Toyota Supra — культовый спорткар."
+        },
+        {
+          "id": 6,
+          "q": "Какой бренд известен моделями Civic и Accord?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            }
+          ],
+          "fact": "Honda выпускает Civic и Accord."
+        },
+        {
+          "id": 7,
+          "q": "Как в Японии называют компактные городские автомобили с ограничением по размеру и мощности?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Kei-cars"
+            },
+            {
+              "correct": false,
+              "text": "Microcars"
+            },
+            {
+              "correct": false,
+              "text": "City-cars"
+            },
+            {
+              "correct": false,
+              "text": "Eco-cars"
+            }
+          ],
+          "fact": "Kei-cars популярны в Японии благодаря налоговым льготам."
+        },
+        {
+          "id": 8,
+          "q": "Какой японский производитель известен мотоциклами Hayabusa?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Suzuki"
+            },
+            {
+              "correct": false,
+              "text": "Yamaha"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Kawasaki"
+            }
+          ],
+          "fact": "Suzuki Hayabusa — один из самых быстрых мотоциклов."
+        },
+        {
+          "id": 9,
+          "q": "Как называются популярные бесконтактные карты (Suica, Pasmo), которыми оплачивают транспорт в Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "IC-карты"
+            },
+            {
+              "correct": false,
+              "text": "MetroCards"
+            },
+            {
+              "correct": false,
+              "text": "SmartPass"
+            },
+            {
+              "correct": false,
+              "text": "TravelCards"
+            }
+          ],
+          "fact": "Suica и Pasmo — типы IC-карт."
+        },
+        {
+          "id": 10,
+          "q": "В каком городе находится самый загруженный железнодорожный вокзал в мире?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Токио (Синдзюку)"
+            },
+            {
+              "correct": false,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Киото"
+            }
+          ],
+          "fact": "Синдзюку в Токио обслуживает более 3 млн пассажиров в день."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Какой японский аэропорт построен на искусственном острове?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            }
+          ],
+          "fact": "Кансай — первый в мире аэропорт на искусственном острове."
+        },
+        {
+          "id": 12,
+          "q": "Какая авиакомпания является крупнейшей в Японии?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Japan Airlines"
+            },
+            {
+              "correct": true,
+              "text": "ANA"
+            },
+            {
+              "correct": false,
+              "text": "Peach"
+            },
+            {
+              "correct": false,
+              "text": "Skymark"
+            }
+          ],
+          "fact": "ANA — крупнейшая японская авиакомпания."
+        },
+        {
+          "id": 13,
+          "q": "Какой японский бренд известен гибридом Prius?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            }
+          ],
+          "fact": "Toyota Prius — первый массовый гибрид."
+        },
+        {
+          "id": 14,
+          "q": "Как называется известный японский внедорожник от Mitsubishi?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Pajero"
+            },
+            {
+              "correct": false,
+              "text": "Land Cruiser"
+            },
+            {
+              "correct": false,
+              "text": "Pathfinder"
+            },
+            {
+              "correct": false,
+              "text": "CR-V"
+            }
+          ],
+          "fact": "Mitsubishi Pajero стал культовым внедорожником."
+        },
+        {
+          "id": 15,
+          "q": "Какой автопроизводитель создал спортбайк Yamaha R1?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Yamaha"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Suzuki"
+            },
+            {
+              "correct": false,
+              "text": "Kawasaki"
+            }
+          ],
+          "fact": "Yamaha YZF-R1 — легендарный спортбайк."
+        },
+        {
+          "id": 16,
+          "q": "В каком городе находится международный аэропорт Нарита?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            },
+            {
+              "correct": false,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            }
+          ],
+          "fact": "Нарита обслуживает регион Токио."
+        },
+        {
+          "id": 17,
+          "q": "Какой японский автопроизводитель использует логотип с шестью звёздами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Subaru"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Suzuki"
+            }
+          ],
+          "fact": "Subaru — логотип Плеяд."
+        },
+        {
+          "id": 18,
+          "q": "Какой автопроизводитель выпускает модель RX-7?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            }
+          ],
+          "fact": "Mazda RX-7 — культовый роторный спорткар."
+        },
+        {
+          "id": 19,
+          "q": "Какая японская авиакомпания носит сокращение ANA?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "All Nippon Airways"
+            },
+            {
+              "correct": false,
+              "text": "Air Nippon Asia"
+            },
+            {
+              "correct": false,
+              "text": "Asia Nippon Airlines"
+            },
+            {
+              "correct": false,
+              "text": "All Nippon Air"
+            }
+          ],
+          "fact": "ANA = All Nippon Airways."
+        },
+        {
+          "id": 20,
+          "q": "Какой автопроизводитель выпускает модель Impreza?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Subaru"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Mitsubishi"
+            }
+          ],
+          "fact": "Subaru Impreza — спортивный седан."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Какой тип поездов синкансен развивает скорость свыше 300 км/ч?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "N700"
+            },
+            {
+              "correct": true,
+              "text": "E5"
+            },
+            {
+              "correct": false,
+              "text": "H5"
+            },
+            {
+              "correct": false,
+              "text": "NEX"
+            }
+          ],
+          "fact": "Shinkansen E5 достигает 320 км/ч."
+        },
+        {
+          "id": 22,
+          "q": "Какой японский поезд работает на магнитной левитации?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Maglev"
+            },
+            {
+              "correct": false,
+              "text": "Linear Chuo"
+            },
+            {
+              "correct": false,
+              "text": "MLX01"
+            },
+            {
+              "correct": true,
+              "text": "SCMaglev"
+            }
+          ],
+          "fact": "SCMaglev — японский проект поездов на магнитной левитации."
+        },
+        {
+          "id": 23,
+          "q": "Какой цвет у самого быстрого поезда серии E5?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Зелёный"
+            },
+            {
+              "correct": false,
+              "text": "Синий"
+            },
+            {
+              "correct": false,
+              "text": "Белый"
+            },
+            {
+              "correct": false,
+              "text": "Красный"
+            }
+          ],
+          "fact": "E5 окрашен в зелёный с розовой линией."
+        },
+        {
+          "id": 24,
+          "q": "В каком году планируют ввести маглев-линии между Токио и Нагоя?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "2027"
+            },
+            {
+              "correct": false,
+              "text": "2030"
+            },
+            {
+              "correct": false,
+              "text": "2025"
+            },
+            {
+              "correct": false,
+              "text": "2035"
+            }
+          ],
+          "fact": "Открытие линии Токио–Нагоя планируется к 2027 году."
+        },
+        {
+          "id": 25,
+          "q": "Какой японский город первым получил подземное метро в 1927 году?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            }
+          ],
+          "fact": "Первая линия метро появилась в Осаке."
+        },
+        {
+          "id": 26,
+          "q": "Какой поезд прозвали «пулей»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Shinkansen"
+            },
+            {
+              "correct": false,
+              "text": "Eurostar"
+            },
+            {
+              "correct": false,
+              "text": "ICE"
+            },
+            {
+              "correct": false,
+              "text": "Thalys"
+            }
+          ],
+          "fact": "Shinkansen получил прозвище «Bullet Train»."
+        },
+        {
+          "id": 27,
+          "q": "Как называется самый быстрый маршрут синкансена, соединяющий Токио и Осаку?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nozomi"
+            },
+            {
+              "correct": false,
+              "text": "Hikari"
+            },
+            {
+              "correct": false,
+              "text": "Kodama"
+            },
+            {
+              "correct": false,
+              "text": "Sakura"
+            }
+          ],
+          "fact": "Nozomi — самый быстрый сервис Токайдо синкансен."
+        },
+        {
+          "id": 28,
+          "q": "Какой тип транспорта JR East тестирует без машиниста?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Автономные поезда"
+            },
+            {
+              "correct": false,
+              "text": "Беспилотные автобусы"
+            },
+            {
+              "correct": false,
+              "text": "Автоматические такси"
+            },
+            {
+              "correct": false,
+              "text": "Дроны"
+            }
+          ],
+          "fact": "JR East тестирует автономные поезда."
+        },
+        {
+          "id": 29,
+          "q": "Какой вокзал считается главным транспортным узлом Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Синдзюку"
+            },
+            {
+              "correct": false,
+              "text": "Уэно"
+            },
+            {
+              "correct": false,
+              "text": "Икебукуро"
+            }
+          ],
+          "fact": "Tokyo Station — главный транспортный хаб страны."
+        },
+        {
+          "id": 30,
+          "q": "Какой город соединяет синкансен «Сакура»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Осака-Фукуока"
+            },
+            {
+              "correct": false,
+              "text": "Токио-Осака"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя-Киото"
+            },
+            {
+              "correct": false,
+              "text": "Токио-Хиросима"
+            }
+          ],
+          "fact": "«Sakura» соединяет Осаку и Фукуоку."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Какой японский порт считается крупнейшим?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Йокогама"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Токио"
+            }
+          ],
+          "fact": "Порт Йокогама — крупнейший в Японии."
+        },
+        {
+          "id": 32,
+          "q": "Какой город является центром судостроения Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кобе"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Хиросима"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            }
+          ],
+          "fact": "Кобе и Йокогама — крупные судостроительные центры."
+        },
+        {
+          "id": 33,
+          "q": "Какой японский остров связан с токийской переправой Rainbow Bridge?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Одайба"
+            },
+            {
+              "correct": false,
+              "text": "Хонсю"
+            },
+            {
+              "correct": false,
+              "text": "Кюсю"
+            },
+            {
+              "correct": false,
+              "text": "Хоккайдо"
+            }
+          ],
+          "fact": "Rainbow Bridge соединяет центр Токио с островом Одайба."
+        },
+        {
+          "id": 34,
+          "q": "Какой автоспорт, зародившийся в Японии на горных дорогах, стал мировым феноменом?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Дрифт"
+            },
+            {
+              "correct": false,
+              "text": "Super GT"
+            },
+            {
+              "correct": false,
+              "text": "Картинг"
+            },
+            {
+              "correct": false,
+              "text": "Drag Racing"
+            }
+          ],
+          "fact": "Дрифт зародился в Японии."
+        },
+        {
+          "id": 35,
+          "q": "Как называется японский автоспорт, где соревнуются модифицированные машины, аналоги DTM?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Super GT"
+            },
+            {
+              "correct": false,
+              "text": "Formula Nippon"
+            },
+            {
+              "correct": false,
+              "text": "Drift"
+            },
+            {
+              "correct": false,
+              "text": "Touring"
+            }
+          ],
+          "fact": "Super GT — чемпионат для модифицированных машин."
+        },
+        {
+          "id": 36,
+          "q": "Какой японский производитель известен водородным автомобилем Mirai?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            }
+          ],
+          "fact": "Toyota Mirai — водородный седан."
+        },
+        {
+          "id": 37,
+          "q": "Какой японский спорткар прозвали «Godzilla»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nissan GT-R"
+            },
+            {
+              "correct": false,
+              "text": "Toyota Supra"
+            },
+            {
+              "correct": false,
+              "text": "Mazda RX-7"
+            },
+            {
+              "correct": false,
+              "text": "Honda NSX"
+            }
+          ],
+          "fact": "Nissan GT-R получил прозвище «Godzilla»."
+        },
+        {
+          "id": 38,
+          "q": "Какой автоконцерн владеет брендом Lexus?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            }
+          ],
+          "fact": "Lexus принадлежит Toyota."
+        },
+        {
+          "id": 39,
+          "q": "Какой автопроизводитель участвовал в Формуле 1 с командой Toro Rosso?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Suzuki"
+            }
+          ],
+          "fact": "Honda поставляла двигатели Toro Rosso."
+        },
+        {
+          "id": 40,
+          "q": "Какой японский морской порт обслуживает Осака?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кобе"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            },
+            {
+              "correct": false,
+              "text": "Токио"
+            }
+          ],
+          "fact": "Порт Кобе обслуживает Осаку."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Какой японский поезд побил мировой рекорд скорости в 2015 году?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Maglev"
+            },
+            {
+              "correct": false,
+              "text": "E5"
+            },
+            {
+              "correct": false,
+              "text": "N700"
+            },
+            {
+              "correct": false,
+              "text": "E6"
+            }
+          ],
+          "fact": "SCMaglev разогнался до 603 км/ч."
+        },
+        {
+          "id": 42,
+          "q": "Какой синкансен имеет характерный «клюв утки» для аэродинамики?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "E5"
+            },
+            {
+              "correct": false,
+              "text": "N700"
+            },
+            {
+              "correct": false,
+              "text": "E6"
+            },
+            {
+              "correct": false,
+              "text": "H5"
+            }
+          ],
+          "fact": "E5 известен удлинённым носом."
+        },
+        {
+          "id": 43,
+          "q": "Какая японская железнодорожная компания управляет сетью синкансенов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "JR East"
+            },
+            {
+              "correct": false,
+              "text": "JR Central"
+            },
+            {
+              "correct": false,
+              "text": "JR West"
+            },
+            {
+              "correct": false,
+              "text": "JR Kyushu"
+            }
+          ],
+          "fact": "Сетью Shinkansen управляют компании JR."
+        },
+        {
+          "id": 44,
+          "q": "Какой японский аэропорт, построенный на воде, считается уникальным в мире?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            }
+          ],
+          "fact": "Аэропорт Кансай построен на воде."
+        },
+        {
+          "id": 45,
+          "q": "Какой токийский аэропорт находится ближе к центру города?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Ибарики"
+            }
+          ],
+          "fact": "Ханэда ближе к центру Токио."
+        },
+        {
+          "id": 46,
+          "q": "Какой японский автопроизводитель основал Соичиро?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "Mazda"
+            },
+            {
+              "correct": false,
+              "text": "Nissan"
+            }
+          ],
+          "fact": "Соичиро Хонда основал Honda."
+        },
+        {
+          "id": 47,
+          "q": "Как называется японская культура тюнинга автомобилей, ориентированных только на внутренний рынок?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "JDM"
+            },
+            {
+              "correct": false,
+              "text": "VIP Style"
+            },
+            {
+              "correct": false,
+              "text": "Bosozoku"
+            },
+            {
+              "correct": false,
+              "text": "Stance"
+            }
+          ],
+          "fact": "JDM = Japanese Domestic Market."
+        },
+        {
+          "id": 48,
+          "q": "Какой японский порт считается воротами на Хоккайдо?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хакодате"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            }
+          ],
+          "fact": "Хакодате связывает Хонсю и Хоккайдо."
+        },
+        {
+          "id": 49,
+          "q": "Какой поезд назван в честь мифической птицы феникса?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Hi no Tori"
+            },
+            {
+              "correct": false,
+              "text": "Sakura"
+            },
+            {
+              "correct": false,
+              "text": "Nozomi"
+            },
+            {
+              "correct": false,
+              "text": "Hikari"
+            }
+          ],
+          "fact": "«Hi no Tori» — поезд в честь феникса."
+        },
+        {
+          "id": 50,
+          "q": "Какой японский автомобиль первым получил титул «Автомобиль года в Европе»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nissan Micra"
+            },
+            {
+              "correct": false,
+              "text": "Toyota Yaris"
+            },
+            {
+              "correct": false,
+              "text": "Mazda 121"
+            },
+            {
+              "correct": false,
+              "text": "Honda Civic"
+            }
+          ],
+          "fact": "Nissan Micra выиграл титул в 1993."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1156 @@
+{
+  "country": "Japan",
+  "pack": "Classic",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "What is Japan’s national flower?",
+          "answers": [
+            { "correct": true, "text": "Cherry blossom" },
+            { "correct": false, "text": "Lotus" },
+            { "correct": false, "text": "Chrysanthemum" },
+            { "correct": false, "text": "Iris" }
+          ],
+          "fact": "Cherry blossoms symbolize the fleeting beauty of life."
+        },
+        {
+          "id": 2,
+          "q": "What is the highest mountain in Japan?",
+          "answers": [
+            { "correct": true, "text": "Mount Fuji" },
+            { "correct": false, "text": "Hakusan" },
+            { "correct": false, "text": "Asama" },
+            { "correct": false, "text": "Ontake" }
+          ],
+          "fact": "Mount Fuji rises 3,776 meters above sea level."
+        },
+        {
+          "id": 3,
+          "q": "What is the capital of Japan?",
+          "answers": [
+            { "correct": false, "text": "Kyoto" },
+            { "correct": true, "text": "Tokyo" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Nara" }
+          ],
+          "fact": "The capital was moved to Tokyo in 1869."
+        },
+        {
+          "id": 4,
+          "q": "What is Japan’s main currency?",
+          "answers": [
+            { "correct": true, "text": "Yen" },
+            { "correct": false, "text": "Yuan" },
+            { "correct": false, "text": "Won" },
+            { "correct": false, "text": "Dollar" }
+          ],
+          "fact": "The yen was introduced in 1871."
+        },
+        {
+          "id": 5,
+          "q": "What is a traditional Japanese inn with tatami floors called?",
+          "answers": [
+            { "correct": true, "text": "Ryokan" },
+            { "correct": false, "text": "Riad" },
+            { "correct": false, "text": "Ryugwan" },
+            { "correct": false, "text": "Motel" }
+          ],
+          "fact": "Guests at ryokan sleep on futons laid on tatami mats."
+        },
+        {
+          "id": 6,
+          "q": "Which ocean lies to the east of Japan?",
+          "answers": [
+            { "correct": true, "text": "Pacific Ocean" },
+            { "correct": false, "text": "Indian Ocean" },
+            { "correct": false, "text": "Atlantic Ocean" },
+            { "correct": false, "text": "Arctic Ocean" }
+          ],
+          "fact": "Japan is surrounded by the Pacific Ocean."
+        },
+        {
+          "id": 7,
+          "q": "What is the Japanese tradition of viewing cherry blossoms called?",
+          "answers": [
+            { "correct": true, "text": "Hanami" },
+            { "correct": false, "text": "Matsuri" },
+            { "correct": false, "text": "O-sechi" },
+            { "correct": false, "text": "Obon" }
+          ],
+          "fact": "Hanami means enjoying picnics under blooming sakura trees."
+        },
+        {
+          "id": 8,
+          "q": "What is the main Shinto religious complex called?",
+          "answers": [
+            { "correct": true, "text": "Shrine" },
+            { "correct": false, "text": "Pagoda" },
+            { "correct": false, "text": "Synagogue" },
+            { "correct": false, "text": "Basilica" }
+          ],
+          "fact": "Shinto places of worship are known as shrines."
+        },
+        {
+          "id": 9,
+          "q": "Which dish is most closely associated with Japan?",
+          "answers": [
+            { "correct": true, "text": "Sushi" },
+            { "correct": false, "text": "Tacos" },
+            { "correct": false, "text": "Pasta" },
+            { "correct": false, "text": "Paella" }
+          ],
+          "fact": "Sushi is one of Japan’s most iconic dishes."
+        },
+        {
+          "id": 10,
+          "q": "Who is Japan’s head of state according to the Constitution?",
+          "answers": [
+            { "correct": true, "text": "Emperor" },
+            { "correct": false, "text": "President" },
+            { "correct": false, "text": "King" },
+            { "correct": false, "text": "Chancellor" }
+          ],
+          "fact": "The Emperor is the symbol of the nation; political power rests with the parliament."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "What is Japan’s national sport?",
+          "answers": [
+            { "correct": true, "text": "Sumo" },
+            { "correct": false, "text": "Karate" },
+            { "correct": false, "text": "Judo" },
+            { "correct": false, "text": "Kendo" }
+          ],
+          "fact": "Sumo wrestling dates back over 1,500 years and is deeply tied to Shinto rituals."
+        },
+        {
+          "id": 12,
+          "q": "Which Japanese city was the first to suffer an atomic bombing?",
+          "answers": [
+            { "correct": true, "text": "Hiroshima" },
+            { "correct": false, "text": "Nagasaki" },
+            { "correct": false, "text": "Tokyo" },
+            { "correct": false, "text": "Osaka" }
+          ],
+          "fact": "Hiroshima was bombed on August 6, 1945, leading to Japan’s surrender in WWII."
+        },
+        {
+          "id": 13,
+          "q": "What is the name of the Japanese bullet train?",
+          "answers": [
+            { "correct": true, "text": "Shinkansen" },
+            { "correct": false, "text": "Narita Express" },
+            { "correct": false, "text": "Metro Rapid" },
+            { "correct": false, "text": "Sakura Line" }
+          ],
+          "fact": "The Shinkansen can reach speeds of over 300 km/h."
+        },
+        {
+          "id": 14,
+          "q": "Which Japanese company created the PlayStation?",
+          "answers": [
+            { "correct": true, "text": "Sony" },
+            { "correct": false, "text": "Nintendo" },
+            { "correct": false, "text": "Sega" },
+            { "correct": false, "text": "Capcom" }
+          ],
+          "fact": "Sony released the first PlayStation console in 1994."
+        },
+        {
+          "id": 15,
+          "q": "What is Japan’s main religion alongside Shinto?",
+          "answers": [
+            { "correct": true, "text": "Buddhism" },
+            { "correct": false, "text": "Christianity" },
+            { "correct": false, "text": "Hinduism" },
+            { "correct": false, "text": "Islam" }
+          ],
+          "fact": "Most Japanese people practice both Shinto and Buddhism in daily life."
+        },
+        {
+          "id": 16,
+          "q": "What is the traditional Japanese garment called?",
+          "answers": [
+            { "correct": true, "text": "Kimono" },
+            { "correct": false, "text": "Hanbok" },
+            { "correct": false, "text": "Ao Dai" },
+            { "correct": false, "text": "Cheongsam" }
+          ],
+          "fact": "Kimono literally means 'thing to wear'."
+        },
+        {
+          "id": 17,
+          "q": "Which Japanese dish consists of noodles served in a hot broth?",
+          "answers": [
+            { "correct": true, "text": "Ramen" },
+            { "correct": false, "text": "Soba" },
+            { "correct": false, "text": "Udon" },
+            { "correct": false, "text": "Pho" }
+          ],
+          "fact": "Ramen has Chinese origins but became a Japanese national favorite."
+        },
+        {
+          "id": 18,
+          "q": "What is the Japanese term for a festival?",
+          "answers": [
+            { "correct": true, "text": "Matsuri" },
+            { "correct": false, "text": "Obon" },
+            { "correct": false, "text": "Tanabata" },
+            { "correct": false, "text": "Setsubun" }
+          ],
+          "fact": "There are over 200,000 matsuri celebrated across Japan each year."
+        },
+        {
+          "id": 19,
+          "q": "Which Japanese city is famous for deer roaming freely in its parks?",
+          "answers": [
+            { "correct": true, "text": "Nara" },
+            { "correct": false, "text": "Kyoto" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Kobe" }
+          ],
+          "fact": "In Nara, deer are considered sacred messengers of the gods."
+        },
+        {
+          "id": 20,
+          "q": "What is the Japanese word for 'thank you'?",
+          "answers": [
+            { "correct": true, "text": "Arigatou" },
+            { "correct": false, "text": "Konnichiwa" },
+            { "correct": false, "text": "Sayonara" },
+            { "correct": false, "text": "Ohayo" }
+          ],
+          "fact": "‘Arigatou’ is one of the most commonly used words in Japan."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "What is the Japanese word for 'cartoon' or 'comic'?",
+          "answers": [
+            { "correct": true, "text": "Manga" },
+            { "correct": false, "text": "Anime" },
+            { "correct": false, "text": "Manhwa" },
+            { "correct": false, "text": "Doujinshi" }
+          ],
+          "fact": "Manga is a multi-billion dollar industry with global influence."
+        },
+        {
+          "id": 22,
+          "q": "What is the Japanese word for animated films or series?",
+          "answers": [
+            { "correct": true, "text": "Anime" },
+            { "correct": false, "text": "Manga" },
+            { "correct": false, "text": "Otaku" },
+            { "correct": false, "text": "Kawaii" }
+          ],
+          "fact": "Anime literally means 'animation' in Japanese but usually refers to Japanese-style animation."
+        },
+        {
+          "id": 23,
+          "q": "Which Japanese animation studio created 'Spirited Away'?",
+          "answers": [
+            { "correct": true, "text": "Studio Ghibli" },
+            { "correct": false, "text": "Toei Animation" },
+            { "correct": false, "text": "MAPPA" },
+            { "correct": false, "text": "Bones" }
+          ],
+          "fact": "‘Spirited Away’ won the Academy Award for Best Animated Feature in 2003."
+        },
+        {
+          "id": 24,
+          "q": "Who is the creator of the Pokémon franchise?",
+          "answers": [
+            { "correct": true, "text": "Satoshi Tajiri" },
+            { "correct": false, "text": "Hayao Miyazaki" },
+            { "correct": false, "text": "Eiichiro Oda" },
+            { "correct": false, "text": "Masashi Kishimoto" }
+          ],
+          "fact": "Tajiri was inspired by his childhood love of collecting insects."
+        },
+        {
+          "id": 25,
+          "q": "What is the Japanese word for 'goodbye'?",
+          "answers": [
+            { "correct": true, "text": "Sayonara" },
+            { "correct": false, "text": "Konnichiwa" },
+            { "correct": false, "text": "Arigatou" },
+            { "correct": false, "text": "Ohayo" }
+          ],
+          "fact": "‘Sayonara’ literally means ‘if it must be so’ — used when parting for a long time."
+        },
+        {
+          "id": 26,
+          "q": "Which city was Japan’s capital before Tokyo?",
+          "answers": [
+            { "correct": true, "text": "Kyoto" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Nara" },
+            { "correct": false, "text": "Kamakura" }
+          ],
+          "fact": "Kyoto was Japan’s capital for over a thousand years."
+        },
+        {
+          "id": 27,
+          "q": "What do Japanese people traditionally remove before entering a home?",
+          "answers": [
+            { "correct": true, "text": "Shoes" },
+            { "correct": false, "text": "Hat" },
+            { "correct": false, "text": "Jacket" },
+            { "correct": false, "text": "Gloves" }
+          ],
+          "fact": "Removing shoes keeps the tatami mats and floors clean."
+        },
+        {
+          "id": 28,
+          "q": "Which Japanese car company produces the Corolla?",
+          "answers": [
+            { "correct": true, "text": "Toyota" },
+            { "correct": false, "text": "Nissan" },
+            { "correct": false, "text": "Honda" },
+            { "correct": false, "text": "Mazda" }
+          ],
+          "fact": "The Toyota Corolla is one of the best-selling cars of all time."
+        },
+        {
+          "id": 29,
+          "q": "What is the Japanese art of paper folding called?",
+          "answers": [
+            { "correct": true, "text": "Origami" },
+            { "correct": false, "text": "Ikebana" },
+            { "correct": false, "text": "Calligraphy" },
+            { "correct": false, "text": "Sumi-e" }
+          ],
+          "fact": "Origami is often used to symbolize peace and mindfulness."
+        },
+        {
+          "id": 30,
+          "q": "What is the name of Japan’s parliament?",
+          "answers": [
+            { "correct": true, "text": "The National Diet" },
+            { "correct": false, "text": "The Imperial Council" },
+            { "correct": false, "text": "The House of the Rising Sun" },
+            { "correct": false, "text": "The Tokyo Assembly" }
+          ],
+          "fact": "Japan’s National Diet consists of two houses: the House of Representatives and the House of Councillors."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "What is the Japanese art of flower arrangement called?",
+          "answers": [
+            { "correct": true, "text": "Ikebana" },
+            { "correct": false, "text": "Origami" },
+            { "correct": false, "text": "Bonsai" },
+            { "correct": false, "text": "Kintsugi" }
+          ],
+          "fact": "Ikebana emphasizes balance, harmony, and simplicity in floral design."
+        },
+        {
+          "id": 32,
+          "q": "Which Japanese city hosts the famous Fushimi Inari Shrine with thousands of red gates?",
+          "answers": [
+            { "correct": true, "text": "Kyoto" },
+            { "correct": false, "text": "Tokyo" },
+            { "correct": false, "text": "Nara" },
+            { "correct": false, "text": "Hiroshima" }
+          ],
+          "fact": "The shrine features over 10,000 vermilion torii gates dedicated to the god of prosperity."
+        },
+        {
+          "id": 33,
+          "q": "What are Japan’s traditional wooden sandals called?",
+          "answers": [
+            { "correct": true, "text": "Geta" },
+            { "correct": false, "text": "Zori" },
+            { "correct": false, "text": "Tabi" },
+            { "correct": false, "text": "Waraji" }
+          ],
+          "fact": "Geta are worn with yukata or kimono and help keep the fabric from touching the ground."
+        },
+        {
+          "id": 34,
+          "q": "Which Japanese martial art focuses on using a sword?",
+          "answers": [
+            { "correct": true, "text": "Kendo" },
+            { "correct": false, "text": "Judo" },
+            { "correct": false, "text": "Karate" },
+            { "correct": false, "text": "Aikido" }
+          ],
+          "fact": "Kendo means 'the way of the sword' and uses bamboo swords called shinai."
+        },
+        {
+          "id": 35,
+          "q": "What is the Japanese word for 'cute'?",
+          "answers": [
+            { "correct": true, "text": "Kawaii" },
+            { "correct": false, "text": "Sugoi" },
+            { "correct": false, "text": "Tanoshii" },
+            { "correct": false, "text": "Ureshii" }
+          ],
+          "fact": "The concept of 'kawaii' shapes much of Japan’s pop culture, from fashion to mascots."
+        },
+        {
+          "id": 36,
+          "q": "Which Japanese island is the largest by area?",
+          "answers": [
+            { "correct": true, "text": "Honshu" },
+            { "correct": false, "text": "Hokkaido" },
+            { "correct": false, "text": "Kyushu" },
+            { "correct": false, "text": "Shikoku" }
+          ],
+          "fact": "Honshu is home to Tokyo, Kyoto, and Osaka — Japan’s main economic and cultural centers."
+        },
+        {
+          "id": 37,
+          "q": "What is the Japanese practice of repairing pottery with gold called?",
+          "answers": [
+            { "correct": true, "text": "Kintsugi" },
+            { "correct": false, "text": "Ikebana" },
+            { "correct": false, "text": "Shodo" },
+            { "correct": false, "text": "Wabi-sabi" }
+          ],
+          "fact": "Kintsugi turns broken ceramics into unique works of art, symbolizing beauty in imperfection."
+        },
+        {
+          "id": 38,
+          "q": "Which famous Japanese company’s mascot is Pikachu?",
+          "answers": [
+            { "correct": true, "text": "Nintendo" },
+            { "correct": false, "text": "Sony" },
+            { "correct": false, "text": "Bandai" },
+            { "correct": false, "text": "Capcom" }
+          ],
+          "fact": "Nintendo launched Pokémon in 1996; Pikachu became its global ambassador."
+        },
+        {
+          "id": 39,
+          "q": "Which Japanese artist became famous for the painting 'The Great Wave off Kanagawa'?",
+          "answers": [
+            { "correct": true, "text": "Katsushika Hokusai" },
+            { "correct": false, "text": "Hiroshige" },
+            { "correct": false, "text": "Utamaro" },
+            { "correct": false, "text": "Kuniyoshi" }
+          ],
+          "fact": "Hokusai’s print is one of the most recognized artworks in the world."
+        },
+        {
+          "id": 40,
+          "q": "What are Japanese comics for adults called?",
+          "answers": [
+            { "correct": true, "text": "Seinen" },
+            { "correct": false, "text": "Shonen" },
+            { "correct": false, "text": "Josei" },
+            { "correct": false, "text": "Shojo" }
+          ],
+          "fact": "Seinen manga target adult men, featuring complex plots and mature themes."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Which mountain is Japan’s highest peak?",
+          "answers": [
+            { "correct": true, "text": "Mount Fuji" },
+            { "correct": false, "text": "Mount Haku" },
+            { "correct": false, "text": "Mount Tate" },
+            { "correct": false, "text": "Mount Ontake" }
+          ],
+          "fact": "Mount Fuji rises 3,776 meters high and is a sacred symbol of Japan."
+        },
+        {
+          "id": 42,
+          "q": "What is the Japanese term for traditional performing arts combining dance and drama?",
+          "answers": [
+            { "correct": true, "text": "Kabuki" },
+            { "correct": false, "text": "Noh" },
+            { "correct": false, "text": "Bunraku" },
+            { "correct": false, "text": "Rakugo" }
+          ],
+          "fact": "Kabuki features colorful makeup, bold acting, and elaborate costumes."
+        },
+        {
+          "id": 43,
+          "q": "Which Japanese food consists of raw fish served over rice?",
+          "answers": [
+            { "correct": true, "text": "Sushi" },
+            { "correct": false, "text": "Tempura" },
+            { "correct": false, "text": "Yakitori" },
+            { "correct": false, "text": "Sashimi" }
+          ],
+          "fact": "Sushi has become a global delicacy but originated as street food."
+        },
+        {
+          "id": 44,
+          "q": "What is the Japanese term for hospitality and mindful service?",
+          "answers": [
+            { "correct": true, "text": "Omotenashi" },
+            { "correct": false, "text": "Wabi-sabi" },
+            { "correct": false, "text": "Satori" },
+            { "correct": false, "text": "Kaiseki" }
+          ],
+          "fact": "Omotenashi is the spirit of anticipating guests’ needs without being asked."
+        },
+        {
+          "id": 45,
+          "q": "Which Japanese city is famous for its Peace Memorial Park?",
+          "answers": [
+            { "correct": true, "text": "Hiroshima" },
+            { "correct": false, "text": "Nagasaki" },
+            { "correct": false, "text": "Tokyo" },
+            { "correct": false, "text": "Kyoto" }
+          ],
+          "fact": "Hiroshima’s Peace Park honors victims of the atomic bombing and promotes peace."
+        },
+        {
+          "id": 46,
+          "q": "What is Japan’s traditional tea ceremony called?",
+          "answers": [
+            { "correct": true, "text": "Chanoyu" },
+            { "correct": false, "text": "Kaiseki" },
+            { "correct": false, "text": "Sado" },
+            { "correct": false, "text": "Matcha-kai" }
+          ],
+          "fact": "The tea ceremony blends art, philosophy, and mindfulness in every gesture."
+        },
+        {
+          "id": 47,
+          "q": "Which animal is considered sacred in Nara Park?",
+          "answers": [
+            { "correct": true, "text": "Deer" },
+            { "correct": false, "text": "Crane" },
+            { "correct": false, "text": "Fox" },
+            { "correct": false, "text": "Cat" }
+          ],
+          "fact": "Nara’s deer are believed to be messengers of the Shinto gods."
+        },
+        {
+          "id": 48,
+          "q": "Which Japanese car brand created the luxury line ‘Lexus’?",
+          "answers": [
+            { "correct": true, "text": "Toyota" },
+            { "correct": false, "text": "Nissan" },
+            { "correct": false, "text": "Mazda" },
+            { "correct": false, "text": "Subaru" }
+          ],
+          "fact": "Toyota launched Lexus in 1989 to compete in the premium car market."
+        },
+        {
+          "id": 49,
+          "q": "What is the traditional Japanese short poem with 17 syllables called?",
+          "answers": [
+            { "correct": true, "text": "Haiku" },
+            { "correct": false, "text": "Tanka" },
+            { "correct": false, "text": "Renga" },
+            { "correct": false, "text": "Sonnet" }
+          ],
+          "fact": "Haiku captures the beauty of fleeting moments, often inspired by nature."
+        },
+        {
+          "id": 50,
+          "q": "Which Japanese festival celebrates cherry blossoms?",
+          "answers": [
+            { "correct": true, "text": "Hanami" },
+            { "correct": false, "text": "Tanabata" },
+            { "correct": false, "text": "Obon" },
+            { "correct": false, "text": "Setsubun" }
+          ],
+          "fact": "During Hanami, people gather under blooming sakura trees to enjoy picnics and celebrate spring."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "questions": [
+        {
+          "id": 51,
+          "q": "What is the name of Japan’s famous high-speed train?",
+          "answers": [
+            { "correct": true, "text": "Shinkansen" },
+            { "correct": false, "text": "Hikari" },
+            { "correct": false, "text": "Nozomi" },
+            { "correct": false, "text": "Hayabusa" }
+          ],
+          "fact": "The Shinkansen, or 'bullet train', reaches speeds of up to 320 km/h."
+        },
+        {
+          "id": 52,
+          "q": "Which Japanese city hosted the 2020 Summer Olympics?",
+          "answers": [
+            { "correct": true, "text": "Tokyo" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Nagoya" },
+            { "correct": false, "text": "Sapporo" }
+          ],
+          "fact": "Due to the pandemic, the Tokyo 2020 Olympics were actually held in 2021."
+        },
+        {
+          "id": 53,
+          "q": "What is the traditional Japanese robe called?",
+          "answers": [
+            { "correct": true, "text": "Kimono" },
+            { "correct": false, "text": "Yukata" },
+            { "correct": false, "text": "Hakama" },
+            { "correct": false, "text": "Haori" }
+          ],
+          "fact": "The kimono is often worn on special occasions like weddings or festivals."
+        },
+        {
+          "id": 54,
+          "q": "What do Japanese students commonly wear to school?",
+          "answers": [
+            { "correct": true, "text": "Uniforms" },
+            { "correct": false, "text": "Casual clothes" },
+            { "correct": false, "text": "Traditional kimono" },
+            { "correct": false, "text": "Tracksuits" }
+          ],
+          "fact": "Japanese school uniforms were inspired by European naval outfits."
+        },
+        {
+          "id": 55,
+          "q": "Which Japanese company created the PlayStation console?",
+          "answers": [
+            { "correct": true, "text": "Sony" },
+            { "correct": false, "text": "Nintendo" },
+            { "correct": false, "text": "Sega" },
+            { "correct": false, "text": "Konami" }
+          ],
+          "fact": "The original PlayStation was released in 1994 and revolutionized gaming worldwide."
+        },
+        {
+          "id": 56,
+          "q": "What is the Japanese word for a person obsessed with anime or games?",
+          "answers": [
+            { "correct": true, "text": "Otaku" },
+            { "correct": false, "text": "Kawaii" },
+            { "correct": false, "text": "Ronin" },
+            { "correct": false, "text": "Shogun" }
+          ],
+          "fact": "‘Otaku’ used to have a negative connotation, but now it’s proudly used by fans."
+        },
+        {
+          "id": 57,
+          "q": "Which Japanese art uses miniature trees?",
+          "answers": [
+            { "correct": true, "text": "Bonsai" },
+            { "correct": false, "text": "Ikebana" },
+            { "correct": false, "text": "Sumi-e" },
+            { "correct": false, "text": "Origami" }
+          ],
+          "fact": "Bonsai is the art of cultivating small trees that mimic the shape of full-sized ones."
+        },
+        {
+          "id": 58,
+          "q": "Which Japanese electronic company invented the Walkman?",
+          "answers": [
+            { "correct": true, "text": "Sony" },
+            { "correct": false, "text": "Panasonic" },
+            { "correct": false, "text": "Sharp" },
+            { "correct": false, "text": "Toshiba" }
+          ],
+          "fact": "The Sony Walkman changed how the world listens to music on the go."
+        },
+        {
+          "id": 59,
+          "q": "What is the name of Japan’s largest fish market, located in Tokyo?",
+          "answers": [
+            { "correct": true, "text": "Tsukiji Market" },
+            { "correct": false, "text": "Nishiki Market" },
+            { "correct": false, "text": "Ameyoko" },
+            { "correct": false, "text": "Kuromon Market" }
+          ],
+          "fact": "Tsukiji Market was once the world’s largest seafood market, famous for tuna auctions."
+        },
+        {
+          "id": 60,
+          "q": "What do Japanese people traditionally eat on New Year’s Day?",
+          "answers": [
+            { "correct": true, "text": "Osechi Ryori" },
+            { "correct": false, "text": "Ramen" },
+            { "correct": false, "text": "Tempura" },
+            { "correct": false, "text": "Okonomiyaki" }
+          ],
+          "fact": "Osechi Ryori is a colorful meal packed into lacquered boxes, symbolizing happiness and luck for the year ahead."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "questions": [
+        {
+          "id": 61,
+          "q": "Which Japanese dish is made by grilling chicken skewers over charcoal?",
+          "answers": [
+            { "correct": true, "text": "Yakitori" },
+            { "correct": false, "text": "Sukiyaki" },
+            { "correct": false, "text": "Tonkatsu" },
+            { "correct": false, "text": "Okonomiyaki" }
+          ],
+          "fact": "Yakitori literally means 'grilled bird' and is a common snack at izakaya pubs."
+        },
+        {
+          "id": 62,
+          "q": "What does the word 'samurai' literally mean?",
+          "answers": [
+            { "correct": true, "text": "One who serves" },
+            { "correct": false, "text": "Warrior" },
+            { "correct": false, "text": "Noble" },
+            { "correct": false, "text": "Swordsman" }
+          ],
+          "fact": "Samurai means 'to serve' and refers to Japan’s warrior class loyal to their lords."
+        },
+        {
+          "id": 63,
+          "q": "What is Japan’s most famous theme park inspired by anime and Studio Ghibli films?",
+          "answers": [
+            { "correct": true, "text": "Ghibli Park" },
+            { "correct": false, "text": "Universal Studios Japan" },
+            { "correct": false, "text": "Tokyo Disneyland" },
+            { "correct": false, "text": "Fuji-Q Highland" }
+          ],
+          "fact": "Ghibli Park opened in 2022 and lets visitors step into scenes from classic films like ‘Totoro’ and ‘Spirited Away’."
+        },
+        {
+          "id": 64,
+          "q": "What is Japan’s national sport?",
+          "answers": [
+            { "correct": true, "text": "Sumo" },
+            { "correct": false, "text": "Judo" },
+            { "correct": false, "text": "Karate" },
+            { "correct": false, "text": "Baseball" }
+          ],
+          "fact": "Sumo dates back over 1,500 years and includes rituals tied to Shinto traditions."
+        },
+        {
+          "id": 65,
+          "q": "Which Japanese flower is the national symbol of the country?",
+          "answers": [
+            { "correct": true, "text": "Cherry blossom" },
+            { "correct": false, "text": "Lotus" },
+            { "correct": false, "text": "Peony" },
+            { "correct": false, "text": "Chrysanthemum" }
+          ],
+          "fact": "Cherry blossoms, or sakura, symbolize the beauty and impermanence of life."
+        },
+        {
+          "id": 66,
+          "q": "Which Japanese city is home to the Golden Pavilion (Kinkaku-ji)?",
+          "answers": [
+            { "correct": true, "text": "Kyoto" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Tokyo" },
+            { "correct": false, "text": "Nikko" }
+          ],
+          "fact": "Kinkaku-ji is covered in gold leaf and reflects beautifully in the surrounding pond."
+        },
+        {
+          "id": 67,
+          "q": "What is the Japanese word for 'cartoon' or 'animated film'?",
+          "answers": [
+            { "correct": true, "text": "Anime" },
+            { "correct": false, "text": "Manga" },
+            { "correct": false, "text": "Otaku" },
+            { "correct": false, "text": "Manhwa" }
+          ],
+          "fact": "Anime has become a global phenomenon influencing art and storytelling worldwide."
+        },
+        {
+          "id": 68,
+          "q": "What is the name of the Japanese art of folding paper?",
+          "answers": [
+            { "correct": true, "text": "Origami" },
+            { "correct": false, "text": "Ikebana" },
+            { "correct": false, "text": "Kintsugi" },
+            { "correct": false, "text": "Kirigami" }
+          ],
+          "fact": "Origami teaches patience and precision — a simple sheet of paper can become a crane or dragon."
+        },
+        {
+          "id": 69,
+          "q": "Which Japanese company is known for creating Mario and Zelda?",
+          "answers": [
+            { "correct": true, "text": "Nintendo" },
+            { "correct": false, "text": "Capcom" },
+            { "correct": false, "text": "Square Enix" },
+            { "correct": false, "text": "Sega" }
+          ],
+          "fact": "Nintendo’s characters, created by Shigeru Miyamoto, defined generations of gaming."
+        },
+        {
+          "id": 70,
+          "q": "What is Japan’s currency called?",
+          "answers": [
+            { "correct": true, "text": "Yen" },
+            { "correct": false, "text": "Won" },
+            { "correct": false, "text": "Yuan" },
+            { "correct": false, "text": "Rupee" }
+          ],
+          "fact": "The yen (¥) has been Japan’s currency since 1871."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "questions": [
+        {
+          "id": 71,
+          "q": "What is the name of Japan’s traditional flower arranging art?",
+          "answers": [
+            { "correct": true, "text": "Ikebana" },
+            { "correct": false, "text": "Origami" },
+            { "correct": false, "text": "Kintsugi" },
+            { "correct": false, "text": "Sumi-e" }
+          ],
+          "fact": "Ikebana focuses on harmony, balance, and simplicity — every stem and leaf has meaning."
+        },
+        {
+          "id": 72,
+          "q": "Which Japanese term describes the aesthetic of finding beauty in imperfection?",
+          "answers": [
+            { "correct": true, "text": "Wabi-sabi" },
+            { "correct": false, "text": "Kawaii" },
+            { "correct": false, "text": "Bushido" },
+            { "correct": false, "text": "Shibui" }
+          ],
+          "fact": "Wabi-sabi celebrates the imperfect, impermanent, and incomplete — a core concept in Japanese art."
+        },
+        {
+          "id": 73,
+          "q": "What is Japan’s most famous castle, located in Himeji?",
+          "answers": [
+            { "correct": true, "text": "Himeji Castle" },
+            { "correct": false, "text": "Osaka Castle" },
+            { "correct": false, "text": "Nagoya Castle" },
+            { "correct": false, "text": "Kumamoto Castle" }
+          ],
+          "fact": "Himeji Castle, known as the 'White Heron', is a UNESCO World Heritage Site."
+        },
+        {
+          "id": 74,
+          "q": "What is the Japanese term for the 'way of the warrior'?",
+          "answers": [
+            { "correct": true, "text": "Bushido" },
+            { "correct": false, "text": "Shinto" },
+            { "correct": false, "text": "Zen" },
+            { "correct": false, "text": "Ninjutsu" }
+          ],
+          "fact": "Bushido emphasizes honor, courage, and loyalty — the moral code of the samurai."
+        },
+        {
+          "id": 75,
+          "q": "What is Japan’s national holiday celebrating the Emperor’s birthday called?",
+          "answers": [
+            { "correct": true, "text": "Tennō Tanjōbi" },
+            { "correct": false, "text": "Shōwa Day" },
+            { "correct": false, "text": "National Foundation Day" },
+            { "correct": false, "text": "Constitution Day" }
+          ],
+          "fact": "Tennō Tanjōbi changes date depending on the reigning Emperor — currently celebrated in February."
+        },
+        {
+          "id": 76,
+          "q": "Which Japanese city is famous for its futuristic architecture and neon nightlife?",
+          "answers": [
+            { "correct": true, "text": "Tokyo" },
+            { "correct": false, "text": "Kyoto" },
+            { "correct": false, "text": "Fukuoka" },
+            { "correct": false, "text": "Nara" }
+          ],
+          "fact": "Tokyo blends tradition and technology — ancient temples stand beside LED skyscrapers."
+        },
+        {
+          "id": 77,
+          "q": "What is the Japanese word for traditional wooden clogs or sandals?",
+          "answers": [
+            { "correct": true, "text": "Geta" },
+            { "correct": false, "text": "Zori" },
+            { "correct": false, "text": "Tabi" },
+            { "correct": false, "text": "Jinbei" }
+          ],
+          "fact": "Geta elevate the foot off the ground to protect kimonos from mud and rain."
+        },
+        {
+          "id": 78,
+          "q": "Which sea creature is often associated with Japan’s cuisine and symbolism of intelligence?",
+          "answers": [
+            { "correct": true, "text": "Octopus" },
+            { "correct": false, "text": "Squid" },
+            { "correct": false, "text": "Crab" },
+            { "correct": false, "text": "Turtle" }
+          ],
+          "fact": "Octopus, or 'tako', appears in street snacks like takoyaki and symbolizes adaptability."
+        },
+        {
+          "id": 79,
+          "q": "What is the Japanese art of repairing broken pottery with gold called?",
+          "answers": [
+            { "correct": true, "text": "Kintsugi" },
+            { "correct": false, "text": "Raku" },
+            { "correct": false, "text": "Urushi" },
+            { "correct": false, "text": "Arita" }
+          ],
+          "fact": "Kintsugi means 'golden joinery' — embracing flaws as part of an object’s history."
+        },
+        {
+          "id": 80,
+          "q": "Which city was Japan’s first capital before Kyoto?",
+          "answers": [
+            { "correct": true, "text": "Nara" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Kamakura" },
+            { "correct": false, "text": "Nagoya" }
+          ],
+          "fact": "Nara was Japan’s first permanent capital, built in 710, home to the Great Buddha of Tōdai-ji."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "questions": [
+        {
+          "id": 81,
+          "q": "Which Japanese island is known for its active volcano, Mount Sakurajima?",
+          "answers": [
+            { "correct": true, "text": "Kyushu" },
+            { "correct": false, "text": "Honshu" },
+            { "correct": false, "text": "Hokkaido" },
+            { "correct": false, "text": "Shikoku" }
+          ],
+          "fact": "Mount Sakurajima is one of the world’s most active volcanoes and regularly releases ash over Kagoshima City."
+        },
+        {
+          "id": 82,
+          "q": "What is the Japanese word for a traditional short poem of 17 syllables?",
+          "answers": [
+            { "correct": true, "text": "Haiku" },
+            { "correct": false, "text": "Tanka" },
+            { "correct": false, "text": "Senryu" },
+            { "correct": false, "text": "Renga" }
+          ],
+          "fact": "Haiku often captures a fleeting moment of nature and emotion in just 17 syllables."
+        },
+        {
+          "id": 83,
+          "q": "Which Japanese company invented instant noodles?",
+          "answers": [
+            { "correct": true, "text": "Nissin" },
+            { "correct": false, "text": "Maruchan" },
+            { "correct": false, "text": "Sapporo Ichiban" },
+            { "correct": false, "text": "Ajinomoto" }
+          ],
+          "fact": "Momofuku Ando of Nissin Foods created instant noodles in 1958 to fight food shortages after WWII."
+        },
+        {
+          "id": 84,
+          "q": "What is the Japanese term for a traditional sliding paper door?",
+          "answers": [
+            { "correct": true, "text": "Shoji" },
+            { "correct": false, "text": "Tatami" },
+            { "correct": false, "text": "Fusuma" },
+            { "correct": false, "text": "Ranma" }
+          ],
+          "fact": "Shoji screens are made from translucent paper and wooden frames to let natural light pass softly into rooms."
+        },
+        {
+          "id": 85,
+          "q": "Which Japanese city is known for its Peace Memorial Park and Atomic Bomb Dome?",
+          "answers": [
+            { "correct": true, "text": "Hiroshima" },
+            { "correct": false, "text": "Nagasaki" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Yokohama" }
+          ],
+          "fact": "Hiroshima Peace Park commemorates the victims of the 1945 atomic bomb and promotes global peace."
+        },
+        {
+          "id": 86,
+          "q": "What is the Japanese practice of drinking tea as a meditative ceremony called?",
+          "answers": [
+            { "correct": true, "text": "Chadō (The Way of Tea)" },
+            { "correct": false, "text": "Zen" },
+            { "correct": false, "text": "Sado" },
+            { "correct": false, "text": "Matcha-kai" }
+          ],
+          "fact": "Chadō combines art, philosophy and mindfulness, emphasizing grace and respect in every movement."
+        },
+        {
+          "id": 87,
+          "q": "Which Japanese mountain range is called the 'Japanese Alps'?",
+          "answers": [
+            { "correct": true, "text": "Hida Mountains" },
+            { "correct": false, "text": "Chugoku Mountains" },
+            { "correct": false, "text": "Osumi Mountains" },
+            { "correct": false, "text": "Izu Mountains" }
+          ],
+          "fact": "The Hida Mountains in central Honshu are nicknamed the Japanese Alps for their snow-covered peaks and alpine villages."
+        },
+        {
+          "id": 88,
+          "q": "What is the Japanese word for a portable lunch box with compartments?",
+          "answers": [
+            { "correct": true, "text": "Bento" },
+            { "correct": false, "text": "Onigiri" },
+            { "correct": false, "text": "Obento" },
+            { "correct": false, "text": "Mochi" }
+          ],
+          "fact": "A bento is a balanced meal in a box — often beautifully arranged with rice, fish, vegetables and fruit."
+        },
+        {
+          "id": 89,
+          "q": "Which famous Japanese animation director created 'Spirited Away'?",
+          "answers": [
+            { "correct": true, "text": "Hayao Miyazaki" },
+            { "correct": false, "text": "Makoto Shinkai" },
+            { "correct": false, "text": "Isao Takahata" },
+            { "correct": false, "text": "Mamoru Oshii" }
+          ],
+          "fact": "Miyazaki’s ‘Spirited Away’ won the Oscar for Best Animated Feature in 2003 and is beloved worldwide."
+        },
+        {
+          "id": 90,
+          "q": "Which Japanese city is considered the birthplace of sushi?",
+          "answers": [
+            { "correct": true, "text": "Tokyo" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Kobe" },
+            { "correct": false, "text": "Nagoya" }
+          ],
+          "fact": "Tokyo was once called Edo, where ‘Edo-style’ sushi was created — fresh fish pressed onto vinegared rice for quick street meals."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "questions": [
+        {
+          "id": 91,
+          "q": "What is the Japanese name for the famous 'floating' torii gate in Miyajima?",
+          "answers": [
+            { "correct": true, "text": "Itsukushima Shrine" },
+            { "correct": false, "text": "Fushimi Inari" },
+            { "correct": false, "text": "Toshogu" },
+            { "correct": false, "text": "Heian Shrine" }
+          ],
+          "fact": "The red torii gate of Itsukushima appears to float on the sea at high tide — one of Japan’s most iconic views."
+        },
+        {
+          "id": 92,
+          "q": "What is the traditional Japanese garment worn on special occasions?",
+          "answers": [
+            { "correct": true, "text": "Kimono" },
+            { "correct": false, "text": "Yukata" },
+            { "correct": false, "text": "Hakama" },
+            { "correct": false, "text": "Haori" }
+          ],
+          "fact": "The kimono, meaning ‘thing to wear’, is tied with an obi belt and symbolizes grace and respect."
+        },
+        {
+          "id": 93,
+          "q": "What is the Japanese art of ink painting called?",
+          "answers": [
+            { "correct": true, "text": "Sumi-e" },
+            { "correct": false, "text": "Ukiyo-e" },
+            { "correct": false, "text": "Etegami" },
+            { "correct": false, "text": "Kintsugi" }
+          ],
+          "fact": "Sumi-e uses simple black ink strokes to express emotion and nature’s essence — ‘less is more’ in Japanese art."
+        },
+        {
+          "id": 94,
+          "q": "What is the name of Japan’s famous high-speed train network?",
+          "answers": [
+            { "correct": true, "text": "Shinkansen" },
+            { "correct": false, "text": "Toden" },
+            { "correct": false, "text": "Keio" },
+            { "correct": false, "text": "Odakyu" }
+          ],
+          "fact": "The Shinkansen has been running since 1964 and reaches speeds over 320 km/h — with legendary punctuality."
+        },
+        {
+          "id": 95,
+          "q": "Which Japanese festival celebrates the blooming of cherry blossoms?",
+          "answers": [
+            { "correct": true, "text": "Hanami" },
+            { "correct": false, "text": "Tanabata" },
+            { "correct": false, "text": "Obon" },
+            { "correct": false, "text": "Setsubun" }
+          ],
+          "fact": "Hanami means ‘flower viewing’ — people gather under sakura trees to picnic, sing, and celebrate spring."
+        },
+        {
+          "id": 96,
+          "q": "Which Japanese car brand’s logo features three diamonds?",
+          "answers": [
+            { "correct": true, "text": "Mitsubishi" },
+            { "correct": false, "text": "Mazda" },
+            { "correct": false, "text": "Subaru" },
+            { "correct": false, "text": "Honda" }
+          ],
+          "fact": "The name ‘Mitsubishi’ means ‘three diamonds’, symbolizing reliability and integrity."
+        },
+        {
+          "id": 97,
+          "q": "Which Japanese city hosts one of the world’s largest fish markets?",
+          "answers": [
+            { "correct": true, "text": "Tokyo" },
+            { "correct": false, "text": "Osaka" },
+            { "correct": false, "text": "Fukuoka" },
+            { "correct": false, "text": "Nagoya" }
+          ],
+          "fact": "Tokyo’s Toyosu Market replaced the famous Tsukiji Market — famous for tuna auctions and sushi stalls."
+        },
+        {
+          "id": 98,
+          "q": "What is the Japanese term for a hot spring bath?",
+          "answers": [
+            { "correct": true, "text": "Onsen" },
+            { "correct": false, "text": "Sentō" },
+            { "correct": false, "text": "Ofuro" },
+            { "correct": false, "text": "Ryokan" }
+          ],
+          "fact": "Onsen are natural volcanic hot springs — visiting them is a cherished relaxation ritual in Japan."
+        },
+        {
+          "id": 99,
+          "q": "Which Japanese city was historically the seat of the shogunate?",
+          "answers": [
+            { "correct": true, "text": "Edo (Tokyo)" },
+            { "correct": false, "text": "Kyoto" },
+            { "correct": false, "text": "Nagasaki" },
+            { "correct": false, "text": "Osaka" }
+          ],
+          "fact": "Edo, now Tokyo, was the political center during the Tokugawa Shogunate (1603–1868)."
+        },
+        {
+          "id": 100,
+          "q": "What is the Japanese term for the 'divine wind' that protected Japan from Mongol invasions?",
+          "answers": [
+            { "correct": true, "text": "Kamikaze" },
+            { "correct": false, "text": "Tsunami" },
+            { "correct": false, "text": "Amaterasu" },
+            { "correct": false, "text": "Raijin" }
+          ],
+          "fact": "Kamikaze — ‘divine wind’ — refers to typhoons that destroyed invading Mongol fleets in the 13th century."
+        }
+      ]
+    }
+  ]
+}

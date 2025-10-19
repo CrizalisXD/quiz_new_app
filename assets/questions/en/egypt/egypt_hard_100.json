@@ -1,0 +1,1156 @@
+{
+  "country": "Egypt",
+  "pack": "Hard",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Which crown represented Upper Egypt in pharaonic iconography?",
+          "answers": [
+            {"correct": true, "text": "Hedjet (White Crown)"},
+            {"correct": false, "text": "Deshret (Red Crown)"},
+            {"correct": false, "text": "Khepresh (Blue Crown)"},
+            {"correct": false, "text": "Atef Crown"}
+          ],
+          "fact": "Hedjet symbolized Upper Egypt; Deshret symbolized Lower Egypt."
+        },
+        {
+          "id": 2,
+          "q": "Who designed Djoser’s Step Pyramid at Saqqara?",
+          "answers": [
+            {"correct": true, "text": "Imhotep"},
+            {"correct": false, "text": "Hemiunu"},
+            {"correct": false, "text": "Senenmut"},
+            {"correct": false, "text": "Amenhotep son of Hapu"}
+          ],
+          "fact": "Imhotep was later deified as a patron of wisdom and medicine."
+        },
+        {
+          "id": 3,
+          "q": "Which god weighed the heart against the feather of Maat?",
+          "answers": [
+            {"correct": true, "text": "Anubis"},
+            {"correct": false, "text": "Ra"},
+            {"correct": false, "text": "Sobek"},
+            {"correct": false, "text": "Khnum"}
+          ],
+          "fact": "In the judgment scene, Anubis weighs the heart while Thoth records the result."
+        },
+        {
+          "id": 4,
+          "q": "The Narmer Palette is often interpreted as depicting what?",
+          "answers": [
+            {"correct": true, "text": "Unification of Upper and Lower Egypt"},
+            {"correct": false, "text": "First depiction of mummification"},
+            {"correct": false, "text": "Invention of hieroglyphs"},
+            {"correct": false, "text": "Myth of Osiris"}
+          ],
+          "fact": "Narmer wears both the White and Red crowns on the palette."
+        },
+        {
+          "id": 5,
+          "q": "Which texts are the earliest large religious corpus carved inside pyramid chambers?",
+          "answers": [
+            {"correct": true, "text": "Pyramid Texts"},
+            {"correct": false, "text": "Book of the Dead"},
+            {"correct": false, "text": "Coffin Texts"},
+            {"correct": false, "text": "Amduat"}
+          ],
+          "fact": "They appear in late Old Kingdom pyramids, starting with Unas."
+        },
+        {
+          "id": 6,
+          "q": "Which ancient capital stood at the apex of the Nile Delta during the Old Kingdom?",
+          "answers": [
+            {"correct": true, "text": "Memphis"},
+            {"correct": false, "text": "Thebes"},
+            {"correct": false, "text": "Amarna"},
+            {"correct": false, "text": "Avaris"}
+          ],
+          "fact": "Memphis was founded near the junction of Upper and Lower Egypt."
+        },
+        {
+          "id": 7,
+          "q": "What was the purpose of a 'cartouche' in hieroglyphic writing?",
+          "answers": [
+            {"correct": true, "text": "Encircling a royal name"},
+            {"correct": false, "text": "Marking a temple boundary"},
+            {"correct": false, "text": "Indicating a sacred animal"},
+            {"correct": false, "text": "Signifying a numeral"}
+          ],
+          "fact": "The elongated oval signaled that the enclosed text was a pharaoh’s name."
+        },
+        {
+          "id": 8,
+          "q": "Which dynasty did Akhenaten belong to?",
+          "answers": [
+            {"correct": true, "text": "18th Dynasty"},
+            {"correct": false, "text": "4th Dynasty"},
+            {"correct": false, "text": "26th Dynasty"},
+            {"correct": false, "text": "12th Dynasty"}
+          ],
+          "fact": "The 18th Dynasty included Hatshepsut, Thutmose III, and Tutankhamun."
+        },
+        {
+          "id": 9,
+          "q": "Which site contains the temple complex with the Great Hypostyle Hall of 134 columns?",
+          "answers": [
+            {"correct": true, "text": "Karnak (Thebes)"},
+            {"correct": false, "text": "Abydos"},
+            {"correct": false, "text": "Abu Simbel"},
+            {"correct": false, "text": "Edfu"}
+          ],
+          "fact": "Karnak grew over centuries, especially under the New Kingdom."
+        },
+        {
+          "id": 10,
+          "q": "Which material was used to desiccate bodies during mummification?",
+          "answers": [
+            {"correct": true, "text": "Natron"},
+            {"correct": false, "text": "Bitumen"},
+            {"correct": false, "text": "Papyrus ash"},
+            {"correct": false, "text": "Limestone dust"}
+          ],
+          "fact": "Natron is a naturally occurring salt harvested from dry lake beds."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "The 'Benben' stone is associated with which city’s sacred mound?",
+          "answers": [
+            {"correct": true, "text": "Heliopolis (Iunu)"},
+            {"correct": false, "text": "Akhmim"},
+            {"correct": false, "text": "Elephantine"},
+            {"correct": false, "text": "Tanis"}
+          ],
+          "fact": "The Benben symbolized the primordial mound at creation."
+        },
+        {
+          "id": 12,
+          "q": "Which pharaoh led the Egyptian forces at the Battle of Kadesh?",
+          "answers": [
+            {"correct": true, "text": "Ramesses II"},
+            {"correct": false, "text": "Seti I"},
+            {"correct": false, "text": "Thutmose III"},
+            {"correct": false, "text": "Amenhotep II"}
+          ],
+          "fact": "Kadesh (c. 1274 BCE) resulted in one of the earliest recorded peace treaties."
+        },
+        {
+          "id": 13,
+          "q": "Which writing system evolved for everyday cursive use alongside hieroglyphs?",
+          "answers": [
+            {"correct": true, "text": "Hieratic"},
+            {"correct": false, "text": "Linear A"},
+            {"correct": false, "text": "Runic"},
+            {"correct": false, "text": "Cuneiform"}
+          ],
+          "fact": "Demotic later replaced much hieratic usage in the first millennium BCE."
+        },
+        {
+          "id": 14,
+          "q": "Which deity was often depicted as a falcon and linked with kingship?",
+          "answers": [
+            {"correct": true, "text": "Horus"},
+            {"correct": false, "text": "Ptah"},
+            {"correct": false, "text": "Sobek"},
+            {"correct": false, "text": "Bes"}
+          ],
+          "fact": "The living king was seen as the embodiment of Horus."
+        },
+        {
+          "id": 15,
+          "q": "Which Old Kingdom queen’s mortuary complex lies at Giza with an intact small pyramidion?",
+          "answers": [
+            {"correct": true, "text": "Khentkaus I"},
+            {"correct": false, "text": "Nefertiti"},
+            {"correct": false, "text": "Tiye"},
+            {"correct": false, "text": "Hetepheres I"}
+          ],
+          "fact": "Khentkaus I is sometimes titled 'Mother of Two Kings of Upper and Lower Egypt'."
+        },
+        {
+          "id": 16,
+          "q": "Which god’s sacred animal was the Apis bull in Memphis?",
+          "answers": [
+            {"correct": true, "text": "Ptah"},
+            {"correct": false, "text": "Amun"},
+            {"correct": false, "text": "Ra"},
+            {"correct": false, "text": "Khonsu"}
+          ],
+          "fact": "The Serapeum at Saqqara housed the burials of the Apis bulls."
+        },
+        {
+          "id": 17,
+          "q": "The Amarna Letters are chiefly written in which language?",
+          "answers": [
+            {"correct": true, "text": "Akkadian"},
+            {"correct": false, "text": "Egyptian"},
+            {"correct": false, "text": "Hittite"},
+            {"correct": false, "text": "Canaanite alphabetic"}
+          ],
+          "fact": "They are diplomatic tablets between Egypt and Near Eastern states."
+        },
+        {
+          "id": 18,
+          "q": "Which pharaoh’s mortuary temple stands at Deir el-Bahri opposite Luxor?",
+          "answers": [
+            {"correct": true, "text": "Hatshepsut"},
+            {"correct": false, "text": "Ahmose I"},
+            {"correct": false, "text": "Ramesses III"},
+            {"correct": false, "text": "Amenhotep III"}
+          ],
+          "fact": "Hatshepsut’s terraced temple is renowned for its colonnades and reliefs."
+        },
+        {
+          "id": 19,
+          "q": "What were 'shabti' (or ushabti) figurines placed in tombs intended to do?",
+          "answers": [
+            {"correct": true, "text": "Perform labor for the deceased in the afterlife"},
+            {"correct": false, "text": "Guard against grave robbers"},
+            {"correct": false, "text": "Hold perfumes"},
+            {"correct": false, "text": "Serve as board-game pieces"}
+          ],
+          "fact": "Many bear texts commanding them to answer when the deceased is called to work."
+        },
+        {
+          "id": 20,
+          "q": "Which king moved the capital to Akhetaten (Amarna) to worship Aten?",
+          "answers": [
+            {"correct": true, "text": "Akhenaten"},
+            {"correct": false, "text": "Smenkhkare"},
+            {"correct": false, "text": "Tutankhamun"},
+            {"correct": false, "text": "Ay"}
+          ],
+          "fact": "Akhenaten’s religious reforms are often described as henotheistic."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Which list of rulers, preserved on papyrus in Turin, is crucial for chronology?",
+          "answers": [
+            {"correct": true, "text": "Turin King List"},
+            {"correct": false, "text": "Behistun Inscription"},
+            {"correct": false, "text": "Hammurabi Stela"},
+            {"correct": false, "text": "Rosetta Stone"}
+          ],
+          "fact": "Though fragmentary, it includes mythical and early dynastic kings."
+        },
+        {
+          "id": 22,
+          "q": "Which quarry near Aswan contains the famous 'Unfinished Obelisk'?",
+          "answers": [
+            {"correct": true, "text": "Ancient granite quarries of Aswan"},
+            {"correct": false, "text": "Tura limestone quarries"},
+            {"correct": false, "text": "Wadi Hammamat"},
+            {"correct": false, "text": "Gebel el-Silsila"}
+          ],
+          "fact": "The broken obelisk shows how monoliths were carved from bedrock."
+        },
+        {
+          "id": 23,
+          "q": "What device lifted water for irrigation in Pharaonic and later periods?",
+          "answers": [
+            {"correct": true, "text": "Shaduf"},
+            {"correct": false, "text": "Noria"},
+            {"correct": false, "text": "Archimedes' screw"},
+            {"correct": false, "text": "Qanat"}
+          ],
+          "fact": "The shaduf is a counterweighted lever with a bucket."
+        },
+        {
+          "id": 24,
+          "q": "Which goddess, often depicted as a lioness, embodied war and healing?",
+          "answers": [
+            {"correct": true, "text": "Sekhmet"},
+            {"correct": false, "text": "Bastet"},
+            {"correct": false, "text": "Nephthys"},
+            {"correct": false, "text": "Tefnut"}
+          ],
+          "fact": "Sekhmet could be appeased by rituals and offerings of beer dyed red."
+        },
+        {
+          "id": 25,
+          "q": "Which ancient Egyptian calendar had 12 months of 30 days plus 5 epagomenal days?",
+          "answers": [
+            {"correct": true, "text": "Civil 365-day calendar"},
+            {"correct": false, "text": "Lunar-solstitial calendar"},
+            {"correct": false, "text": "Octaeteris cycle"},
+            {"correct": false, "text": "Metonic cycle"}
+          ],
+          "fact": "The extra five days celebrated the births of key deities."
+        },
+        {
+          "id": 26,
+          "q": "Which river feature traditionally marked Egypt’s southern border in antiquity?",
+          "answers": [
+            {"correct": true, "text": "First Cataract at Aswan"},
+            {"correct": false, "text": "Fourth Cataract"},
+            {"correct": false, "text": "Delta apex at Memphis"},
+            {"correct": false, "text": "Fayum depression"}
+          ],
+          "fact": "The Nile’s cataracts are rocky rapids that impeded navigation."
+        },
+        {
+          "id": 27,
+          "q": "Which deity was symbolized by the ibis and associated with writing?",
+          "answers": [
+            {"correct": true, "text": "Thoth"},
+            {"correct": false, "text": "Khnum"},
+            {"correct": false, "text": "Min"},
+            {"correct": false, "text": "Aten"}
+          ],
+          "fact": "Thoth was patron of scribes, calculation, and lunar reckoning."
+        },
+        {
+          "id": 28,
+          "q": "What are the rectangular, flat-roofed tombs that predate pyramids called?",
+          "answers": [
+            {"correct": true, "text": "Mastabas"},
+            {"correct": false, "text": "Hypogea"},
+            {"correct": false, "text": "Dolmens"},
+            {"correct": false, "text": "Tholoi"}
+          ],
+          "fact": "Mastabas feature a chapel, a false door, and a shaft to the burial."
+        },
+        {
+          "id": 29,
+          "q": "Which later script appears on the Rosetta Stone alongside hieroglyphs and Greek?",
+          "answers": [
+            {"correct": true, "text": "Demotic"},
+            {"correct": false, "text": "Coptic"},
+            {"correct": false, "text": "Ugaritic"},
+            {"correct": false, "text": "Phoenician"}
+          ],
+          "fact": "Decipherment by Champollion relied on the trilingual decree."
+        },
+        {
+          "id": 30,
+          "q": "Which site in the Western Desert is famed for Greco-Roman 'Fayum portraits'?",
+          "answers": [
+            {"correct": true, "text": "Fayum Oasis"},
+            {"correct": false, "text": "Dakhla Oasis"},
+            {"correct": false, "text": "Siwa Oasis"},
+            {"correct": false, "text": "Kharga Oasis"}
+          ],
+          "fact": "Panel portraits were attached to mummies in Roman Egypt."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Which pharaoh erected the pair of rock-cut temples at Abu Simbel?",
+          "answers": [
+            {"correct": true, "text": "Ramesses II"},
+            {"correct": false, "text": "Seti II"},
+            {"correct": false, "text": "Merenptah"},
+            {"correct": false, "text": "Ramesses III"}
+          ],
+          "fact": "The temples were relocated in the 1960s to save them from Lake Nasser."
+        },
+        {
+          "id": 32,
+          "q": "Which goddess protected Lower Egypt and is represented by the cobra?",
+          "answers": [
+            {"correct": true, "text": "Wadjet"},
+            {"correct": false, "text": "Nekhbet"},
+            {"correct": false, "text": "Hathor"},
+            {"correct": false, "text": "Isis"}
+          ],
+          "fact": "Wadjet (cobra) and Nekhbet (vulture) often flank the royal cartouche."
+        },
+        {
+          "id": 33,
+          "q": "Which Old Kingdom pyramid has the earliest complete pyramid complex with causeway and valley temple?",
+          "answers": [
+            {"correct": true, "text": "Pyramid of Khafre"},
+            {"correct": false, "text": "Pyramid of Menkaure"},
+            {"correct": false, "text": "Bent Pyramid"},
+            {"correct": false, "text": "Red Pyramid"}
+          ],
+          "fact": "Khafre’s complex includes the Great Sphinx nearby."
+        },
+        {
+          "id": 34,
+          "q": "Which late period is known as the Saite Renaissance?",
+          "answers": [
+            {"correct": true, "text": "26th Dynasty"},
+            {"correct": false, "text": "21st Dynasty"},
+            {"correct": false, "text": "30th Dynasty"},
+            {"correct": false, "text": "Ptolemaic Period"}
+          ],
+          "fact": "Saite rulers revived archaism and centralized administration at Sais."
+        },
+        {
+          "id": 35,
+          "q": "Which Greek historian’s account is a major—if imperfect—source on Egypt?",
+          "answers": [
+            {"correct": true, "text": "Herodotus"},
+            {"correct": false, "text": "Thucydides"},
+            {"correct": false, "text": "Polybius"},
+            {"correct": false, "text": "Diodorus Siculus"}
+          ],
+          "fact": "Herodotus visited Egypt in the 5th century BCE."
+        },
+        {
+          "id": 36,
+          "q": "Which ancient lighthouse stood on the island of Pharos?",
+          "answers": [
+            {"correct": true, "text": "Lighthouse of Alexandria"},
+            {"correct": false, "text": "Colossus Beacon"},
+            {"correct": false, "text": "Rhodes Tower"},
+            {"correct": false, "text": "Artemision Light"}
+          ],
+          "fact": "The Pharos was among the Seven Wonders of the Ancient World."
+        },
+        {
+          "id": 37,
+          "q": "Which temple is the best-preserved Ptolemaic sanctuary dedicated to Horus?",
+          "answers": [
+            {"correct": true, "text": "Edfu"},
+            {"correct": false, "text": "Kom Ombo"},
+            {"correct": false, "text": "Dendera"},
+            {"correct": false, "text": "Esna"}
+          ],
+          "fact": "Its reliefs provide extensive ritual and mythological texts."
+        },
+        {
+          "id": 38,
+          "q": "Which object from Rashid helped decipher hieroglyphs?",
+          "answers": [
+            {"correct": true, "text": "Rosetta Stone"},
+            {"correct": false, "text": "Narmer Macehead"},
+            {"correct": false, "text": "Palette of King Scorpion"},
+            {"correct": false, "text": "Merneptah Stela"}
+          ],
+          "fact": "It bears a decree in Greek, Demotic, and hieroglyphic scripts."
+        },
+        {
+          "id": 39,
+          "q": "Which pharaoh’s burial treasures were discovered largely intact in 1922?",
+          "answers": [
+            {"correct": true, "text": "Tutankhamun"},
+            {"correct": false, "text": "Thutmose IV"},
+            {"correct": false, "text": "Amenhotep III"},
+            {"correct": false, "text": "Ay"}
+          ],
+          "fact": "Howard Carter excavated KV62 in the Valley of the Kings."
+        },
+        {
+          "id": 40,
+          "q": "Which deity personified truth, order, and cosmic balance?",
+          "answers": [
+            {"correct": true, "text": "Maat"},
+            {"correct": false, "text": "Neith"},
+            {"correct": false, "text": "Nut"},
+            {"correct": false, "text": "Selket"}
+          ],
+          "fact": "Maat’s feather served as the standard in the Weighing of the Heart."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "What was the main capital during the Middle Kingdom’s height?",
+          "answers": [
+            {"correct": true, "text": "Itj-tawy (near el-Lisht)"},
+            {"correct": false, "text": "Tanis"},
+            {"correct": false, "text": "Alexandria"},
+            {"correct": false, "text": "Pi-Ramesses"}
+          ],
+          "fact": "Itj-tawy was founded by Amenemhat I of the 12th Dynasty."
+        },
+        {
+          "id": 42,
+          "q": "Which documents succeeded Pyramid Texts and were written inside coffins?",
+          "answers": [
+            {"correct": true, "text": "Coffin Texts"},
+            {"correct": false, "text": "Book of Caverns"},
+            {"correct": false, "text": "Book of Gates"},
+            {"correct": false, "text": "Litany of Ra"}
+          ],
+          "fact": "They democratized afterlife spells to non-royal elites."
+        },
+        {
+          "id": 43,
+          "q": "Which female ruler took the throne name Maatkare?",
+          "answers": [
+            {"correct": true, "text": "Hatshepsut"},
+            {"correct": false, "text": "Cleopatra VII"},
+            {"correct": false, "text": "Nitocris"},
+            {"correct": false, "text": "Twosret"}
+          ],
+          "fact": "Her red-granite obelisks still stand at Karnak."
+        },
+        {
+          "id": 44,
+          "q": "Which animal-headed god guarded embalming and was patron of mummification?",
+          "answers": [
+            {"correct": true, "text": "Anubis (jackal-headed)"},
+            {"correct": false, "text": "Sobek (crocodile)"},
+            {"correct": false, "text": "Khnum (ram)"},
+            {"correct": false, "text": "Horus (falcon)"}
+          ],
+          "fact": "Anubis oversees organ removal and wrapping rituals."
+        },
+        {
+          "id": 45,
+          "q": "Which sea did the ancient Egyptian trade port of Berenice Trogodytica face?",
+          "answers": [
+            {"correct": true, "text": "Red Sea"},
+            {"correct": false, "text": "Mediterranean Sea"},
+            {"correct": false, "text": "Arabian Gulf"},
+            {"correct": false, "text": "Gulf of Suez only"}
+          ],
+          "fact": "Berenice linked Egypt to Indian Ocean commerce."
+        },
+        {
+          "id": 46,
+          "q": "Which temple ceiling famously shows a zodiac relief now in the Louvre?",
+          "answers": [
+            {"correct": true, "text": "Dendera (Temple of Hathor)"},
+            {"correct": false, "text": "Philae"},
+            {"correct": false, "text": "Edfu"},
+            {"correct": false, "text": "Abydos"}
+          ],
+          "fact": "The Dendera Zodiac is Greco-Roman in date."
+        },
+        {
+          "id": 47,
+          "q": "What were the administrative districts of ancient Egypt called?",
+          "answers": [
+            {"correct": true, "text": "Nomes"},
+            {"correct": false, "text": "Satrapies"},
+            {"correct": false, "text": "Polis"},
+            {"correct": false, "text": "Toparchies"}
+          ],
+          "fact": "Each nome had its own emblem and local cult centers."
+        },
+        {
+          "id": 48,
+          "q": "Which pharaoh built the Bent and Red Pyramids at Dahshur?",
+          "answers": [
+            {"correct": true, "text": "Sneferu"},
+            {"correct": false, "text": "Khufu"},
+            {"correct": false, "text": "Djoser"},
+            {"correct": false, "text": "Userkaf"}
+          ],
+          "fact": "Sneferu perfected true pyramid construction before Giza."
+        },
+        {
+          "id": 49,
+          "q": "Which desert valley preserves hundreds of fossil whales (UNESCO site)?",
+          "answers": [
+            {"correct": true, "text": "Wadi al-Hitan"},
+            {"correct": false, "text": "Wadi Natrun"},
+            {"correct": false, "text": "Wadi Hammamat"},
+            {"correct": false, "text": "Wadi el-Mullak"}
+          ],
+          "fact": "Shows the evolution of whales from land mammals."
+        },
+        {
+          "id": 50,
+          "q": "Which deity’s cult center at Abydos was a major pilgrimage site?",
+          "answers": [
+            {"correct": true, "text": "Osiris"},
+            {"correct": false, "text": "Montu"},
+            {"correct": false, "text": "Bes"},
+            {"correct": false, "text": "Serapis"}
+          ],
+          "fact": "Abydos was associated with the tomb of Osiris."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "questions": [
+        {
+          "id": 51,
+          "q": "Which Ptolemaic ruler famously allied with Julius Caesar and Mark Antony?",
+          "answers": [
+            {"correct": true, "text": "Cleopatra VII"},
+            {"correct": false, "text": "Arsinoe II"},
+            {"correct": false, "text": "Berenice IV"},
+            {"correct": false, "text": "Cleopatra II"}
+          ],
+          "fact": "Her defeat at Actium (31 BCE) led to Roman rule."
+        },
+        {
+          "id": 52,
+          "q": "Which city housed the Mouseion and the Great Library in antiquity?",
+          "answers": [
+            {"correct": true, "text": "Alexandria"},
+            {"correct": false, "text": "Pelusium"},
+            {"correct": false, "text": "Sais"},
+            {"correct": false, "text": "Bubastis"}
+          ],
+          "fact": "It was a major center of Hellenistic scholarship."
+        },
+        {
+          "id": 53,
+          "q": "Which structure measured Nile flood levels for taxation and prediction?",
+          "answers": [
+            {"correct": true, "text": "Nilometer"},
+            {"correct": false, "text": "Pylon"},
+            {"correct": false, "text": "Serdab"},
+            {"correct": false, "text": "Serekh"}
+          ],
+          "fact": "Nilometers survive at Elephantine and Roda Island."
+        },
+        {
+          "id": 54,
+          "q": "In canopic jars, which deity protected the liver?",
+          "answers": [
+            {"correct": true, "text": "Imsety (human-headed)"},
+            {"correct": false, "text": "Hapi (baboon-headed)"},
+            {"correct": false, "text": "Duamutef (jackal-headed)"},
+            {"correct": false, "text": "Qebehsenuef (falcon-headed)"}
+          ],
+          "fact": "The Four Sons of Horus guarded organs under Isis and Nephthys."
+        },
+        {
+          "id": 55,
+          "q": "Which festival involved the statue of Amun sailing from Karnak to Luxor?",
+          "answers": [
+            {"correct": true, "text": "Opet Festival"},
+            {"correct": false, "text": "Wepet-Renpet"},
+            {"correct": false, "text": "Khoiak"},
+            {"correct": false, "text": "Beautiful Feast of the Valley"}
+          ],
+          "fact": "It renewed kingship and divine vitality annually."
+        },
+        {
+          "id": 56,
+          "q": "Which Middle Kingdom fortress chain guarded Egypt’s eastern Delta routes?",
+          "answers": [
+            {"correct": true, "text": "Walls of the Prince"},
+            {"correct": false, "text": "Western Desert Lines"},
+            {"correct": false, "text": "Cataract Fortresses"},
+            {"correct": false, "text": "Libyan Gates"}
+          ],
+          "fact": "Mentioned in literary texts like the Tale of Sinuhe."
+        },
+        {
+          "id": 57,
+          "q": "What name do scholars give to Akhenaten’s religious focus on the sun disk?",
+          "answers": [
+            {"correct": true, "text": "Atenism"},
+            {"correct": false, "text": "Ammonism"},
+            {"correct": false, "text": "Ra-cult orthodoxy"},
+            {"correct": false, "text": "Memphite Theology"}
+          ],
+          "fact": "Atenism emphasized the visible life-giving power of the sun."
+        },
+        {
+          "id": 58,
+          "q": "Which goddess of magic was mother of Horus and wife of Osiris?",
+          "answers": [
+            {"correct": true, "text": "Isis"},
+            {"correct": false, "text": "Neith"},
+            {"correct": false, "text": "Mut"},
+            {"correct": false, "text": "Taweret"}
+          ],
+          "fact": "Her cult spread widely in the Greco-Roman world."
+        },
+        {
+          "id": 59,
+          "q": "Which monument near modern Cairo is the earliest 'true' smooth-sided pyramid?",
+          "answers": [
+            {"correct": true, "text": "Red Pyramid of Dahshur"},
+            {"correct": false, "text": "Bent Pyramid"},
+            {"correct": false, "text": "Meidum Pyramid (final form)"},
+            {"correct": false, "text": "Pyramid of Unas"}
+          ],
+          "fact": "Sneferu’s Red Pyramid perfected the angle after the Bent Pyramid."
+        },
+        {
+          "id": 60,
+          "q": "Which sacred boat shrines carried divine statues during processions?",
+          "answers": [
+            {"correct": true, "text": "Barques"},
+            {"correct": false, "text": "Feluccas"},
+            {"correct": false, "text": "Mastabas"},
+            {"correct": false, "text": "Dories"}
+          ],
+          "fact": "Stone barque chapels survive at Karnak and elsewhere."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "questions": [
+        {
+          "id": 61,
+          "q": "Which New Kingdom king is famed for a vast mortuary temple at Medinet Habu?",
+          "answers": [
+            {"correct": true, "text": "Ramesses III"},
+            {"correct": false, "text": "Amenhotep II"},
+            {"correct": false, "text": "Seti I"},
+            {"correct": false, "text": "Horemheb"}
+          ],
+          "fact": "Medinet Habu records battles with the 'Sea Peoples'."
+        },
+        {
+          "id": 62,
+          "q": "Which oasis hosted the Oracle of Amun consulted by Alexander the Great?",
+          "answers": [
+            {"correct": true, "text": "Siwa"},
+            {"correct": false, "text": "Bahariya"},
+            {"correct": false, "text": "Farfara"},
+            {"correct": false, "text": "Dakhla"}
+          ],
+          "fact": "Alexander was hailed there as 'son of Amun'."
+        },
+        {
+          "id": 63,
+          "q": "Which bilingual late form of Egyptian became the liturgical language of the Coptic Church?",
+          "answers": [
+            {"correct": true, "text": "Coptic"},
+            {"correct": false, "text": "Demotic"},
+            {"correct": false, "text": "Aramaic"},
+            {"correct": false, "text": "Greek only"}
+          ],
+          "fact": "Coptic uses the Greek alphabet with additional Demotic letters."
+        },
+        {
+          "id": 64,
+          "q": "Which New Kingdom official’s tomb at Thebes (TT100) preserves scenes of tomb construction?",
+          "answers": [
+            {"correct": true, "text": "Rekhmire (vizier)"},
+            {"correct": false, "text": "Nebamun"},
+            {"correct": false, "text": "Ramose"},
+            {"correct": false, "text": "Khaemwaset"}
+          ],
+          "fact": "Rekhmire’s tomb is a key source on administration and crafts."
+        },
+        {
+          "id": 65,
+          "q": "Which goddess of childbirth is depicted as a hippopotamus?",
+          "answers": [
+            {"correct": true, "text": "Taweret"},
+            {"correct": false, "text": "Mut"},
+            {"correct": false, "text": "Nephthys"},
+            {"correct": false, "text": "Serket"}
+          ],
+          "fact": "She protected mothers and infants from harm."
+        },
+        {
+          "id": 66,
+          "q": "Which king’s mortuary temple features colossal statues known as the Colossi of Memnon?",
+          "answers": [
+            {"correct": true, "text": "Amenhotep III"},
+            {"correct": false, "text": "Thutmose I"},
+            {"correct": false, "text": "Seti II"},
+            {"correct": false, "text": "Ramesses I"}
+          ],
+          "fact": "The statues flank the former entrance to his vast temple complex."
+        },
+        {
+          "id": 67,
+          "q": "Which desert road linked Coptos with the Red Sea ports via Wadi Hammamat?",
+          "answers": [
+            {"correct": true, "text": "Eastern Desert route"},
+            {"correct": false, "text": "Darb el-Arbain (Forty Days Road)"},
+            {"correct": false, "text": "Libyan Coastal Road"},
+            {"correct": false, "text": "Incense Route via Petra"}
+          ],
+          "fact": "Wadi Hammamat has quarry inscriptions from many reigns."
+        },
+        {
+          "id": 68,
+          "q": "Which Middle Kingdom tale features a courtier who flees to Asia and returns?",
+          "answers": [
+            {"correct": true, "text": "The Tale of Sinuhe"},
+            {"correct": false, "text": "Shipwrecked Sailor"},
+            {"correct": false, "text": "Setne Khamwas"},
+            {"correct": false, "text": "Contendings of Horus and Seth"}
+          ],
+          "fact": "It’s a classic of Egyptian literature and identity."
+        },
+        {
+          "id": 69,
+          "q": "Which crown combined the symbols of Upper and Lower Egypt?",
+          "answers": [
+            {"correct": true, "text": "Pschent (Double Crown)"},
+            {"correct": false, "text": "Atef"},
+            {"correct": false, "text": "Khepresh"},
+            {"correct": false, "text": "Hemhem"}
+          ],
+          "fact": "It fused Hedjet (white) and Deshret (red)."
+        },
+        {
+          "id": 70,
+          "q": "Which deity with crocodile head protected waters and fertility?",
+          "answers": [
+            {"correct": true, "text": "Sobek"},
+            {"correct": false, "text": "Montu"},
+            {"correct": false, "text": "Khonsu"},
+            {"correct": false, "text": "Shu"}
+          ],
+          "fact": "Major Sobek temples stood at Kom Ombo and Faiyum."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "questions": [
+        {
+          "id": 71,
+          "q": "Which cemetery of Apis bulls lies at Saqqara in underground galleries?",
+          "answers": [
+            {"correct": true, "text": "Serapeum"},
+            {"correct": false, "text": "Catacombs of Anubis"},
+            {"correct": false, "text": "Valley Temple"},
+            {"correct": false, "text": "Osireion"}
+          ],
+          "fact": "Massive granite sarcophagi housed sacred bulls of Ptah."
+        },
+        {
+          "id": 72,
+          "q": "Which New Kingdom pharaoh is credited with the first known 'peace treaty' with the Hittites?",
+          "answers": [
+            {"correct": true, "text": "Ramesses II"},
+            {"correct": false, "text": "Seti I"},
+            {"correct": false, "text": "Thutmose IV"},
+            {"correct": false, "text": "Akhenaten"}
+          ],
+          "fact": "A silver tablet and hieroglyphic copies commemorate it."
+        },
+        {
+          "id": 73,
+          "q": "Which temple island near Aswan was dedicated to Isis and relocated due to the High Dam?",
+          "answers": [
+            {"correct": true, "text": "Philae (to Agilkia Island)"},
+            {"correct": false, "text": "Elephantine"},
+            {"correct": false, "text": "Bigeh"},
+            {"correct": false, "text": "Sehel"}
+          ],
+          "fact": "UNESCO led the rescue project in the 1960s–70s."
+        },
+        {
+          "id": 74,
+          "q": "Which Coptic monastic center west of the Delta preserves early churches and manuscripts?",
+          "answers": [
+            {"correct": true, "text": "Wadi Natrun"},
+            {"correct": false, "text": "Gebel el-Bahr"},
+            {"correct": false, "text": "Beni Hasan"},
+            {"correct": false, "text": "Akhmim"}
+          ],
+          "fact": "It’s one of the heartlands of Egyptian monasticism."
+        },
+        {
+          "id": 75,
+          "q": "Which modern engineering project created Lake Nasser and altered Nile floods?",
+          "answers": [
+            {"correct": true, "text": "Aswan High Dam"},
+            {"correct": false, "text": "Low Dam only"},
+            {"correct": false, "text": "Delta Barrage"},
+            {"correct": false, "text": "El Salam Canal"}
+          ],
+          "fact": "Completed in 1970, it provides hydropower and irrigation control."
+        },
+        {
+          "id": 76,
+          "q": "Which pharaoh is often called 'the Napoleon of Egypt' for his campaigns?",
+          "answers": [
+            {"correct": true, "text": "Thutmose III"},
+            {"correct": false, "text": "Amenhotep II"},
+            {"correct": false, "text": "Ramesses I"},
+            {"correct": false, "text": "Psamtik I"}
+          ],
+          "fact": "He recorded 17 campaigns in the Levant."
+        },
+        {
+          "id": 77,
+          "q": "Which funerary text’s spell collection is commonly written on papyri placed in burials?",
+          "answers": [
+            {"correct": true, "text": "Book of the Dead"},
+            {"correct": false, "text": "Book of Two Ways"},
+            {"correct": false, "text": "Amduat"},
+            {"correct": false, "text": "Book of Breathing"}
+          ],
+          "fact": "Known to Egyptians as the 'Book of Coming Forth by Day'."
+        },
+        {
+          "id": 78,
+          "q": "Which royal symbol shows a rearing cobra worn on the brow?",
+          "answers": [
+            {"correct": true, "text": "Uraeus"},
+            {"correct": false, "text": "Sistrum"},
+            {"correct": false, "text": "Ankh"},
+            {"correct": false, "text": "Was-scepter"}
+          ],
+          "fact": "It signified protection and royal authority."
+        },
+        {
+          "id": 79,
+          "q": "Which pharaoh moved the royal residence to Pi-Ramesses in the Delta?",
+          "answers": [
+            {"correct": true, "text": "Ramesses II"},
+            {"correct": false, "text": "Ramesses VI"},
+            {"correct": false, "text": "Ahmose I"},
+            {"correct": false, "text": "Shoshenq I"}
+          ],
+          "fact": "Pi-Ramesses replaced the earlier Hyksos capital Avaris."
+        },
+        {
+          "id": 80,
+          "q": "Which Ptolemaic temple ceiling at Dendera is decorated with Hathor-headed columns?",
+          "answers": [
+            {"correct": true, "text": "Temple of Hathor"},
+            {"correct": false, "text": "Temple of Khnum"},
+            {"correct": false, "text": "Temple of Horus"},
+            {"correct": false, "text": "Temple of Sobek"}
+          ],
+          "fact": "Hathor was goddess of love, music, and joy."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "questions": [
+        {
+          "id": 81,
+          "q": "Which early artifact shows the earliest royal serekh with two crowns united?",
+          "answers": [
+            {"correct": true, "text": "Narmer Palette"},
+            {"correct": false, "text": "Merneptah Stela"},
+            {"correct": false, "text": "Shabaka Stone"},
+            {"correct": false, "text": "Canopus Decree"}
+          ],
+          "fact": "It’s a key symbol of political unification."
+        },
+        {
+          "id": 82,
+          "q": "Which burial ground across from Thebes holds many New Kingdom royal tombs?",
+          "answers": [
+            {"correct": true, "text": "Valley of the Kings"},
+            {"correct": false, "text": "Valley of the Queens"},
+            {"correct": false, "text": "Deir el-Medina"},
+            {"correct": false, "text": "Gurob"}
+          ],
+          "fact": "Workmen from Deir el-Medina carved the tombs."
+        },
+        {
+          "id": 83,
+          "q": "Which crown, also called the war crown, is blue and bulbous?",
+          "answers": [
+            {"correct": true, "text": "Khepresh"},
+            {"correct": false, "text": "Atef"},
+            {"correct": false, "text": "Hedjet"},
+            {"correct": false, "text": "Deshret"}
+          ],
+          "fact": "Often worn by New Kingdom rulers in battle scenes."
+        },
+        {
+          "id": 84,
+          "q": "Which pharaoh’s throne name was 'Nebmaatre'?",
+          "answers": [
+            {"correct": true, "text": "Amenhotep III"},
+            {"correct": false, "text": "Thutmose I"},
+            {"correct": false, "text": "Seti I"},
+            {"correct": false, "text": "Merenptah"}
+          ],
+          "fact": "His reign saw unprecedented artistic and diplomatic prosperity."
+        },
+        {
+          "id": 85,
+          "q": "Which ancient port on the Red Sea yielded papyri of Middle Kingdom expeditions to Sinai?",
+          "answers": [
+            {"correct": true, "text": "Wadi el-Jarf"},
+            {"correct": false, "text": "Mersa Gawasis"},
+            {"correct": false, "text": "Quseir al-Qadim"},
+            {"correct": false, "text": "Berenice"}
+          ],
+          "fact": "Journals of Inspector Merer mention transport of Tura limestone."
+        },
+        {
+          "id": 86,
+          "q": "Which temple at Abydos lists 76 kings in a relief procession?",
+          "answers": [
+            {"correct": true, "text": "Seti I Temple (King List)"},
+            {"correct": false, "text": "Osireion"},
+            {"correct": false, "text": "Ramesseum"},
+            {"correct": false, "text": "Medinet Habu"}
+          ],
+          "fact": "The list excludes certain rulers like Hatshepsut and Akhenaten."
+        },
+        {
+          "id": 87,
+          "q": "Which goddess is often shown as a cow nursing the pharaoh?",
+          "answers": [
+            {"correct": true, "text": "Hathor"},
+            {"correct": false, "text": "Mut"},
+            {"correct": false, "text": "Bastet"},
+            {"correct": false, "text": "Neith"}
+          ],
+          "fact": "Hathor embodies motherhood, music, and joy."
+        },
+        {
+          "id": 88,
+          "q": "Which modern Egyptian author won the Nobel Prize in Literature in 1988?",
+          "answers": [
+            {"correct": true, "text": "Naguib Mahfouz"},
+            {"correct": false, "text": "Taha Hussein"},
+            {"correct": false, "text": "Alaa Al Aswany"},
+            {"correct": false, "text": "Sonallah Ibrahim"}
+          ],
+          "fact": "Mahfouz is known for the Cairo Trilogy."
+        },
+        {
+          "id": 89,
+          "q": "Which 1952 event ended the monarchy and led to a republic?",
+          "answers": [
+            {"correct": true, "text": "Free Officers Revolution"},
+            {"correct": false, "text": "Urabi Revolt"},
+            {"correct": false, "text": "Bread Riots"},
+            {"correct": false, "text": "Suez Crisis uprising"}
+          ],
+          "fact": "It brought Gamal Abdel Nasser to prominence."
+        },
+        {
+          "id": 90,
+          "q": "Which Gulf connects the Red Sea to the Suez Canal at its northern end?",
+          "answers": [
+            {"correct": true, "text": "Gulf of Suez"},
+            {"correct": false, "text": "Gulf of Aqaba"},
+            {"correct": false, "text": "Gulf of Sirte"},
+            {"correct": false, "text": "Gulf of Aden"}
+          ],
+          "fact": "The canal links the Mediterranean and Red Sea."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "questions": [
+        {
+          "id": 91,
+          "q": "Which Greco-Egyptian deity fused aspects of Osiris and Apis?",
+          "answers": [
+            {"correct": true, "text": "Serapis"},
+            {"correct": false, "text": "Hermanubis"},
+            {"correct": false, "text": "Zeus-Ammon"},
+            {"correct": false, "text": "Harpocrates"}
+          ],
+          "fact": "Serapis became a major deity in Hellenistic Alexandria."
+        },
+        {
+          "id": 92,
+          "q": "Which ancient stone canals connected the Nile to the Red Sea at various times?",
+          "answers": [
+            {"correct": true, "text": "Canal of the Pharaohs"},
+            {"correct": false, "text": "Necho’s West Canal"},
+            {"correct": false, "text": "Artemisia Trench"},
+            {"correct": false, "text": "Memphite Ditch"}
+          ],
+          "fact": "Works were attempted under Necho II, Darius I, and Ptolemies."
+        },
+        {
+          "id": 93,
+          "q": "Which royal cemetery contains the Tomb of Nefertari with vivid wall paintings?",
+          "answers": [
+            {"correct": true, "text": "Valley of the Queens"},
+            {"correct": false, "text": "Valley of the Kings"},
+            {"correct": false, "text": "Asyut Necropolis"},
+            {"correct": false, "text": "Akhmim Tombs"}
+          ],
+          "fact": "QV66 is famed for its brilliant pigments."
+        },
+        {
+          "id": 94,
+          "q": "Which city served as the Hyksos capital in the Second Intermediate Period?",
+          "answers": [
+            {"correct": true, "text": "Avaris (Tell el-Dab'a)"},
+            {"correct": false, "text": "Tanis"},
+            {"correct": false, "text": "Naukratis"},
+            {"correct": false, "text": "Per-Bastet"}
+          ],
+          "fact": "Avaris lay in the eastern Delta and later underpinned Pi-Ramesses."
+        },
+        {
+          "id": 95,
+          "q": "Which symbol, a looped cross, signifies 'life' in Egyptian art?",
+          "answers": [
+            {"correct": true, "text": "Ankh"},
+            {"correct": false, "text": "Djed"},
+            {"correct": false, "text": "Tyet"},
+            {"correct": false, "text": "Shen ring"}
+          ],
+          "fact": "Gods are often shown handing the ankh to the pharaoh."
+        },
+        {
+          "id": 96,
+          "q": "Which papyrus preserves the story of a sailor on a magical island with a serpent?",
+          "answers": [
+            {"correct": true, "text": "Tale of the Shipwrecked Sailor"},
+            {"correct": false, "text": "Instruction of Ptahhotep"},
+            {"correct": false, "text": "Westcar Papyrus"},
+            {"correct": false, "text": "Satire of the Trades"}
+          ],
+          "fact": "A Middle Kingdom narrative of wonder and wisdom."
+        },
+        {
+          "id": 97,
+          "q": "Which colossal open-air museum city on the West Bank includes the Ramesseum and Hatshepsut’s temple?",
+          "answers": [
+            {"correct": true, "text": "Western Thebes (Luxor West Bank)"},
+            {"correct": false, "text": "Heliopolis"},
+            {"correct": false, "text": "Sais"},
+            {"correct": false, "text": "Athribis"}
+          ],
+          "fact": "It encompasses Deir el-Bahri, Deir el-Medina, and numerous mortuary temples."
+        },
+        {
+          "id": 98,
+          "q": "Which late-period dynasty was founded by Libyan rulers such as Shoshenq I?",
+          "answers": [
+            {"correct": true, "text": "22nd Dynasty"},
+            {"correct": false, "text": "24th Dynasty"},
+            {"correct": false, "text": "27th Dynasty"},
+            {"correct": false, "text": "29th Dynasty"}
+          ],
+          "fact": "Libyan chiefs integrated into Egyptian elite structures."
+        },
+        {
+          "id": 99,
+          "q": "Which modern city stands near ancient Thebes?",
+          "answers": [
+            {"correct": true, "text": "Luxor"},
+            {"correct": false, "text": "Minya"},
+            {"correct": false, "text": "Port Said"},
+            {"correct": false, "text": "Ismailia"}
+          ],
+          "fact": "Luxor and Karnak form the ancient core of Thebes."
+        },
+        {
+          "id": 100,
+          "q": "Which bird symbolized the soul (ba) and is shown with a human head?",
+          "answers": [
+            {"correct": true, "text": "Human-headed bird (ba)"},
+            {"correct": false, "text": "Phoenix (bennu) only"},
+            {"correct": false, "text": "Ibis"},
+            {"correct": false, "text": "Kite"}
+          ],
+          "fact": "The ba could leave the tomb and return to the body."
+        }
+      ]
+    }
+  ]
+}

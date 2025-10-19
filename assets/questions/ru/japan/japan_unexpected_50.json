@@ -1,0 +1,1181 @@
+{
+  "country": "Japan",
+  "pack": "Unexpected Japan",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Как называется высокотехнологичная туалетная крышка с бидe и подогревом сиденья?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Washlet"
+            },
+            {
+              "correct": false,
+              "text": "Kotatsu"
+            },
+            {
+              "correct": false,
+              "text": "Tatami"
+            },
+            {
+              "correct": false,
+              "text": "Ofuro"
+            }
+          ],
+          "fact": "Washlet — фирменное имя стало нарицательным для умных крышек."
+        },
+        {
+          "id": 2,
+          "q": "Как называется низкий стол с обогревом и одеялом для зимних вечеров?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Котацу"
+            },
+            {
+              "correct": false,
+              "text": "Футона"
+            },
+            {
+              "correct": false,
+              "text": "Офуро"
+            },
+            {
+              "correct": false,
+              "text": "Сёдзи"
+            }
+          ],
+          "fact": "Котацу — обогреваемый стол с пледом, семейный must-have."
+        },
+        {
+          "id": 3,
+          "q": "Как японцы называют «режим тишины» на телефоне в поездах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Manner mode"
+            },
+            {
+              "correct": false,
+              "text": "Silent mode"
+            },
+            {
+              "correct": false,
+              "text": "Calm mode"
+            },
+            {
+              "correct": false,
+              "text": "Train mode"
+            }
+          ],
+          "fact": "Manner mode — этикет без звука и разговоров."
+        },
+        {
+          "id": 4,
+          "q": "Как называется услуга доставки чемоданов «от двери до двери» по стране?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Таккюбин"
+            },
+            {
+              "correct": false,
+              "text": "Пакудзуцу"
+            },
+            {
+              "correct": false,
+              "text": "Бин-мару"
+            },
+            {
+              "correct": false,
+              "text": "Хакоби"
+            }
+          ],
+          "fact": "Takkyubin (Yamato и др.) — удобная курьерская логистика."
+        },
+        {
+          "id": 5,
+          "q": "Как называется традиция собирать штампы в святилищах и храмах в специальной книжке?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Госюин"
+            },
+            {
+              "correct": false,
+              "text": "Эма"
+            },
+            {
+              "correct": false,
+              "text": "Офуда"
+            },
+            {
+              "correct": false,
+              "text": "Омамори"
+            }
+          ],
+          "fact": "Госюин — каллиграфия+печать; коллекционируют в альбоме гōсюин‑тё."
+        },
+        {
+          "id": 6,
+          "q": "Как называется станционный гастрономический ланчбокс‑набор?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Экйбэн"
+            },
+            {
+              "correct": false,
+              "text": "Обэнто"
+            },
+            {
+              "correct": false,
+              "text": "Донбури"
+            },
+            {
+              "correct": false,
+              "text": "Онъгири"
+            }
+          ],
+          "fact": "Экибэн — региональные бэнто, продаются на вокзалах."
+        },
+        {
+          "id": 7,
+          "q": "Какое повседневное устройство встречается даже в жилых домах для зонтoв?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Замки‑держатели зонтов"
+            },
+            {
+              "correct": false,
+              "text": "Зонтокрутки"
+            },
+            {
+              "correct": false,
+              "text": "Шкафы для сушилки"
+            },
+            {
+              "correct": false,
+              "text": "Ламинарии для зонтa"
+            }
+          ],
+          "fact": "Замки для зонтов — против краж; есть и машины‑сушилки."
+        },
+        {
+          "id": 8,
+          "q": "Как называется привычка надевать маски не только при болезни, но и от аллергии/пыли?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кафунсьо‑маск"
+            },
+            {
+              "correct": false,
+              "text": "Сайд‑маск"
+            },
+            {
+              "correct": false,
+              "text": "Кири‑маск"
+            },
+            {
+              "correct": false,
+              "text": "Кохи‑маск"
+            }
+          ],
+          "fact": "Кафунсьо — поллиноз; маски — часть этикета и защиты."
+        },
+        {
+          "id": 9,
+          "q": "Как называется «фальшивая еда» в витринах ресторанов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сампуру"
+            },
+            {
+              "correct": false,
+              "text": "Коппо"
+            },
+            {
+              "correct": false,
+              "text": "Фейк‑миру"
+            },
+            {
+              "correct": false,
+              "text": "Симэдзи"
+            }
+          ],
+          "fact": "Сампуру — реалистичные макеты блюд, улица Каппабаси в Токио."
+        },
+        {
+          "id": 10,
+          "q": "Как называется автомат с горячими и холодными напитками на улицах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Вендинг‑машина"
+            },
+            {
+              "correct": false,
+              "text": "Конбини‑автомат"
+            },
+            {
+              "correct": false,
+              "text": "Кофе‑бот"
+            },
+            {
+              "correct": false,
+              "text": "Питьевой слот"
+            }
+          ],
+          "fact": "В Японии миллионы вендинг‑автоматов с напитками и не только."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Как называется остров‑«музей современного искусства» с музеями Нао и Бенессе?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Наосима"
+            },
+            {
+              "correct": false,
+              "text": "Окинава"
+            },
+            {
+              "correct": false,
+              "text": "Садо"
+            },
+            {
+              "correct": false,
+              "text": "Миядзима"
+            }
+          ],
+          "fact": "Наосима — арт‑остров в Сето‑ути с музеями Андо Тадао."
+        },
+        {
+          "id": 12,
+          "q": "Как называется «кроличий остров», где много диких кроликов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Окуносима"
+            },
+            {
+              "correct": false,
+              "text": "Тасиродзима"
+            },
+            {
+              "correct": false,
+              "text": "Эносима"
+            },
+            {
+              "correct": false,
+              "text": "Садо"
+            }
+          ],
+          "fact": "Окуносима — остров‑кроличий рай в преф. Хиросима."
+        },
+        {
+          "id": 13,
+          "q": "Как называется «кошачий остров» у побережья Мияги?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тасиродзима"
+            },
+            {
+              "correct": false,
+              "text": "Аосима"
+            },
+            {
+              "correct": false,
+              "text": "Эносима"
+            },
+            {
+              "correct": false,
+              "text": "Наосима"
+            }
+          ],
+          "fact": "Тасиродзима — знаменит «остров кошек»; есть и Аосима (Эхиме)."
+        },
+        {
+          "id": 14,
+          "q": "Как называется отель, где гостей обслуживают роботы‑андроиды/динозавры?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Henn‑na Hotel"
+            },
+            {
+              "correct": false,
+              "text": "Robo‑Inn"
+            },
+            {
+              "correct": false,
+              "text": "Android Lodge"
+            },
+            {
+              "correct": false,
+              "text": "Mecha Stay"
+            }
+          ],
+          "fact": "Henn‑na Hotel экспериментировал с робот‑персоналом."
+        },
+        {
+          "id": 15,
+          "q": "Как называется формат «капсульного» ночлега в городе?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Capsule Hotel"
+            },
+            {
+              "correct": false,
+              "text": "Micro Hotel"
+            },
+            {
+              "correct": false,
+              "text": "Tiny Stay"
+            },
+            {
+              "correct": false,
+              "text": "Box Inn"
+            }
+          ],
+          "fact": "Капсульные отели — компактные кабины для сна."
+        },
+        {
+          "id": 16,
+          "q": "Как зовут интерактивный музей цифрового искусства в Токио с проекциями и водой?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "teamLab Borderless"
+            },
+            {
+              "correct": true,
+              "text": "teamLab Planets"
+            },
+            {
+              "correct": false,
+              "text": "Mori Art Digital"
+            },
+            {
+              "correct": false,
+              "text": "Pixel Dome"
+            }
+          ],
+          "fact": "teamLab Planets — с водными залами; Borderless был в Одайба (переехал)."
+        },
+        {
+          "id": 17,
+          "q": "Какой район Токио славится магазинами кухонной утвари и «сампуру»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Каппабаси"
+            },
+            {
+              "correct": false,
+              "text": "Акихабара"
+            },
+            {
+              "correct": false,
+              "text": "Накано"
+            },
+            {
+              "correct": false,
+              "text": "Гиндза"
+            }
+          ],
+          "fact": "Каппабаси‑дōри — «Kitchen Town» в Асакуса."
+        },
+        {
+          "id": 18,
+          "q": "Какой тематический бар/кафе предлагает «слуги и горничные» в стиле аниме?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Maid café"
+            },
+            {
+              "correct": false,
+              "text": "Butler café"
+            },
+            {
+              "correct": false,
+              "text": "Idol bar"
+            },
+            {
+              "correct": false,
+              "text": "Otaku diner"
+            }
+          ],
+          "fact": "Maid café — отаку‑культура Акихабары."
+        },
+        {
+          "id": 19,
+          "q": "Как называется сеть книжных/интернет‑кафе с ночёвкой в кубик‑кабинах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Манга‑кисса"
+            },
+            {
+              "correct": false,
+              "text": "Net café"
+            },
+            {
+              "correct": false,
+              "text": "Comic box"
+            },
+            {
+              "correct": false,
+              "text": "Book booth"
+            }
+          ],
+          "fact": "Manga kissa/net café — почасовая аренда кают с душем и ПК."
+        },
+        {
+          "id": 20,
+          "q": "Какой остров известен гигантскими оленийми стадами, свободно гуляющими по городу Нара?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нара-парк (город)"
+            },
+            {
+              "correct": false,
+              "text": "Окинава"
+            },
+            {
+              "correct": false,
+              "text": "Садо"
+            },
+            {
+              "correct": false,
+              "text": "Цусима"
+            }
+          ],
+          "fact": "В Нара‑парке олени считаются посланниками богов."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Как называется музей, посвящённый мгновенной лапше?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "CupNoodles Museum"
+            },
+            {
+              "correct": false,
+              "text": "Ramen Instant Hall"
+            },
+            {
+              "correct": false,
+              "text": "Noodle Expo"
+            },
+            {
+              "correct": false,
+              "text": "Yakisoba Park"
+            }
+          ],
+          "fact": "CupNoodles Museum есть в Иокогаме и в Осаке (Ikeda)."
+        },
+        {
+          "id": 22,
+          "q": "Как называется музей паразитологии в Мегуро (Токио)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Meguro Parasitological Museum"
+            },
+            {
+              "correct": false,
+              "text": "Tokyo Bio Bugs"
+            },
+            {
+              "correct": false,
+              "text": "Parasite Lab"
+            },
+            {
+              "correct": false,
+              "text": "Insectarium"
+            }
+          ],
+          "fact": "Небольшой музей с коллекцией паразитов."
+        },
+        {
+          "id": 23,
+          "q": "Как называется музей песчаных скульптур в Тоттори?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "The Sand Museum"
+            },
+            {
+              "correct": false,
+              "text": "Desert Art Hall"
+            },
+            {
+              "correct": false,
+              "text": "Tottori Dunes Center"
+            },
+            {
+              "correct": false,
+              "text": "Sand Craft Dome"
+            }
+          ],
+          "fact": "Музей Sand Museum меняет темы экспозиций ежегодно."
+        },
+        {
+          "id": 24,
+          "q": "Как называется музей мусора/переработки в Осаке (дизайн Хундертвассера)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Maishima Incineration Plant"
+            },
+            {
+              "correct": false,
+              "text": "Recycle Expo"
+            },
+            {
+              "correct": false,
+              "text": "Osaka Eco Museum"
+            },
+            {
+              "correct": false,
+              "text": "Waste Art Center"
+            }
+          ],
+          "fact": "Завод‑музей Maishima с ярким фасадом как у Hundertwasser."
+        },
+        {
+          "id": 25,
+          "q": "Где можно увидеть музей кактусов и огромные оранжереи на полуострове Идзу?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Izu Shaboten Zoo"
+            },
+            {
+              "correct": false,
+              "text": "Cactus Park Tokyo"
+            },
+            {
+              "correct": false,
+              "text": "Izu Desert Garden"
+            },
+            {
+              "correct": false,
+              "text": "Jogasaki Green"
+            }
+          ],
+          "fact": "Izu Shaboten — парк с кактусами и капибарами."
+        },
+        {
+          "id": 26,
+          "q": "Как называется музей‑деревня глиняных кукол ханива?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Haniwa no Sato"
+            },
+            {
+              "correct": false,
+              "text": "Clay Ancient Park"
+            },
+            {
+              "correct": false,
+              "text": "Haniwa Village"
+            },
+            {
+              "correct": false,
+              "text": "Kofun Hall"
+            }
+          ],
+          "fact": "Ханива — глиняные фигуры эпохи Кофун."
+        },
+        {
+          "id": 27,
+          "q": "Как называется музей реплик еды, где можно сделать «сампуру»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sample Village Iwasaki"
+            },
+            {
+              "correct": false,
+              "text": "Food Replicas Lab"
+            },
+            {
+              "correct": false,
+              "text": "Plastic Food Park"
+            },
+            {
+              "correct": false,
+              "text": "Kappabashi Sample"
+            }
+          ],
+          "fact": "В Гифу можно сделать своё «блюдо» из воска/смолы."
+        },
+        {
+          "id": 28,
+          "q": "Как называется музей о канализации Токио с экспозициями страйджа?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tokyo Sewerage Museum Rainbow"
+            },
+            {
+              "correct": false,
+              "text": "Water Loop Hall"
+            },
+            {
+              "correct": false,
+              "text": "Drainage Park"
+            },
+            {
+              "correct": false,
+              "text": "Pipe World"
+            }
+          ],
+          "fact": "Rainbow — интерактив о ливнёвках и очистке воды."
+        },
+        {
+          "id": 29,
+          "q": "Как называется музей‑остров с арт‑хотелем Benesse House?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Benesse House Naoshima"
+            },
+            {
+              "correct": false,
+              "text": "Benesse Inn Art"
+            },
+            {
+              "correct": false,
+              "text": "Naoshima Art Stay"
+            },
+            {
+              "correct": false,
+              "text": "Setouchi Benesse"
+            }
+          ],
+          "fact": "Отель‑музей Бенессе на Наосиме — автор Андо Тадао."
+        },
+        {
+          "id": 30,
+          "q": "Как называется музей игрушек и ретро‑вещей эпохи Сёва?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Showa Retro Museum"
+            },
+            {
+              "correct": false,
+              "text": "Heisei Time Box"
+            },
+            {
+              "correct": false,
+              "text": "Taisho Memory Hall"
+            },
+            {
+              "correct": false,
+              "text": "Retro Japan Center"
+            }
+          ],
+          "fact": "Есть несколько ретро‑музеев Сёва в разных городах."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Какое правило действует в поездах относительно звонков по телефону?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Не говорить вслух"
+            },
+            {
+              "correct": false,
+              "text": "Можно везде"
+            },
+            {
+              "correct": false,
+              "text": "Только у дверей"
+            },
+            {
+              "correct": false,
+              "text": "Только ночью"
+            }
+          ],
+          "fact": "Разговоры не приветствуются; SMS/чат — ок."
+        },
+        {
+          "id": 32,
+          "q": "Как ведут себя в эскалаторах в Токио и Осаке?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Стоят слева/справа идут"
+            },
+            {
+              "correct": false,
+              "text": "Стоят справа/слева идут"
+            },
+            {
+              "correct": false,
+              "text": "Стоят по центру"
+            },
+            {
+              "correct": false,
+              "text": "Нет правила"
+            }
+          ],
+          "fact": "В Токио — стоят слева, проходят справа; в Осаке наоборот."
+        },
+        {
+          "id": 33,
+          "q": "Где принято снимать обувь?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "В домах/рёканах/некоторых заведениях"
+            },
+            {
+              "correct": false,
+              "text": "Только дома"
+            },
+            {
+              "correct": false,
+              "text": "Только в храме"
+            },
+            {
+              "correct": false,
+              "text": "Нигде"
+            }
+          ],
+          "fact": "Снимают в домах, рёканах, на татами‑зонах."
+        },
+        {
+          "id": 34,
+          "q": "Как называют бесплатные влажные салфетки, которые дают в ресторанах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ошибори"
+            },
+            {
+              "correct": false,
+              "text": "Офуро"
+            },
+            {
+              "correct": false,
+              "text": "Омамори"
+            },
+            {
+              "correct": false,
+              "text": "Отидзу"
+            }
+          ],
+          "fact": "Ошибори — холодные/горячие салфетки для рук."
+        },
+        {
+          "id": 35,
+          "q": "Что делать с мусором на улице, где мало урн?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Носить с собой до сортировки"
+            },
+            {
+              "correct": false,
+              "text": "Бросить у конбини"
+            },
+            {
+              "correct": false,
+              "text": "Оставить у двери"
+            },
+            {
+              "correct": false,
+              "text": "Спрятать"
+            }
+          ],
+          "fact": "Раздельный сбор, часто урн нет — несут с собой."
+        },
+        {
+          "id": 36,
+          "q": "Как называется привычка собирать печати на станциях JR в тетрадь?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Stamp Rally"
+            },
+            {
+              "correct": false,
+              "text": "Goshuin"
+            },
+            {
+              "correct": false,
+              "text": "Ticket Art"
+            },
+            {
+              "correct": false,
+              "text": "Railbook"
+            }
+          ],
+          "fact": "Stamp Rally — тематические туры со штемпелями."
+        },
+        {
+          "id": 37,
+          "q": "Как называют пластиковые макеты блюда в витринах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сампуру"
+            },
+            {
+              "correct": false,
+              "text": "Омамори"
+            },
+            {
+              "correct": false,
+              "text": "Сэнсу"
+            },
+            {
+              "correct": false,
+              "text": "Офуда"
+            }
+          ],
+          "fact": "Сампуру — по ним выбирают блюдо."
+        },
+        {
+          "id": 38,
+          "q": "Почему многие бани/онсэны ограничивают вход с татуировками?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ассоциации с якудза"
+            },
+            {
+              "correct": false,
+              "text": "Аллергия на краски"
+            },
+            {
+              "correct": false,
+              "text": "Вред для воды"
+            },
+            {
+              "correct": false,
+              "text": "Гигиена"
+            }
+          ],
+          "fact": "Историческая связь тату и якудза; сейчас правила смягчают."
+        },
+        {
+          "id": 39,
+          "q": "Как называются камеры хранения на станциях?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Coin lockers"
+            },
+            {
+              "correct": false,
+              "text": "Safe boxes"
+            },
+            {
+              "correct": false,
+              "text": "Luggage pods"
+            },
+            {
+              "correct": false,
+              "text": "Travel bins"
+            }
+          ],
+          "fact": "Coin lockers — повсеместно на станциях."
+        },
+        {
+          "id": 40,
+          "q": "Как называется привычка покупать сезонные лимитированные вкусы всего?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Кисэцу‑лимит"
+            },
+            {
+              "correct": true,
+              "text": "Сезонные лимитки"
+            },
+            {
+              "correct": false,
+              "text": "Natsu‑edition"
+            },
+            {
+              "correct": false,
+              "text": "Fuyu‑brand"
+            }
+          ],
+          "fact": "Сезонные лимитки — от напитков до снеков, культ вкусов."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Как называется уличное зеркало на перекрёстках узких дорог?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Кёкё"
+            },
+            {
+              "correct": false,
+              "text": "Кагами‑зеркало"
+            },
+            {
+              "correct": true,
+              "text": "Дорожное сферическое зеркало"
+            },
+            {
+              "correct": false,
+              "text": "Тэмпо‑миррор"
+            }
+          ],
+          "fact": "Сферические зеркала помогают видеть слепые зоны."
+        },
+        {
+          "id": 42,
+          "q": "Как называются тактильные плитки для слабовидящих на тротуарах?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Панель Брайля"
+            },
+            {
+              "correct": true,
+              "text": "Tactile paving"
+            },
+            {
+              "correct": false,
+              "text": "Guide tiles"
+            },
+            {
+              "correct": false,
+              "text": "Blind track"
+            }
+          ],
+          "fact": "Изобретены в Японии, затем распространились по миру."
+        },
+        {
+          "id": 43,
+          "q": "Как называется городская система предупреждений о ЧС и землетрясениях на телефонах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "J‑Alert/EEW"
+            },
+            {
+              "correct": false,
+              "text": "QuakeNow"
+            },
+            {
+              "correct": false,
+              "text": "SeismoApp"
+            },
+            {
+              "correct": false,
+              "text": "EarthWarn"
+            }
+          ],
+          "fact": "Экстренные сигналы J‑Alert и EEW приходят на телефоны."
+        },
+        {
+          "id": 44,
+          "q": "Как называется привычка оставлять зонты у входа и не забирать чужой?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Zontrust"
+            },
+            {
+              "correct": false,
+              "text": "Umbrella etiquette"
+            },
+            {
+              "correct": true,
+              "text": "Kasa manner"
+            },
+            {
+              "correct": false,
+              "text": "Rain rule"
+            }
+          ],
+          "fact": "Kasa = зонт; есть даже замки‑держатели у входов."
+        },
+        {
+          "id": 45,
+          "q": "Как называется детская система с жёлтыми шляпами и флажками по дороге в школу?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Безопасные маршруты"
+            },
+            {
+              "correct": false,
+              "text": "School Patrol"
+            },
+            {
+              "correct": false,
+              "text": "Kodomo Anzen"
+            },
+            {
+              "correct": false,
+              "text": "Kids Route"
+            }
+          ],
+          "fact": "Разметка, флаги и взрослые добровольцы."
+        },
+        {
+          "id": 46,
+          "q": "Как называются магазины, где продают всё по одной цене, например 100 йен?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "100‑yen shop"
+            },
+            {
+              "correct": false,
+              "text": "Fixed store"
+            },
+            {
+              "correct": false,
+              "text": "Flat price"
+            },
+            {
+              "correct": false,
+              "text": "One coin"
+            }
+          ],
+          "fact": "Daiso, Seria, Can★Do — культ «ста-йенников»."
+        },
+        {
+          "id": 47,
+          "q": "Как называется привычка стоять в очереди ровно и тихо на платформе?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Line‑manner"
+            },
+            {
+              "correct": true,
+              "text": "Platform etiquette"
+            },
+            {
+              "correct": false,
+              "text": "Shudan Line"
+            },
+            {
+              "correct": false,
+              "text": "Queue culture"
+            }
+          ],
+          "fact": "Очереди выстраиваются по меткам вагонов."
+        },
+        {
+          "id": 48,
+          "q": "Как называется центр «второй руки» электроники и гардероба в Накано?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nakano Broadway"
+            },
+            {
+              "correct": false,
+              "text": "Harajuku Lane"
+            },
+            {
+              "correct": false,
+              "text": "Akiba Used Mall"
+            },
+            {
+              "correct": false,
+              "text": "Koenji Plaza"
+            }
+          ],
+          "fact": "Nakano Broadway — рай коллекционеров и ресейла."
+        },
+        {
+          "id": 49,
+          "q": "Как называется привычка ставить печать‑именной штамп вместо подписи?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ханко/Инькан"
+            },
+            {
+              "correct": false,
+              "text": "Сюин"
+            },
+            {
+              "correct": false,
+              "text": "Госюин"
+            },
+            {
+              "correct": false,
+              "text": "Сигна"
+            }
+          ],
+          "fact": "Ханко — личная печать; цифровизация постепенно заменяет."
+        },
+        {
+          "id": 50,
+          "q": "Как называется квадратный арбуз из Зэнцу́джи (Кагава)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Square watermelon"
+            },
+            {
+              "correct": false,
+              "text": "Cube melon"
+            },
+            {
+              "correct": false,
+              "text": "Box fruit"
+            },
+            {
+              "correct": false,
+              "text": "Kado melon"
+            }
+          ],
+          "fact": "Квадратные арбузы выращивают в формах ради удобства перевозки."
+        }
+      ]
+    }
+  ]
+}

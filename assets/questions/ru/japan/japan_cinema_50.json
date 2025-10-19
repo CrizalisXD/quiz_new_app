@@ -1,0 +1,1181 @@
+{
+  "country": "Japan",
+  "pack": "Cinema & Animation",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Какое японское чудовище впервые появилось в кино 1954 года?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Годзилла"
+            },
+            {
+              "correct": false,
+              "text": "Гамера"
+            },
+            {
+              "correct": false,
+              "text": "Кинг Гидора"
+            },
+            {
+              "correct": false,
+              "text": "Мотра"
+            }
+          ],
+          "fact": "Первая «Godzilla» вышла в 1954 году на Toho."
+        },
+        {
+          "id": 2,
+          "q": "Какая анимационная студия создала «Унесённых призраками» и «Ходячий замок»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Studio Ghibli"
+            },
+            {
+              "correct": false,
+              "text": "Toei Animation"
+            },
+            {
+              "correct": false,
+              "text": "Madhouse"
+            },
+            {
+              "correct": false,
+              "text": "Bones"
+            }
+          ],
+          "fact": "Ghibli основана Миядзаки и Такахатой."
+        },
+        {
+          "id": 3,
+          "q": "Кто снял «Мой сосед Тоторо»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хаяо Миядзаки"
+            },
+            {
+              "correct": false,
+              "text": "Иссао Такахата"
+            },
+            {
+              "correct": false,
+              "text": "Мамору Хосода"
+            },
+            {
+              "correct": false,
+              "text": "Сатоси Кон"
+            }
+          ],
+          "fact": "Фильм 1988 года стал символом студии Ghibli."
+        },
+        {
+          "id": 4,
+          "q": "Как зовут духа в маске в «Унесённых призраками»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Безликий (Каонаси)"
+            },
+            {
+              "correct": false,
+              "text": "Хаку"
+            },
+            {
+              "correct": false,
+              "text": "Юбаба"
+            },
+            {
+              "correct": false,
+              "text": "Зениба"
+            }
+          ],
+          "fact": "Каонаси — «Безликий»."
+        },
+        {
+          "id": 5,
+          "q": "В какой серии фильмов Годзилла стал культовым персонажем?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Фильмы студии Toho о кайдзю"
+            },
+            {
+              "correct": false,
+              "text": "Фильмы Daiei о Гамере"
+            },
+            {
+              "correct": false,
+              "text": "Американские ремейки"
+            },
+            {
+              "correct": false,
+              "text": "Только аниме-сериалы"
+            }
+          ],
+          "fact": "Toho создала вселенную кайдзю с 1954."
+        },
+        {
+          "id": 6,
+          "q": "Как зовут главную героиню «Унесённых призраками»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тихиро"
+            },
+            {
+              "correct": false,
+              "text": "Кики"
+            },
+            {
+              "correct": false,
+              "text": "Сан"
+            },
+            {
+              "correct": false,
+              "text": "Софи"
+            }
+          ],
+          "fact": "Тихиро проходит путь взросления в мире духов."
+        },
+        {
+          "id": 7,
+          "q": "Какой мультфильм стал «визиткой» Ghibli для мира?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Мой сосед Тоторо"
+            },
+            {
+              "correct": false,
+              "text": "Принцесса Мононоке"
+            },
+            {
+              "correct": false,
+              "text": "Небесный замок Лапута"
+            },
+            {
+              "correct": false,
+              "text": "Навсикая из Долины ветров"
+            }
+          ],
+          "fact": "Тоторо — талисман студии."
+        },
+        {
+          "id": 8,
+          "q": "Как одним словом называют японскую анимацию?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Аниме"
+            },
+            {
+              "correct": false,
+              "text": "Манга"
+            },
+            {
+              "correct": false,
+              "text": "Дорама"
+            },
+            {
+              "correct": false,
+              "text": "Синема"
+            }
+          ],
+          "fact": "Аниме — общий термин для японской анимации."
+        },
+        {
+          "id": 9,
+          "q": "В каком городе расположен Музей Ghibli?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Токио (Митака)"
+            },
+            {
+              "correct": false,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            }
+          ],
+          "fact": "Музей находится в районе Митака, Токио."
+        },
+        {
+          "id": 10,
+          "q": "Какой фильм Миядзаки получил «Оскар» как лучший анимационный?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Унесённые призраками"
+            },
+            {
+              "correct": false,
+              "text": "Принцесса Мононоке"
+            },
+            {
+              "correct": false,
+              "text": "Ходячий замок"
+            },
+            {
+              "correct": false,
+              "text": "Ветер крепчает"
+            }
+          ],
+          "fact": "Оскар‑2003 за «Spirited Away»."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Какой аниме-сериал про мальчика-ниндзю стал мировым хитом?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Naruto"
+            },
+            {
+              "correct": false,
+              "text": "Bleach"
+            },
+            {
+              "correct": false,
+              "text": "One Piece"
+            },
+            {
+              "correct": false,
+              "text": "Boruto"
+            }
+          ],
+          "fact": "«Naruto» Масаси Кисимото стартовал в 2002."
+        },
+        {
+          "id": 12,
+          "q": "Кто автор манги «One Piece»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Эйитиро Ода"
+            },
+            {
+              "correct": false,
+              "text": "Масаси Кисимото"
+            },
+            {
+              "correct": false,
+              "text": "Акира Торияма"
+            },
+            {
+              "correct": false,
+              "text": "Ёсихиро Тогаси"
+            }
+          ],
+          "fact": "Ода начал «One Piece» в 1997."
+        },
+        {
+          "id": 13,
+          "q": "Как называется аниме-сериал, где главный герой путешествует вместе с покемонами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Pokémon"
+            },
+            {
+              "correct": false,
+              "text": "Digimon"
+            },
+            {
+              "correct": false,
+              "text": "Yo‑kai Watch"
+            },
+            {
+              "correct": false,
+              "text": "Monster Rancher"
+            }
+          ],
+          "fact": "Эш Кетчум путешествует с Пикачу."
+        },
+        {
+          "id": 14,
+          "q": "Какой робот ассоциируется с «Евангелион»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "ЕВА‑01"
+            },
+            {
+              "correct": false,
+              "text": "Гандам RX‑78‑2"
+            },
+            {
+              "correct": false,
+              "text": "Титан Колосс"
+            },
+            {
+              "correct": false,
+              "text": "Идэон"
+            }
+          ],
+          "fact": "ЕВА‑01 — фиолетовый юнит Синдзи."
+        },
+        {
+          "id": 15,
+          "q": "Как называется аниме, где человечество сражается с гигантами за стены?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Attack on Titan"
+            },
+            {
+              "correct": false,
+              "text": "Claymore"
+            },
+            {
+              "correct": false,
+              "text": "Berserk"
+            },
+            {
+              "correct": false,
+              "text": "Gantz"
+            }
+          ],
+          "fact": "Shingeki no Kyojin стал глобальным феноменом."
+        },
+        {
+          "id": 16,
+          "q": "Какое аниме рассказывает о школьнике, который получает загадочную тетрадь с опасными силами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Death Note"
+            },
+            {
+              "correct": false,
+              "text": "Code Geass"
+            },
+            {
+              "correct": false,
+              "text": "Paranoia Agent"
+            },
+            {
+              "correct": false,
+              "text": "Erased"
+            }
+          ],
+          "fact": "«Тетрадь смерти» — дуэль Лайта и L."
+        },
+        {
+          "id": 17,
+          "q": "Кто создал «Dragon Ball»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акира Торияма"
+            },
+            {
+              "correct": false,
+              "text": "Ёсихиро Тогаси"
+            },
+            {
+              "correct": false,
+              "text": "Хиромо Аракава"
+            },
+            {
+              "correct": false,
+              "text": "CLAMP"
+            }
+          ],
+          "fact": "Манга выходит с 1984."
+        },
+        {
+          "id": 18,
+          "q": "Какая сага идёт с 1999 и всё ещё продолжается?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "One Piece"
+            },
+            {
+              "correct": false,
+              "text": "Detective Conan"
+            },
+            {
+              "correct": false,
+              "text": "Bleach"
+            },
+            {
+              "correct": false,
+              "text": "Fairy Tail"
+            }
+          ],
+          "fact": "Аниме «One Piece» стартовало в 1999."
+        },
+        {
+          "id": 19,
+          "q": "Какой фильм Миядзаки рассказывает о ведьме-курьере?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кики: Служба доставки"
+            },
+            {
+              "correct": false,
+              "text": "Навсикая"
+            },
+            {
+              "correct": false,
+              "text": "Ветер крепчает"
+            },
+            {
+              "correct": false,
+              "text": "Ариэтти"
+            }
+          ],
+          "fact": "История юной ведьмы Кики."
+        },
+        {
+          "id": 20,
+          "q": "Какое аниме про девочку-волшебницу стало культовым в 90-е?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sailor Moon"
+            },
+            {
+              "correct": false,
+              "text": "Cardcaptor Sakura"
+            },
+            {
+              "correct": false,
+              "text": "Pretty Cure"
+            },
+            {
+              "correct": false,
+              "text": "Madoka Magica"
+            }
+          ],
+          "fact": "«Sailor Moon» популяризировала жанр махо-сёдзё."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Кто снял «Семь самураев»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акира Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Ёсудзиро Одзу"
+            },
+            {
+              "correct": false,
+              "text": "Такеши Китано"
+            },
+            {
+              "correct": false,
+              "text": "Хирокадзу Корээда"
+            }
+          ],
+          "fact": "Классика 1954 года."
+        },
+        {
+          "id": 22,
+          "q": "Какого режиссёра считают мастером созерцательного кино о семье («Токийская повесть»)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ёсудзиро Одзу"
+            },
+            {
+              "correct": false,
+              "text": "Акира Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Нагиса Осима"
+            },
+            {
+              "correct": false,
+              "text": "Киёси Куросава"
+            }
+          ],
+          "fact": "Одзӯ — поэтика повседневности."
+        },
+        {
+          "id": 23,
+          "q": "Кто снял «Дерсу Узала» совместно с СССР?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акира Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Такеши Китано"
+            },
+            {
+              "correct": false,
+              "text": "Масахиро Синода"
+            },
+            {
+              "correct": false,
+              "text": "Сёхэй Имамура"
+            }
+          ],
+          "fact": "Фильм получил «Оскар» 1976 как иностранный."
+        },
+        {
+          "id": 24,
+          "q": "Какой актёр сыграл многие самурайские роли у Куросавы?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тосиро Мифунэ"
+            },
+            {
+              "correct": false,
+              "text": "Кэн Такура"
+            },
+            {
+              "correct": false,
+              "text": "Сонни Тиба"
+            },
+            {
+              "correct": false,
+              "text": "Хироюки Санада"
+            }
+          ],
+          "fact": "Мифунэ — постоянный соавтор Куросавы."
+        },
+        {
+          "id": 25,
+          "q": "Кто поставил фильм «Фейерверк» (Hana‑Bi)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Такеши Китано"
+            },
+            {
+              "correct": false,
+              "text": "Сёхэй Имамура"
+            },
+            {
+              "correct": false,
+              "text": "Такаси Миикэ"
+            },
+            {
+              "correct": false,
+              "text": "Хирокадзу Корээда"
+            }
+          ],
+          "fact": "«Hana‑Bi» получил Золотого льва в 1997."
+        },
+        {
+          "id": 26,
+          "q": "Как зовут японского актёра из «Последнего самурая», получившего «Оскар»‑номинацию?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кэн Ватанабэ"
+            },
+            {
+              "correct": false,
+              "text": "Тосиро Мифунэ"
+            },
+            {
+              "correct": false,
+              "text": "Санни Тиба"
+            },
+            {
+              "correct": false,
+              "text": "Хироюки Санада"
+            }
+          ],
+          "fact": "Кэн Ватанабэ сыграл Кацумото."
+        },
+        {
+          "id": 27,
+          "q": "Кто снял «Куклы» и «Битва под дождём» («Zatoichi» в 2003 — как режиссёр)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Такеши Китано"
+            },
+            {
+              "correct": false,
+              "text": "Иссао Такахата"
+            },
+            {
+              "correct": false,
+              "text": "Сатоси Кон"
+            },
+            {
+              "correct": false,
+              "text": "Сёхэй Имамура"
+            }
+          ],
+          "fact": "Китано поставил «Dolls» (2002) и «Zatoichi» (2003)."
+        },
+        {
+          "id": 28,
+          "q": "Какой фильм Куросавы вдохновил «Звёздные войны» Лукаса?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Скрытая крепость"
+            },
+            {
+              "correct": false,
+              "text": "Телохранитель"
+            },
+            {
+              "correct": false,
+              "text": "Расёмон"
+            },
+            {
+              "correct": false,
+              "text": "Кровавый трон"
+            }
+          ],
+          "fact": "«Скрытая крепость» повлияла на структуру «Star Wars»."
+        },
+        {
+          "id": 29,
+          "q": "Какой режиссёр получил «Золотого льва» за «Воровские семьи»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хирокадзу Корээда"
+            },
+            {
+              "correct": false,
+              "text": "Киёси Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Сион Соно"
+            },
+            {
+              "correct": false,
+              "text": "Наоми Кавасэ"
+            }
+          ],
+          "fact": "Корээда победил в Венеции (2018)."
+        },
+        {
+          "id": 30,
+          "q": "Как зовут актрису из оригинального «Ringu» 1998?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нанако Мацусима"
+            },
+            {
+              "correct": false,
+              "text": "Ринка Кикути"
+            },
+            {
+              "correct": false,
+              "text": "Кира Ёсино"
+            },
+            {
+              "correct": false,
+              "text": "Юми Адати"
+            }
+          ],
+          "fact": "Нанако Мацусима сыграла журналистку Рэйко."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Какое аниме рассказывает о Гоне Фриксе и его друзьях?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Hunter x Hunter"
+            },
+            {
+              "correct": false,
+              "text": "Yu Yu Hakusho"
+            },
+            {
+              "correct": false,
+              "text": "Black Clover"
+            },
+            {
+              "correct": false,
+              "text": "Fairy Tail"
+            }
+          ],
+          "fact": "Манга Ёсихиро Тогаси."
+        },
+        {
+          "id": 32,
+          "q": "В каком аниме используются техники «банкай» и «шикай»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Bleach"
+            },
+            {
+              "correct": false,
+              "text": "Naruto"
+            },
+            {
+              "correct": false,
+              "text": "Jujutsu Kaisen"
+            },
+            {
+              "correct": false,
+              "text": "Demon Slayer"
+            }
+          ],
+          "fact": "Занпакто и формы банкая — мир «Bleach»."
+        },
+        {
+          "id": 33,
+          "q": "Какая франшиза о карточной дуэли стала мировой?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Yu‑Gi‑Oh!"
+            },
+            {
+              "correct": false,
+              "text": "Pokémon TCG"
+            },
+            {
+              "correct": false,
+              "text": "Cardfight!! Vanguard"
+            },
+            {
+              "correct": false,
+              "text": "Weiss Schwarz"
+            }
+          ],
+          "fact": "Yu‑Gi‑Oh! популяризировала карточные дуэли."
+        },
+        {
+          "id": 34,
+          "q": "Как зовут одного из главных персонажей «Акиры», байкера, чья сила выходит из-под контроля?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тэцуо"
+            },
+            {
+              "correct": false,
+              "text": "Канэда"
+            },
+            {
+              "correct": false,
+              "text": "Кэй"
+            },
+            {
+              "correct": false,
+              "text": "Ямагата"
+            }
+          ],
+          "fact": "Тэцуо Сима — центральный антагонист."
+        },
+        {
+          "id": 35,
+          "q": "Какое аниме стало символом киберпанка и вдохновило «Матрицу»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ghost in the Shell"
+            },
+            {
+              "correct": false,
+              "text": "Psycho‑Pass"
+            },
+            {
+              "correct": false,
+              "text": "Ergo Proxy"
+            },
+            {
+              "correct": false,
+              "text": "Serial Experiments Lain"
+            }
+          ],
+          "fact": "«Призрак в доспехах» повлиял на Вачовски."
+        },
+        {
+          "id": 36,
+          "q": "Как зовут майора из «Призрака в доспехах»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Мотоко Кусанаги"
+            },
+            {
+              "correct": false,
+              "text": "Рицуко Акаги"
+            },
+            {
+              "correct": false,
+              "text": "Наоту Шиндзо"
+            },
+            {
+              "correct": false,
+              "text": "Рэй Айанами"
+            }
+          ],
+          "fact": "Майор Кусанаги — киборг‑оперативник."
+        },
+        {
+          "id": 37,
+          "q": "Какое аниме CLAMP о магических картах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Cardcaptor Sakura"
+            },
+            {
+              "correct": false,
+              "text": "Tsubasa Chronicle"
+            },
+            {
+              "correct": false,
+              "text": "xxxHolic"
+            },
+            {
+              "correct": false,
+              "text": "Magic Knight Rayearth"
+            }
+          ],
+          "fact": "«Сакура‑собирательница карт»."
+        },
+        {
+          "id": 38,
+          "q": "В каком аниме подростки пилотируют гигантских биомехов против ангелов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Neon Genesis Evangelion"
+            },
+            {
+              "correct": false,
+              "text": "Gundam Wing"
+            },
+            {
+              "correct": false,
+              "text": "Darling in the Franxx"
+            },
+            {
+              "correct": false,
+              "text": "RahXephon"
+            }
+          ],
+          "fact": "Культ Анно Хидэаки 1995."
+        },
+        {
+          "id": 39,
+          "q": "Какое аниме о мальчике и духе мастера популяризировало игру го?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Hikaru no Go"
+            },
+            {
+              "correct": false,
+              "text": "March Comes in Like a Lion"
+            },
+            {
+              "correct": false,
+              "text": "Chihayafuru"
+            },
+            {
+              "correct": false,
+              "text": "Saki"
+            }
+          ],
+          "fact": "Дух Сая и путь Хикару."
+        },
+        {
+          "id": 40,
+          "q": "Какой сериал рассказывает о классе убийц и ученике Нагисе?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Assassination Classroom"
+            },
+            {
+              "correct": false,
+              "text": "Danganronpa"
+            },
+            {
+              "correct": false,
+              "text": "Btooom!"
+            },
+            {
+              "correct": false,
+              "text": "Classroom of the Elite"
+            }
+          ],
+          "fact": "Учитель — Коро-сэнсэй."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Какой японский фильм получил «Золотую пальмовую ветвь» Канн в 2018 году?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Магазинные воришки"
+            },
+            {
+              "correct": false,
+              "text": "Ещё по одной"
+            },
+            {
+              "correct": false,
+              "text": "Возлюбленные"
+            },
+            {
+              "correct": false,
+              "text": "Любовное настроение"
+            }
+          ],
+          "fact": "«Shoplifters» Хирокадзу Корээда — победитель Канн 2018."
+        },
+        {
+          "id": 42,
+          "q": "Какой поздний фильм Куросавы построен как серия цветных новелл‑видений?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сны"
+            },
+            {
+              "correct": false,
+              "text": "Додэсука‑дэн"
+            },
+            {
+              "correct": false,
+              "text": "Тени воинов"
+            },
+            {
+              "correct": false,
+              "text": "Кагемуса"
+            }
+          ],
+          "fact": "«Dreams» (1990) — восемь снов Куросавы."
+        },
+        {
+          "id": 43,
+          "q": "Какой фильм Такеши Китано имеет автобиографические мотивы о художнике и юмористе?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Фейерверк"
+            },
+            {
+              "correct": true,
+              "text": "Кикудзиро"
+            },
+            {
+              "correct": false,
+              "text": "Аутсайдер"
+            },
+            {
+              "correct": false,
+              "text": "Куклы"
+            }
+          ],
+          "fact": "«Кикудзиро» и «Фейерверк» содержат автобиографические мотивы."
+        },
+        {
+          "id": 44,
+          "q": "Кто поставил «Сказание о принцессе Кагуя» (2013)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Иссао Такахата"
+            },
+            {
+              "correct": false,
+              "text": "Хаяо Миядзаки"
+            },
+            {
+              "correct": false,
+              "text": "Мамору Хосода"
+            },
+            {
+              "correct": false,
+              "text": "Макото Синкай"
+            }
+          ],
+          "fact": "Последний полнометражный фильм Такахаты."
+        },
+        {
+          "id": 45,
+          "q": "Какой фильм про школьников на выживание стал культовым и повлиял на жанр баттл‑рояль?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Battle Royale"
+            },
+            {
+              "correct": false,
+              "text": "Confessions"
+            },
+            {
+              "correct": false,
+              "text": "Blue Spring"
+            },
+            {
+              "correct": false,
+              "text": "Suicide Club"
+            }
+          ],
+          "fact": "«Battle Royale» (2000) Киндзи Фукусаку."
+        },
+        {
+          "id": 46,
+          "q": "Кто снял «Токийскую повесть» (1953)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ёсудзиро Одзу"
+            },
+            {
+              "correct": false,
+              "text": "Акира Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Микио Нарусэ"
+            },
+            {
+              "correct": false,
+              "text": "Сёхэй Имамура"
+            }
+          ],
+          "fact": "Одзӯ — классика послевоенного кино."
+        },
+        {
+          "id": 47,
+          "q": "Какой фильм Мамору Хосода рассказывает о девочке, прыгающей во времени?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Девочка, покорившая время"
+            },
+            {
+              "correct": false,
+              "text": "Волки‑дети"
+            },
+            {
+              "correct": false,
+              "text": "Мирай из будущего"
+            },
+            {
+              "correct": false,
+              "text": "Сад изящных слов"
+            }
+          ],
+          "fact": "«The Girl Who Leapt Through Time» (2006)."
+        },
+        {
+          "id": 48,
+          "q": "Какой фильм Макото Синкая о любви и расстоянии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "5 сантиметров в секунду"
+            },
+            {
+              "correct": false,
+              "text": "Твоё имя"
+            },
+            {
+              "correct": false,
+              "text": "Сад изящных слов"
+            },
+            {
+              "correct": false,
+              "text": "Погода с тобой"
+            }
+          ],
+          "fact": "«5 Centimeters per Second» (2007)."
+        },
+        {
+          "id": 49,
+          "q": "Какой фильм получил «Оскар» 2009 как лучший иностранный от Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ушедшие"
+            },
+            {
+              "correct": false,
+              "text": "Воры"
+            },
+            {
+              "correct": false,
+              "text": "Последняя жизнь"
+            },
+            {
+              "correct": false,
+              "text": "Любовное настроение"
+            }
+          ],
+          "fact": "«Departures» («Okuribito») — победитель 2009."
+        },
+        {
+          "id": 50,
+          "q": "Как называется классическая сага о слепом фехтовальщике?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Затойчи"
+            },
+            {
+              "correct": false,
+              "text": "Легенда о Мусаси"
+            },
+            {
+              "correct": false,
+              "text": "Ёсицунэ"
+            },
+            {
+              "correct": false,
+              "text": "Синдзо"
+            }
+          ],
+          "fact": "Затойчи — культовая франшиза о слепом мечнике."
+        }
+      ]
+    }
+  ]
+}

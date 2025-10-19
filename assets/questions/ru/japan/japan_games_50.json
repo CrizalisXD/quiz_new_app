@@ -1,0 +1,1181 @@
+{
+  "country": "Japan",
+  "pack": "Games & Entertainment",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Как называется настольная игра с чёрными и белыми камнями на доске 19×19?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Го"
+            },
+            {
+              "correct": false,
+              "text": "Сёги"
+            },
+            {
+              "correct": false,
+              "text": "Рэндзю"
+            },
+            {
+              "correct": false,
+              "text": "Маджонг"
+            }
+          ],
+          "fact": "Го пришла в Японию из Китая и стала частью профессионального спорта."
+        },
+        {
+          "id": 2,
+          "q": "Японские шахматы называются…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёги"
+            },
+            {
+              "correct": false,
+              "text": "Го"
+            },
+            {
+              "correct": false,
+              "text": "Чесс"
+            },
+            {
+              "correct": false,
+              "text": "Сянци"
+            }
+          ],
+          "fact": "В сёги можно возвращать взятые фигуры на доску — ключевая особенность."
+        },
+        {
+          "id": 3,
+          "q": "Какая карточная игра связана со сборником «Сто поэтов»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ута‑гарута"
+            },
+            {
+              "correct": false,
+              "text": "Ханафуда"
+            },
+            {
+              "correct": false,
+              "text": "Карута‑ироха"
+            },
+            {
+              "correct": false,
+              "text": "Трамп"
+            }
+          ],
+          "fact": "В ута‑гарута игроки по отрывку находят нужную карточку со стихом."
+        },
+        {
+          "id": 4,
+          "q": "Как называется традиционное караоке‑развлечение в отдельных комнатах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Караоке‑бокс"
+            },
+            {
+              "correct": false,
+              "text": "Караоке‑бар"
+            },
+            {
+              "correct": false,
+              "text": "Караоке‑холл"
+            },
+            {
+              "correct": false,
+              "text": "Караоке‑класс"
+            }
+          ],
+          "fact": "Караоке‑боксы — приватные комнаты для компаний."
+        },
+        {
+          "id": 5,
+          "q": "Как зовут электронного питомца‑брелок, ставший хитом 1990‑х?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tamagotchi"
+            },
+            {
+              "correct": false,
+              "text": "Digimon"
+            },
+            {
+              "correct": false,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "Chocobo"
+            }
+          ],
+          "fact": "Tamagotchi выпустила Bandai в 1996 году."
+        },
+        {
+          "id": 6,
+          "q": "Аркадные игровые залы по‑японски чаще называют…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Game Center"
+            },
+            {
+              "correct": false,
+              "text": "Arcadia"
+            },
+            {
+              "correct": false,
+              "text": "Joy Hall"
+            },
+            {
+              "correct": false,
+              "text": "Play Cube"
+            }
+          ],
+          "fact": "Game Center — распространённое название аркадных залов."
+        },
+        {
+          "id": 7,
+          "q": "Какое развлечение связано с автоматами с мягкими игрушками‑призами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "UFO Catcher"
+            },
+            {
+              "correct": false,
+              "text": "Gacha"
+            },
+            {
+              "correct": false,
+              "text": "Pachinko"
+            },
+            {
+              "correct": false,
+              "text": "Gashapon"
+            }
+          ],
+          "fact": "UFO Catcher — краны‑хвататели с плюшами и призами."
+        },
+        {
+          "id": 8,
+          "q": "Как называется лотерейная капсула‑автомат с игрушками?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Gashapon"
+            },
+            {
+              "correct": false,
+              "text": "Pachinko"
+            },
+            {
+              "correct": false,
+              "text": "UFO Catcher"
+            },
+            {
+              "correct": false,
+              "text": "Slotto"
+            }
+          ],
+          "fact": "Gashapon выпускают капсулы с мини‑фигурками и сувенирами."
+        },
+        {
+          "id": 9,
+          "q": "Какой популярный жанр настольных кафе объединяет кошек и игры?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Cat café"
+            },
+            {
+              "correct": false,
+              "text": "Dog café"
+            },
+            {
+              "correct": false,
+              "text": "Owl café"
+            },
+            {
+              "correct": false,
+              "text": "Panda café"
+            }
+          ],
+          "fact": "Cat café — японский формат: напитки и общение с кошками."
+        },
+        {
+          "id": 10,
+          "q": "Какое массовое ночное развлечение связано с поющими комнатами и напитками?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Караоке"
+            },
+            {
+              "correct": false,
+              "text": "Кабуки"
+            },
+            {
+              "correct": false,
+              "text": "Но"
+            },
+            {
+              "correct": false,
+              "text": "Бон одори"
+            }
+          ],
+          "fact": "Караоке — часть городской жизни и корпоративной культуры."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Какая компания выпустила консоль Famicom/NES?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nintendo"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "NEC"
+            }
+          ],
+          "fact": "Nintendo Famicom (1983) стала мировым бестселлером как NES."
+        },
+        {
+          "id": 12,
+          "q": "Кто создал серию консолей PlayStation?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Nintendo"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "Atari"
+            }
+          ],
+          "fact": "Sony запустила PlayStation в 1994 году."
+        },
+        {
+          "id": 13,
+          "q": "Какая японская компания выпустила консоль Mega Drive/Genesis?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Nintendo"
+            },
+            {
+              "correct": false,
+              "text": "SNK"
+            }
+          ],
+          "fact": "Sega — один из лидеров консольной эры 80–90‑х."
+        },
+        {
+          "id": 14,
+          "q": "Переносная приставка Nintendo 1989 года — это…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Game Boy"
+            },
+            {
+              "correct": false,
+              "text": "Game Gear"
+            },
+            {
+              "correct": false,
+              "text": "WonderSwan"
+            },
+            {
+              "correct": false,
+              "text": "PSP"
+            }
+          ],
+          "fact": "Game Boy стал символом портативного гейминга."
+        },
+        {
+          "id": 15,
+          "q": "Какая серия — визитная карточка Nintendo и её талисмана Mario?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Super Mario"
+            },
+            {
+              "correct": false,
+              "text": "Sonic"
+            },
+            {
+              "correct": false,
+              "text": "Crash Bandicoot"
+            },
+            {
+              "correct": false,
+              "text": "Rayman"
+            }
+          ],
+          "fact": "Серия Super Mario — крупнейшая платформа‑франшиза."
+        },
+        {
+          "id": 16,
+          "q": "Главный конкурент Марио от Sega — это…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sonic"
+            },
+            {
+              "correct": false,
+              "text": "Alex Kidd"
+            },
+            {
+              "correct": false,
+              "text": "Kirby"
+            },
+            {
+              "correct": false,
+              "text": "Bomberman"
+            }
+          ],
+          "fact": "Соник стал маскотом Sega в 1990‑е."
+        },
+        {
+          "id": 17,
+          "q": "Какой портативной консоли принадлежит двойной экран?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nintendo DS"
+            },
+            {
+              "correct": false,
+              "text": "PSP"
+            },
+            {
+              "correct": false,
+              "text": "Game Gear"
+            },
+            {
+              "correct": false,
+              "text": "Neo Geo Pocket"
+            }
+          ],
+          "fact": "Nintendo DS имела два экрана, один сенсорный."
+        },
+        {
+          "id": 18,
+          "q": "Гибрид «домашняя + портативная» консоль Nintendo 2017 года?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Switch"
+            },
+            {
+              "correct": false,
+              "text": "Wii U"
+            },
+            {
+              "correct": false,
+              "text": "3DS"
+            },
+            {
+              "correct": false,
+              "text": "PS Vita"
+            }
+          ],
+          "fact": "Switch совмещает портатив и док‑режим на ТВ."
+        },
+        {
+          "id": 19,
+          "q": "Как называется жанр ролевых игр японского происхождения?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "JRPG"
+            },
+            {
+              "correct": false,
+              "text": "ARPG"
+            },
+            {
+              "correct": false,
+              "text": "CRPG"
+            },
+            {
+              "correct": false,
+              "text": "SRPG"
+            }
+          ],
+          "fact": "JRPG — Final Fantasy, Dragon Quest и др."
+        },
+        {
+          "id": 20,
+          "q": "Какой издатель создал серии Street Fighter и Monster Hunter?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Capcom"
+            },
+            {
+              "correct": false,
+              "text": "Konami"
+            },
+            {
+              "correct": false,
+              "text": "Namco"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            }
+          ],
+          "fact": "Capcom — один из крупнейших издателей Японии."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Азартное развлечение с шариками и вертикальными автоматами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Pachinko"
+            },
+            {
+              "correct": false,
+              "text": "Gashapon"
+            },
+            {
+              "correct": false,
+              "text": "UFO Catcher"
+            },
+            {
+              "correct": false,
+              "text": "Slots"
+            }
+          ],
+          "fact": "Pachinko сочетает механический автомат и азартную механику."
+        },
+        {
+          "id": 22,
+          "q": "Крупные тематические парки под Токио и в Осаке?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Disney Resort & USJ"
+            },
+            {
+              "correct": false,
+              "text": "Fuji‑Q & Huis Ten Bosch"
+            },
+            {
+              "correct": false,
+              "text": "Nagasaki Park & Toei Land"
+            },
+            {
+              "correct": false,
+              "text": "Joypolis & Nasu Park"
+            }
+          ],
+          "fact": "Tokyo Disney Resort и Universal Studios Japan — топ‑парки страны."
+        },
+        {
+          "id": 23,
+          "q": "Город‑мека для отаку‑культуры и аниме‑магазинов в Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акихабара"
+            },
+            {
+              "correct": false,
+              "text": "Сибуя"
+            },
+            {
+              "correct": false,
+              "text": "Гиндза"
+            },
+            {
+              "correct": false,
+              "text": "Харадзюку"
+            }
+          ],
+          "fact": "Акихабара — электроника, аниме, фигурки, аркады."
+        },
+        {
+          "id": 24,
+          "q": "Как называется фестивальное летнее танцевальное развлечение с круговыми танцами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бон одори"
+            },
+            {
+              "correct": false,
+              "text": "Ава одори"
+            },
+            {
+              "correct": false,
+              "text": "Ясака одори"
+            },
+            {
+              "correct": false,
+              "text": "Сёдо одори"
+            }
+          ],
+          "fact": "Бон‑одори — часть праздника О‑бон в разных регионах."
+        },
+        {
+          "id": 25,
+          "q": "Какое настольное развлечение используют с дощечками и кистью для каллиграфии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёдо‑баттл"
+            },
+            {
+              "correct": false,
+              "text": "Икебана‑сэт"
+            },
+            {
+              "correct": false,
+              "text": "Танка‑игра"
+            },
+            {
+              "correct": false,
+              "text": "Кэндо‑дзё"
+            }
+          ],
+          "fact": "Сёдо — каллиграфия; фановый формат — состязания‑баттлы."
+        },
+        {
+          "id": 26,
+          "q": "Как называется сеттинг игровых кафе с ретро‑консолями и аркадами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Retro game café"
+            },
+            {
+              "correct": false,
+              "text": "Manga kissaten"
+            },
+            {
+              "correct": false,
+              "text": "Net café"
+            },
+            {
+              "correct": false,
+              "text": "VR lounge"
+            }
+          ],
+          "fact": "Retro game café — заведения с старой техникой и играми."
+        },
+        {
+          "id": 27,
+          "q": "Чем славится парк Fuji‑Q Highland для любителей острых ощущений?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Американские горки"
+            },
+            {
+              "correct": false,
+              "text": "Зоопарк"
+            },
+            {
+              "correct": false,
+              "text": "Аквариум"
+            },
+            {
+              "correct": false,
+              "text": "Горнолыжные трассы"
+            }
+          ],
+          "fact": "Fuji‑Q — экстремальные роллеркостеры с видами на Фудзи."
+        },
+        {
+          "id": 28,
+          "q": "Как называется формат кафе, где можно читать комиксы часами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Manga café"
+            },
+            {
+              "correct": false,
+              "text": "Book bar"
+            },
+            {
+              "correct": false,
+              "text": "Anime diner"
+            },
+            {
+              "correct": false,
+              "text": "Story lounge"
+            }
+          ],
+          "fact": "Manga café (manga kissa) — почасовая оплата, каталоги манги."
+        },
+        {
+          "id": 29,
+          "q": "Какое VR‑развлечение популярно в японских игровых центрах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "VR‑аркады"
+            },
+            {
+              "correct": false,
+              "text": "VR‑квесты только дома"
+            },
+            {
+              "correct": false,
+              "text": "Только симуляторы полётов"
+            },
+            {
+              "correct": false,
+              "text": "Нет VR"
+            }
+          ],
+          "fact": "VR‑зоны с тим‑играми и шутерами есть в Joypolis, Bandai Namco VR Zone."
+        },
+        {
+          "id": 30,
+          "q": "Какая серия музыкальных аркад с таико‑барабанами популярна?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Taiko no Tatsujin"
+            },
+            {
+              "correct": false,
+              "text": "Beatmania"
+            },
+            {
+              "correct": false,
+              "text": "Dance Dance"
+            },
+            {
+              "correct": false,
+              "text": "Pop'n Music"
+            }
+          ],
+          "fact": "Игроки бьют по барабанам таико в ритм мелодии."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Какие карты использовались Nintendo до видеоигр?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Hanafuda"
+            },
+            {
+              "correct": false,
+              "text": "Poker"
+            },
+            {
+              "correct": false,
+              "text": "Tarot"
+            },
+            {
+              "correct": false,
+              "text": "UNO"
+            }
+          ],
+          "fact": "Nintendo начинала с производства карт ханафуда в 1889."
+        },
+        {
+          "id": 32,
+          "q": "Какой пати‑формат — совместное приготовление блинов‑капустников на плите?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Окономияки‑party"
+            },
+            {
+              "correct": false,
+              "text": "Сукияки‑night"
+            },
+            {
+              "correct": false,
+              "text": "Сябу‑сябу‑meet"
+            },
+            {
+              "correct": false,
+              "text": "Тяною‑сет"
+            }
+          ],
+          "fact": "Окономияки жарят вместе на тэппане — весёлое домашнее развлечение."
+        },
+        {
+          "id": 33,
+          "q": "Традиционная новогодняя игра с воланом и деревянными ракетками?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ханэцуки"
+            },
+            {
+              "correct": false,
+              "text": "Кемари"
+            },
+            {
+              "correct": false,
+              "text": "Кэндaма"
+            },
+            {
+              "correct": false,
+              "text": "Ондэко"
+            }
+          ],
+          "fact": "Ханэцуки напоминает бадминтон без сетки."
+        },
+        {
+          "id": 34,
+          "q": "Деревянная игрушка‑ловушка с шариком на верёвке?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кэндaма"
+            },
+            {
+              "correct": false,
+              "text": "Кокеши"
+            },
+            {
+              "correct": false,
+              "text": "Дарума"
+            },
+            {
+              "correct": false,
+              "text": "Бейблейд"
+            }
+          ],
+          "fact": "Кэндама — классический скил‑той с трюками."
+        },
+        {
+          "id": 35,
+          "q": "Имя куклы‑талисмана с закрашиваемыми глазами‑желаниями?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Дарума"
+            },
+            {
+              "correct": false,
+              "text": "Кокеши"
+            },
+            {
+              "correct": false,
+              "text": "Манэки‑нэко"
+            },
+            {
+              "correct": false,
+              "text": "Терутэру‑бодзу"
+            }
+          ],
+          "fact": "Дарума — символ упорства; глаз закрашивают при цели."
+        },
+        {
+          "id": 36,
+          "q": "Деревянные куклы с цилиндрическим корпусом из северной Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кокеши"
+            },
+            {
+              "correct": false,
+              "text": "Дарума"
+            },
+            {
+              "correct": false,
+              "text": "Нингио"
+            },
+            {
+              "correct": false,
+              "text": "Момоко"
+            }
+          ],
+          "fact": "Кокеши родом из Тохоку, лаконичный дизайн."
+        },
+        {
+          "id": 37,
+          "q": "Дворовой мяч‑ножка‑игра у школьников?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кикбол/доджбол"
+            },
+            {
+              "correct": false,
+              "text": "Крикет"
+            },
+            {
+              "correct": false,
+              "text": "Гэльский футбол"
+            },
+            {
+              "correct": false,
+              "text": "Бочча"
+            }
+          ],
+          "fact": "Доджбол и кикбол — популярные школьные игры."
+        },
+        {
+          "id": 38,
+          "q": "Новогодний запуск воздушного змея в регионах называется…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Такоагэ"
+            },
+            {
+              "correct": false,
+              "text": "Кадомацу"
+            },
+            {
+              "correct": false,
+              "text": "Кагамибирaки"
+            },
+            {
+              "correct": false,
+              "text": "Сэцубун"
+            }
+          ],
+          "fact": "Такоагэ — запуск змеев зимой и на праздники."
+        },
+        {
+          "id": 39,
+          "q": "Игра‑викторина на карточках с изображениями префектур?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тодофукэн‑карута"
+            },
+            {
+              "correct": false,
+              "text": "Сакура‑квиз"
+            },
+            {
+              "correct": false,
+              "text": "Нихон‑мап‑чипс"
+            },
+            {
+              "correct": false,
+              "text": "Кен‑карта"
+            }
+          ],
+          "fact": "Тодофукэн‑карута учит географию Японии."
+        },
+        {
+          "id": 40,
+          "q": "Какой детский персонаж стал символом поездок по стране и штампов‑печати?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Rilakkuma"
+            },
+            {
+              "correct": false,
+              "text": "Hello Kitty"
+            },
+            {
+              "correct": true,
+              "text": "Doraemon"
+            },
+            {
+              "correct": false,
+              "text": "Anpanman"
+            }
+          ],
+          "fact": "Doraemon часто используется в турах и коллаборациях на станциях."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Какой жанр файтингов из Японии доминирует на EVO?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Street Fighter"
+            },
+            {
+              "correct": false,
+              "text": "Tekken"
+            },
+            {
+              "correct": false,
+              "text": "Guilty Gear"
+            },
+            {
+              "correct": true,
+              "text": "Все варианты"
+            }
+          ],
+          "fact": "Японские файтинги — ядро EVO: SF, Tekken, GG и др."
+        },
+        {
+          "id": 42,
+          "q": "Какой издатель выпускает серию Tekken?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Bandai Namco"
+            },
+            {
+              "correct": false,
+              "text": "Capcom"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "SNK"
+            }
+          ],
+          "fact": "Bandai Namco — владелец Tekken, Soulcalibur и др."
+        },
+        {
+          "id": 43,
+          "q": "Серия охоты на монстров, ставшая ко‑оп хитом на портативках?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Monster Hunter"
+            },
+            {
+              "correct": false,
+              "text": "God Eater"
+            },
+            {
+              "correct": false,
+              "text": "Toukiden"
+            },
+            {
+              "correct": false,
+              "text": "Freedom Wars"
+            }
+          ],
+          "fact": "Monster Hunter сформировал целый жанр ко‑оп охот."
+        },
+        {
+          "id": 44,
+          "q": "Соревновательная музыкальная аркада с панелями ногами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Dance Dance Revolution"
+            },
+            {
+              "correct": false,
+              "text": "Beat Saber"
+            },
+            {
+              "correct": false,
+              "text": "Pump It Up"
+            },
+            {
+              "correct": false,
+              "text": "StepManiaX"
+            }
+          ],
+          "fact": "DDR родом из Японии (Konami)."
+        },
+        {
+          "id": 45,
+          "q": "Как называется индустрия «виртуальных ютуберов» из Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "VTuber"
+            },
+            {
+              "correct": false,
+              "text": "VJockey"
+            },
+            {
+              "correct": false,
+              "text": "VStreamer"
+            },
+            {
+              "correct": false,
+              "text": "VR Idol"
+            }
+          ],
+          "fact": "VTuber‑сцена выросла из японской аниме‑культуры."
+        },
+        {
+          "id": 46,
+          "q": "Как зовут культовую аркаду‑рогалик про рыбака от японского инди‑разработчика?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "DAVE THE DIVER"
+            },
+            {
+              "correct": false,
+              "text": "Spelunky"
+            },
+            {
+              "correct": true,
+              "text": "Downwell"
+            },
+            {
+              "correct": false,
+              "text": "Vampire Survivors"
+            }
+          ],
+          "fact": "Downwell — японский инди‑хит от Ojiro Fumoto (Moppin)."
+        },
+        {
+          "id": 47,
+          "q": "Какой формат кафе позволяет ночевать и играть/серфить в интернете поминутно?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Net café (манга‑кисса)"
+            },
+            {
+              "correct": false,
+              "text": "LAN‑клуб"
+            },
+            {
+              "correct": false,
+              "text": "e‑Sports‑арена"
+            },
+            {
+              "correct": false,
+              "text": "Wi‑Fi бар"
+            }
+          ],
+          "fact": "Net café/манга‑кисса — капсулы, душ, манга и ПК по тарифу."
+        },
+        {
+          "id": 48,
+          "q": "Какая серия головоломок Nintendo связана с профессором и загадками?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Professor Layton"
+            },
+            {
+              "correct": false,
+              "text": "Ace Attorney"
+            },
+            {
+              "correct": false,
+              "text": "Brain Age"
+            },
+            {
+              "correct": false,
+              "text": "Picross"
+            }
+          ],
+          "fact": "Professor Layton — детективные загадки от Level‑5."
+        },
+        {
+          "id": 49,
+          "q": "Серия ритм‑игр от Sega с виртуальной певицей?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Hatsune Miku: Project DIVA"
+            },
+            {
+              "correct": false,
+              "text": "Taiko no Tatsujin"
+            },
+            {
+              "correct": false,
+              "text": "Osu!"
+            },
+            {
+              "correct": false,
+              "text": "Beatmania IIDX"
+            }
+          ],
+          "fact": "Проект Vocaloid и игры Project DIVA получили культовый статус."
+        },
+        {
+          "id": 50,
+          "q": "Какая франшиза Nintendo связана с киберспортом по стрельбе краской?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Splatoon"
+            },
+            {
+              "correct": false,
+              "text": "ARMS"
+            },
+            {
+              "correct": false,
+              "text": "Metroid"
+            },
+            {
+              "correct": false,
+              "text": "Kirby"
+            }
+          ],
+          "fact": "Splatoon — командные сражения краской, популярные турниры."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2356 @@
+{
+  "country": "Japan",
+  "pack": "Classic",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Что является национальным цветком Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сакура"
+            },
+            {
+              "correct": false,
+              "text": "Лотос"
+            },
+            {
+              "correct": false,
+              "text": "Хризантема"
+            },
+            {
+              "correct": false,
+              "text": "Ирис"
+            }
+          ],
+          "fact": "Сакура символизирует быстротечность жизни."
+        },
+        {
+          "id": 2,
+          "q": "Самая высокая гора страны?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Фудзи"
+            },
+            {
+              "correct": false,
+              "text": "Хакусан"
+            },
+            {
+              "correct": false,
+              "text": "Асама"
+            },
+            {
+              "correct": false,
+              "text": "Онтакэ"
+            }
+          ],
+          "fact": "Высота Фудзи — 3776 м."
+        },
+        {
+          "id": 3,
+          "q": "Столица Японии?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Киото"
+            },
+            {
+              "correct": true,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Нара"
+            }
+          ],
+          "fact": "Столица перенесена в Токио в 1869 году."
+        },
+        {
+          "id": 4,
+          "q": "Основная валюта Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Йена"
+            },
+            {
+              "correct": false,
+              "text": "Юань"
+            },
+            {
+              "correct": false,
+              "text": "Вон"
+            },
+            {
+              "correct": false,
+              "text": "Доллар"
+            }
+          ],
+          "fact": "Йена введена в 1871 году."
+        },
+        {
+          "id": 5,
+          "q": "Традиционное жильё-гостиница с татами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Рёкан"
+            },
+            {
+              "correct": false,
+              "text": "Риад"
+            },
+            {
+              "correct": false,
+              "text": "Рюгван"
+            },
+            {
+              "correct": false,
+              "text": "Мотель"
+            }
+          ],
+          "fact": "В рёканах спят на футоне на татами."
+        },
+        {
+          "id": 6,
+          "q": "Какой океан на востоке Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тихий"
+            },
+            {
+              "correct": false,
+              "text": "Индийский"
+            },
+            {
+              "correct": false,
+              "text": "Атлантический"
+            },
+            {
+              "correct": false,
+              "text": "Северный Ледовитый"
+            }
+          ],
+          "fact": "Страна омывается Тихим океаном."
+        },
+        {
+          "id": 7,
+          "q": "Как называется традиция любования сакурой?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ханами"
+            },
+            {
+              "correct": false,
+              "text": "Мацури"
+            },
+            {
+              "correct": false,
+              "text": "О-сёти"
+            },
+            {
+              "correct": false,
+              "text": "О-бон"
+            }
+          ],
+          "fact": "Ханами — пикники под цветущими вишнями."
+        },
+        {
+          "id": 8,
+          "q": "Главный религиозный комплекс синто — это…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Святилище"
+            },
+            {
+              "correct": false,
+              "text": "Пагода"
+            },
+            {
+              "correct": false,
+              "text": "Синагога"
+            },
+            {
+              "correct": false,
+              "text": "Базилика"
+            }
+          ],
+          "fact": "Синтоистские храмы называют святилищами."
+        },
+        {
+          "id": 9,
+          "q": "Какое блюдо наиболее ассоциируется с Японией?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Суши"
+            },
+            {
+              "correct": false,
+              "text": "Такос"
+            },
+            {
+              "correct": false,
+              "text": "Паста"
+            },
+            {
+              "correct": false,
+              "text": "Паэлья"
+            }
+          ],
+          "fact": "Суши — визитная карточка кухни."
+        },
+        {
+          "id": 10,
+          "q": "Глава государства по Конституции?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Император"
+            },
+            {
+              "correct": false,
+              "text": "Президент"
+            },
+            {
+              "correct": false,
+              "text": "Король"
+            },
+            {
+              "correct": false,
+              "text": "Канцлер"
+            }
+          ],
+          "fact": "Император — символ нации, власть у парламента."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Древняя столица до Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нара"
+            },
+            {
+              "correct": false,
+              "text": "Камакура"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            }
+          ],
+          "fact": "Киото — столица более 1000 лет."
+        },
+        {
+          "id": 12,
+          "q": "Первая постоянная столица страны?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нара"
+            },
+            {
+              "correct": false,
+              "text": "Камакура"
+            },
+            {
+              "correct": false,
+              "text": "Эдо"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            }
+          ],
+          "fact": "Нара — столица периода Нара (710–794)."
+        },
+        {
+          "id": 13,
+          "q": "Крупнейший мегаполис по населению?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Осака"
+            },
+            {
+              "correct": true,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            },
+            {
+              "correct": false,
+              "text": "Саппоро"
+            }
+          ],
+          "fact": "Агломерация Токио — крупнейшая в мире."
+        },
+        {
+          "id": 14,
+          "q": "Главный скоростной поезд?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синкансэн"
+            },
+            {
+              "correct": false,
+              "text": "Интерсити"
+            },
+            {
+              "correct": false,
+              "text": "Тальго"
+            },
+            {
+              "correct": false,
+              "text": "ТЖВ"
+            }
+          ],
+          "fact": "Скорость маршрутов свыше 300 км/ч."
+        },
+        {
+          "id": 15,
+          "q": "Традиционное платье?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кимоно"
+            },
+            {
+              "correct": false,
+              "text": "Сари"
+            },
+            {
+              "correct": false,
+              "text": "Ханбок"
+            },
+            {
+              "correct": false,
+              "text": "Чипао"
+            }
+          ],
+          "fact": "Кимоно надевают на праздники."
+        },
+        {
+          "id": 16,
+          "q": "Искусство складывания бумаги?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Оригами"
+            },
+            {
+              "correct": false,
+              "text": "Икебана"
+            },
+            {
+              "correct": false,
+              "text": "Бонсай"
+            },
+            {
+              "correct": false,
+              "text": "Суми-э"
+            }
+          ],
+          "fact": "Оригами — бессклеевая сборка фигур."
+        },
+        {
+          "id": 17,
+          "q": "Украшение сада мини-деревцами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бонсай"
+            },
+            {
+              "correct": false,
+              "text": "Бодхи"
+            },
+            {
+              "correct": false,
+              "text": "Бонсайа"
+            },
+            {
+              "correct": false,
+              "text": "Бонкоми"
+            }
+          ],
+          "fact": "Бонсай — миниатюрные деревья в контейнерах."
+        },
+        {
+          "id": 18,
+          "q": "Главный аэропорт Токио для международных рейсов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Итами"
+            }
+          ],
+          "fact": "Нарита обслуживает большую часть международных рейсов."
+        },
+        {
+          "id": 19,
+          "q": "Лапша в бульоне, популярная и в инстант-формате?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Рамен"
+            },
+            {
+              "correct": false,
+              "text": "Соба"
+            },
+            {
+              "correct": false,
+              "text": "Удон"
+            },
+            {
+              "correct": false,
+              "text": "Сомэн"
+            }
+          ],
+          "fact": "Ра́мен — бульонная лапша, бывает инстант."
+        },
+        {
+          "id": 20,
+          "q": "Исторический рыбный рынок в Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Цукидзи"
+            },
+            {
+              "correct": false,
+              "text": "Нисики"
+            },
+            {
+              "correct": false,
+              "text": "Куромон"
+            },
+            {
+              "correct": false,
+              "text": "Омитьё"
+            }
+          ],
+          "fact": "Цукидзи знаменит аукционами тунца."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Как назывался старый Токио до 1868 года?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Эдо"
+            },
+            {
+              "correct": false,
+              "text": "Мэйдзи"
+            },
+            {
+              "correct": false,
+              "text": "Хэйан"
+            },
+            {
+              "correct": false,
+              "text": "Мурамати"
+            }
+          ],
+          "fact": "Эдо переименован в Токио при реставрации Мэйдзи."
+        },
+        {
+          "id": 22,
+          "q": "Военный правитель Японии в феодальную эпоху?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёгун"
+            },
+            {
+              "correct": false,
+              "text": "Даймё"
+            },
+            {
+              "correct": false,
+              "text": "Самурай"
+            },
+            {
+              "correct": false,
+              "text": "Ронин"
+            }
+          ],
+          "fact": "Сёгун возглавлял сёгунат."
+        },
+        {
+          "id": 23,
+          "q": "Кодекс самурая называется…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бусидо"
+            },
+            {
+              "correct": false,
+              "text": "Кёкушин"
+            },
+            {
+              "correct": false,
+              "text": "Синто"
+            },
+            {
+              "correct": false,
+              "text": "Зэн"
+            }
+          ],
+          "fact": "Бусидо — «путь воина»."
+        },
+        {
+          "id": 24,
+          "q": "У синто есть основатель?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нет"
+            },
+            {
+              "correct": false,
+              "text": "Да, Будда"
+            },
+            {
+              "correct": false,
+              "text": "Да, Конфуций"
+            },
+            {
+              "correct": false,
+              "text": "Да, Лао-цзы"
+            }
+          ],
+          "fact": "Синто — местные культы без основателя."
+        },
+        {
+          "id": 25,
+          "q": "Буддийская школа созерцания в Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Дзэн"
+            },
+            {
+              "correct": false,
+              "text": "Тхеравада"
+            },
+            {
+              "correct": false,
+              "text": "Ваджраяна"
+            },
+            {
+              "correct": false,
+              "text": "Нитирэн"
+            }
+          ],
+          "fact": "Дзэн повлиял на чайную церемонию."
+        },
+        {
+          "id": 26,
+          "q": "Японский театр масок и танца?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Но"
+            },
+            {
+              "correct": false,
+              "text": "Кабуки"
+            },
+            {
+              "correct": false,
+              "text": "Бунраку"
+            },
+            {
+              "correct": false,
+              "text": "Кёгэн"
+            }
+          ],
+          "fact": "Но — древнейший театр Японии."
+        },
+        {
+          "id": 27,
+          "q": "Театр с ярким гримом и драмой?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кабуки"
+            },
+            {
+              "correct": false,
+              "text": "Но"
+            },
+            {
+              "correct": false,
+              "text": "Бунраку"
+            },
+            {
+              "correct": false,
+              "text": "Кёгэн"
+            }
+          ],
+          "fact": "Кабуки — зрелищный и динамичный."
+        },
+        {
+          "id": 28,
+          "q": "Кукольный театр Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бунраку"
+            },
+            {
+              "correct": false,
+              "text": "Но"
+            },
+            {
+              "correct": false,
+              "text": "Кабуки"
+            },
+            {
+              "correct": false,
+              "text": "Кёгэн"
+            }
+          ],
+          "fact": "Бунраку — большие куклы, открытые кукловоды."
+        },
+        {
+          "id": 29,
+          "q": "Порошковый зелёный чай для церемонии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Матча"
+            },
+            {
+              "correct": false,
+              "text": "Сэнча"
+            },
+            {
+              "correct": false,
+              "text": "Ходзича"
+            },
+            {
+              "correct": false,
+              "text": "Гёкуро"
+            }
+          ],
+          "fact": "Матча взбивается бамбуковым венчиком."
+        },
+        {
+          "id": 30,
+          "q": "Кто фактически правил до Мэйдзи?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёгунаты"
+            },
+            {
+              "correct": false,
+              "text": "Императоры-абсолюты"
+            },
+            {
+              "correct": false,
+              "text": "Колонии"
+            },
+            {
+              "correct": false,
+              "text": "Советы"
+            }
+          ],
+          "fact": "Страной управлял сёгунат Токугава."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Рис с рыбой и рисовым уксусом называется…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Суши"
+            },
+            {
+              "correct": false,
+              "text": "Сашими"
+            },
+            {
+              "correct": false,
+              "text": "Донбури"
+            },
+            {
+              "correct": false,
+              "text": "Оякодон"
+            }
+          ],
+          "fact": "Суши — рис + начинка."
+        },
+        {
+          "id": 32,
+          "q": "Лапша из гречки — это…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Соба"
+            },
+            {
+              "correct": false,
+              "text": "Удон"
+            },
+            {
+              "correct": false,
+              "text": "Рамен"
+            },
+            {
+              "correct": false,
+              "text": "Харусаме"
+            }
+          ],
+          "fact": "Соба — гречневая лапша."
+        },
+        {
+          "id": 33,
+          "q": "Лёгкое хлопковое кимоно для лета?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Юката"
+            },
+            {
+              "correct": false,
+              "text": "Фурисодэ"
+            },
+            {
+              "correct": false,
+              "text": "Хакама"
+            },
+            {
+              "correct": false,
+              "text": "Томэсодэ"
+            }
+          ],
+          "fact": "Юкату надевают на фестивали."
+        },
+        {
+          "id": 34,
+          "q": "Рисовое «вино» по‑японски?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сакэ"
+            },
+            {
+              "correct": false,
+              "text": "Сёчу"
+            },
+            {
+              "correct": false,
+              "text": "Умэсю"
+            },
+            {
+              "correct": false,
+              "text": "Мирин"
+            }
+          ],
+          "fact": "Сакэ — ферментированный напиток из риса."
+        },
+        {
+          "id": 35,
+          "q": "Праздник любования луной?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Цукими"
+            },
+            {
+              "correct": false,
+              "text": "Танабата"
+            },
+            {
+              "correct": false,
+              "text": "О-бон"
+            },
+            {
+              "correct": false,
+              "text": "Сэцубун"
+            }
+          ],
+          "fact": "Цукими отмечают осенью."
+        },
+        {
+          "id": 36,
+          "q": "Клейкий рисовый колобок?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Моти"
+            },
+            {
+              "correct": false,
+              "text": "Дайфуку"
+            },
+            {
+              "correct": false,
+              "text": "Данго"
+            },
+            {
+              "correct": false,
+              "text": "Ёкан"
+            }
+          ],
+          "fact": "Моти — база для многих десертов."
+        },
+        {
+          "id": 37,
+          "q": "Горячие источники-купальни?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Онсэн"
+            },
+            {
+              "correct": false,
+              "text": "Сэнто"
+            },
+            {
+              "correct": false,
+              "text": "Офуро"
+            },
+            {
+              "correct": false,
+              "text": "Фуро"
+            }
+          ],
+          "fact": "Онсэны используют природные воды."
+        },
+        {
+          "id": 38,
+          "q": "Город с тысячами ворот тории Фусими Инари?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нара"
+            },
+            {
+              "correct": false,
+              "text": "Хиросима"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            }
+          ],
+          "fact": "Фусими Инари — в Киото."
+        },
+        {
+          "id": 39,
+          "q": "Омлет на рисе с кетчупом?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Омурайсу"
+            },
+            {
+              "correct": false,
+              "text": "Тамагояки"
+            },
+            {
+              "correct": false,
+              "text": "Окономияки"
+            },
+            {
+              "correct": false,
+              "text": "Такояки"
+            }
+          ],
+          "fact": "Омурайсу — блюдо-йошоку."
+        },
+        {
+          "id": 40,
+          "q": "Главный новогодний период?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "О-сёгацу"
+            },
+            {
+              "correct": false,
+              "text": "Золотая неделя"
+            },
+            {
+              "correct": false,
+              "text": "О-бон"
+            },
+            {
+              "correct": false,
+              "text": "Сэцубун"
+            }
+          ],
+          "fact": "О-сёгацу — семейный Новый год."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Сколько главных островов в Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "4"
+            },
+            {
+              "correct": false,
+              "text": "3"
+            },
+            {
+              "correct": false,
+              "text": "5"
+            },
+            {
+              "correct": false,
+              "text": "6"
+            }
+          ],
+          "fact": "Хоккайдо, Хонсю, Сикоку, Кюсю."
+        },
+        {
+          "id": 42,
+          "q": "Море между Японией и Кореей?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Японское"
+            },
+            {
+              "correct": false,
+              "text": "Охотское"
+            },
+            {
+              "correct": false,
+              "text": "Восточно-Китайское"
+            },
+            {
+              "correct": false,
+              "text": "Жёлтое"
+            }
+          ],
+          "fact": "Японское море."
+        },
+        {
+          "id": 43,
+          "q": "Сейсмическая дуга вокруг Тихого океана?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Огненное кольцо"
+            },
+            {
+              "correct": false,
+              "text": "Земной пояс"
+            },
+            {
+              "correct": false,
+              "text": "Пояс Фудзи"
+            },
+            {
+              "correct": false,
+              "text": "Тектоническая дуга"
+            }
+          ],
+          "fact": "Япония входит в Огненное кольцо."
+        },
+        {
+          "id": 44,
+          "q": "Равнина, где расположен Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Канто"
+            },
+            {
+              "correct": false,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Токай"
+            },
+            {
+              "correct": false,
+              "text": "Тюгоку"
+            }
+          ],
+          "fact": "Канто — крупнейшая равнина."
+        },
+        {
+          "id": 45,
+          "q": "Самый северный главный остров?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хоккайдо"
+            },
+            {
+              "correct": false,
+              "text": "Хонсю"
+            },
+            {
+              "correct": false,
+              "text": "Кюсю"
+            },
+            {
+              "correct": false,
+              "text": "Сикоку"
+            }
+          ],
+          "fact": "Хоккайдо."
+        },
+        {
+          "id": 46,
+          "q": "Сезон раннелетних дождей?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Цую"
+            },
+            {
+              "correct": false,
+              "text": "Хару"
+            },
+            {
+              "correct": false,
+              "text": "Аки"
+            },
+            {
+              "correct": false,
+              "text": "Фую"
+            }
+          ],
+          "fact": "«Сливовые дожди» — цую."
+        },
+        {
+          "id": 47,
+          "q": "Парк у Фудзи и Хаконэ?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Фудзи‑Хаконэ‑Идзу"
+            },
+            {
+              "correct": false,
+              "text": "Никко"
+            },
+            {
+              "correct": false,
+              "text": "Дайсецудзан"
+            },
+            {
+              "correct": false,
+              "text": "Асохаку"
+            }
+          ],
+          "fact": "Популярен видами и онсэнами."
+        },
+        {
+          "id": 48,
+          "q": "Активный вулкан у Кагосимы?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сакурадзима"
+            },
+            {
+              "correct": false,
+              "text": "Ундзэн"
+            },
+            {
+              "correct": false,
+              "text": "Асо"
+            },
+            {
+              "correct": false,
+              "text": "Кирисима"
+            }
+          ],
+          "fact": "Сакурадзима часто извергается."
+        },
+        {
+          "id": 49,
+          "q": "Пролив между Хонсю и Хоккайдо?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Цугару"
+            },
+            {
+              "correct": false,
+              "text": "Симоносеки"
+            },
+            {
+              "correct": false,
+              "text": "Кии"
+            },
+            {
+              "correct": false,
+              "text": "Бунго"
+            }
+          ],
+          "fact": "Цугару соединяет моря."
+        },
+        {
+          "id": 50,
+          "q": "Южный тропический регион?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Окинава"
+            },
+            {
+              "correct": false,
+              "text": "Сикоку"
+            },
+            {
+              "correct": false,
+              "text": "Садо"
+            },
+            {
+              "correct": false,
+              "text": "Цусима"
+            }
+          ],
+          "fact": "Окинава — архипелаг Рюкю."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "questions": [
+        {
+          "id": 51,
+          "q": "Кто создал Game Boy?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Nintendo"
+            },
+            {
+              "correct": false,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "Bandai"
+            }
+          ],
+          "fact": "Nintendo — пионер портативного гейминга."
+        },
+        {
+          "id": 52,
+          "q": "Какие бренды японские?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Canon"
+            },
+            {
+              "correct": false,
+              "text": "Nikon"
+            },
+            {
+              "correct": false,
+              "text": "Fujifilm"
+            },
+            {
+              "correct": true,
+              "text": "Все варианты верны"
+            }
+          ],
+          "fact": "Все перечисленные — японские."
+        },
+        {
+          "id": 53,
+          "q": "Конвейерные суши называются…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кайтэн-зуси"
+            },
+            {
+              "correct": false,
+              "text": "Омакасе"
+            },
+            {
+              "correct": false,
+              "text": "Кайсэки"
+            },
+            {
+              "correct": false,
+              "text": "Идзакaя"
+            }
+          ],
+          "fact": "Лента с тарелками вокруг шефа."
+        },
+        {
+          "id": 54,
+          "q": "Самый точный поезд?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синкансэн"
+            },
+            {
+              "correct": false,
+              "text": "ICE"
+            },
+            {
+              "correct": false,
+              "text": "TGV"
+            },
+            {
+              "correct": false,
+              "text": "AVE"
+            }
+          ],
+          "fact": "Точность измеряют секундами."
+        },
+        {
+          "id": 55,
+          "q": "Магазины формата 24/7?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Конбини"
+            },
+            {
+              "correct": false,
+              "text": "Бакалея"
+            },
+            {
+              "correct": false,
+              "text": "Маркет"
+            },
+            {
+              "correct": false,
+              "text": "Супер"
+            }
+          ],
+          "fact": "Konbini — 7‑Eleven, Lawson, FamilyMart."
+        },
+        {
+          "id": 56,
+          "q": "Капсульные отели — это…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Микрокапсулы"
+            },
+            {
+              "correct": false,
+              "text": "Квартиры"
+            },
+            {
+              "correct": false,
+              "text": "Хостелы"
+            },
+            {
+              "correct": false,
+              "text": "Рёканы"
+            }
+          ],
+          "fact": "Мини‑кабины сна."
+        },
+        {
+          "id": 57,
+          "q": "Жареная лапша с овощами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Якисоба"
+            },
+            {
+              "correct": false,
+              "text": "Соба"
+            },
+            {
+              "correct": false,
+              "text": "Удон"
+            },
+            {
+              "correct": false,
+              "text": "Сомэн"
+            }
+          ],
+          "fact": "Якисоба готовится на гриле/сковороде."
+        },
+        {
+          "id": 58,
+          "q": "Район электроники и аниме в Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акихабара"
+            },
+            {
+              "correct": false,
+              "text": "Сибуя"
+            },
+            {
+              "correct": false,
+              "text": "Гинза"
+            },
+            {
+              "correct": false,
+              "text": "Роппонги"
+            }
+          ],
+          "fact": "Акка — Акаба, «электрогородок»."
+        },
+        {
+          "id": 59,
+          "q": "Кто выпустил первую PlayStation?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Nintendo"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "SNK"
+            }
+          ],
+          "fact": "PS вышла в 1994."
+        },
+        {
+          "id": 60,
+          "q": "Как называют секатор у мастеров бонсая?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Эгэкири (секатор)"
+            },
+            {
+              "correct": false,
+              "text": "Цуруги"
+            },
+            {
+              "correct": false,
+              "text": "Кириэ"
+            },
+            {
+              "correct": false,
+              "text": "Цуба"
+            }
+          ],
+          "fact": "Садовые ножницы — важный инструмент."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "questions": [
+        {
+          "id": 61,
+          "q": "Краткое стихотворение 5‑7‑5?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хайку/Хокку"
+            },
+            {
+              "correct": false,
+              "text": "Танка"
+            },
+            {
+              "correct": false,
+              "text": "Сэнрю"
+            },
+            {
+              "correct": false,
+              "text": "Рэнга"
+            }
+          ],
+          "fact": "Хайку — минимализм и природа."
+        },
+        {
+          "id": 62,
+          "q": "Автор «Большой волны в Канагаве»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хокусай"
+            },
+            {
+              "correct": false,
+              "text": "Хиросигэ"
+            },
+            {
+              "correct": false,
+              "text": "Сэссю"
+            },
+            {
+              "correct": false,
+              "text": "Кано Эйтоку"
+            }
+          ],
+          "fact": "Хокусай — мастер укиё‑э."
+        },
+        {
+          "id": 63,
+          "q": "Укиё‑э печатают как…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ксилографию"
+            },
+            {
+              "correct": false,
+              "text": "Монотипию"
+            },
+            {
+              "correct": false,
+              "text": "Литографию"
+            },
+            {
+              "correct": false,
+              "text": "Офорт"
+            }
+          ],
+          "fact": "Гравюра по дереву."
+        },
+        {
+          "id": 64,
+          "q": "Режиссёр «Семь самураев»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Акира Куросава"
+            },
+            {
+              "correct": false,
+              "text": "Ёсудзиро Одзу"
+            },
+            {
+              "correct": false,
+              "text": "Китано"
+            },
+            {
+              "correct": false,
+              "text": "Миядзаки"
+            }
+          ],
+          "fact": "Классика 1954 года."
+        },
+        {
+          "id": 65,
+          "q": "Комикс по-японски?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Манга"
+            },
+            {
+              "correct": false,
+              "text": "Манхва"
+            },
+            {
+              "correct": false,
+              "text": "Комик"
+            },
+            {
+              "correct": false,
+              "text": "BD"
+            }
+          ],
+          "fact": "Манга — индустрия и культура."
+        },
+        {
+          "id": 66,
+          "q": "Анимация по-японски?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Аниме"
+            },
+            {
+              "correct": false,
+              "text": "Мультфильм"
+            },
+            {
+              "correct": false,
+              "text": "Донга"
+            },
+            {
+              "correct": false,
+              "text": "Картун"
+            }
+          ],
+          "fact": "Аниме — от детского до взрослого."
+        },
+        {
+          "id": 67,
+          "q": "Поп‑музыка мейнстрим Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "J‑Pop"
+            },
+            {
+              "correct": false,
+              "text": "K‑Pop"
+            },
+            {
+              "correct": false,
+              "text": "City Pop"
+            },
+            {
+              "correct": false,
+              "text": "Энка"
+            }
+          ],
+          "fact": "J‑Pop доминирует в чартах."
+        },
+        {
+          "id": 68,
+          "q": "Стих 31 слог (5‑7‑5‑7‑7)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Танка"
+            },
+            {
+              "correct": false,
+              "text": "Хайку"
+            },
+            {
+              "correct": false,
+              "text": "Рэнга"
+            },
+            {
+              "correct": false,
+              "text": "Сэнрю"
+            }
+          ],
+          "fact": "Танка — классическая форма."
+        },
+        {
+          "id": 69,
+          "q": "Карточная игра с поэзией?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Карута"
+            },
+            {
+              "correct": false,
+              "text": "Го"
+            },
+            {
+              "correct": false,
+              "text": "Сёги"
+            },
+            {
+              "correct": false,
+              "text": "Ханафуда"
+            }
+          ],
+          "fact": "Ута‑гарута — «Сто поэтов»."
+        },
+        {
+          "id": 70,
+          "q": "Каллиграфия по-японски?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёдо"
+            },
+            {
+              "correct": false,
+              "text": "Суми‑э"
+            },
+            {
+              "correct": false,
+              "text": "Кириэ"
+            },
+            {
+              "correct": false,
+              "text": "Икебана"
+            }
+          ],
+          "fact": "Сёдо — «путь письма»."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "questions": [
+        {
+          "id": 71,
+          "q": "Национальный вид спорта?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сумо"
+            },
+            {
+              "correct": false,
+              "text": "Кэндо"
+            },
+            {
+              "correct": false,
+              "text": "Бейсбол"
+            },
+            {
+              "correct": false,
+              "text": "Дзюдо"
+            }
+          ],
+          "fact": "Сумо — ритуальная борьба."
+        },
+        {
+          "id": 72,
+          "q": "Самый массовый спортивный культ?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бейсбол"
+            },
+            {
+              "correct": false,
+              "text": "Футбол"
+            },
+            {
+              "correct": false,
+              "text": "Теннис"
+            },
+            {
+              "correct": false,
+              "text": "Регби"
+            }
+          ],
+          "fact": "Бейсбол любим со школы."
+        },
+        {
+          "id": 73,
+          "q": "Клубы по интересам в школах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Букацу"
+            },
+            {
+              "correct": false,
+              "text": "Додзё"
+            },
+            {
+              "correct": false,
+              "text": "Кумитэ"
+            },
+            {
+              "correct": false,
+              "text": "Кайсё"
+            }
+          ],
+          "fact": "Внеклассные занятия."
+        },
+        {
+          "id": 74,
+          "q": "Школьная форма‑морячка называется…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сэйфуку"
+            },
+            {
+              "correct": false,
+              "text": "Юката"
+            },
+            {
+              "correct": false,
+              "text": "Кимоно"
+            },
+            {
+              "correct": false,
+              "text": "Дзинабэ"
+            }
+          ],
+          "fact": "Сэйфуку — униформа."
+        },
+        {
+          "id": 75,
+          "q": "Автоматы‑продавцы по всей стране?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Вендинговые автоматы"
+            },
+            {
+              "correct": false,
+              "text": "Конбини"
+            },
+            {
+              "correct": false,
+              "text": "Киоски"
+            },
+            {
+              "correct": false,
+              "text": "Ларёк"
+            }
+          ],
+          "fact": "Автоматов миллионы."
+        },
+        {
+          "id": 76,
+          "q": "Церемония вступления в компанию?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нюсся‑сики"
+            },
+            {
+              "correct": false,
+              "text": "Сэйдзин‑сики"
+            },
+            {
+              "correct": false,
+              "text": "Сэцубун"
+            },
+            {
+              "correct": false,
+              "text": "Мацури"
+            }
+          ],
+          "fact": "Проходит весной."
+        },
+        {
+          "id": 77,
+          "q": "Этикет при входе в дом?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Снимать обувь"
+            },
+            {
+              "correct": false,
+              "text": "Хлопать"
+            },
+            {
+              "correct": false,
+              "text": "Кланяться дважды"
+            },
+            {
+              "correct": false,
+              "text": "Дарить визитку"
+            }
+          ],
+          "fact": "Обувь оставляют в генкане."
+        },
+        {
+          "id": 78,
+          "q": "Праздник совершеннолетия?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сэйдзин‑сики"
+            },
+            {
+              "correct": false,
+              "text": "О-бон"
+            },
+            {
+              "correct": false,
+              "text": "Танабата"
+            },
+            {
+              "correct": false,
+              "text": "Цукими"
+            }
+          ],
+          "fact": "Традиционно для 20‑летних."
+        },
+        {
+          "id": 79,
+          "q": "Зал для занятий боевыми искусствами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Додзё"
+            },
+            {
+              "correct": false,
+              "text": "Дзиндзя"
+            },
+            {
+              "correct": false,
+              "text": "Сёин"
+            },
+            {
+              "correct": false,
+              "text": "Кайкан"
+            }
+          ],
+          "fact": "«Место пути»."
+        },
+        {
+          "id": 80,
+          "q": "Деревянные сандалии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Гэта"
+            },
+            {
+              "correct": false,
+              "text": "Дзори"
+            },
+            {
+              "correct": false,
+              "text": "Варадзи"
+            },
+            {
+              "correct": false,
+              "text": "Сандо"
+            }
+          ],
+          "fact": "Гэта — высокая подошва."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "questions": [
+        {
+          "id": 81,
+          "q": "Карты/оплата в метро Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Suica/PASMO"
+            },
+            {
+              "correct": false,
+              "text": "Oyster"
+            },
+            {
+              "correct": false,
+              "text": "Octopus"
+            },
+            {
+              "correct": false,
+              "text": "Clipper"
+            }
+          ],
+          "fact": "Suica и PASMO — NFC‑карты."
+        },
+        {
+          "id": 82,
+          "q": "Робот‑гуманоид Honda?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "ASIMO"
+            },
+            {
+              "correct": false,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "Spot"
+            }
+          ],
+          "fact": "ASIMO — проект Honda."
+        },
+        {
+          "id": 83,
+          "q": "Диагональный переход «Scramble» в…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сибуя"
+            },
+            {
+              "correct": false,
+              "text": "Синдзюку"
+            },
+            {
+              "correct": false,
+              "text": "Икэбукуро"
+            },
+            {
+              "correct": false,
+              "text": "Акихабара"
+            }
+          ],
+          "fact": "Сибуя — культовый перекрёсток."
+        },
+        {
+          "id": 84,
+          "q": "Робопёс от Sony?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "QRIO"
+            },
+            {
+              "correct": false,
+              "text": "Kirobo"
+            },
+            {
+              "correct": false,
+              "text": "Pepper"
+            }
+          ],
+          "fact": "Aibo — домашний робот‑питомец."
+        },
+        {
+          "id": 85,
+          "q": "Кто выпустил тамагочи?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Bandai"
+            },
+            {
+              "correct": false,
+              "text": "Sega"
+            },
+            {
+              "correct": false,
+              "text": "Konami"
+            },
+            {
+              "correct": false,
+              "text": "Hudson"
+            }
+          ],
+          "fact": "Гаджет‑питомец от Bandai."
+        },
+        {
+          "id": 86,
+          "q": "Искусственные острова Токийского залива?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Одайба"
+            },
+            {
+              "correct": false,
+              "text": "Гиндза"
+            },
+            {
+              "correct": false,
+              "text": "Нихонбаси"
+            },
+            {
+              "correct": false,
+              "text": "Канда"
+            }
+          ],
+          "fact": "Одайба — футуристическая зона."
+        },
+        {
+          "id": 87,
+          "q": "Карта JR West?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "ICOCA"
+            },
+            {
+              "correct": false,
+              "text": "Suica"
+            },
+            {
+              "correct": false,
+              "text": "PASMO"
+            },
+            {
+              "correct": false,
+              "text": "Kitaca"
+            }
+          ],
+          "fact": "ICOCA — Кансаи/Западная Япония."
+        },
+        {
+          "id": 88,
+          "q": "Поезда с «утконосым» носом для тоннелей?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Shinkansen E5/E6"
+            },
+            {
+              "correct": false,
+              "text": "ICE"
+            },
+            {
+              "correct": false,
+              "text": "TGV"
+            },
+            {
+              "correct": false,
+              "text": "AVE"
+            }
+          ],
+          "fact": "Форма снижает ударную волну."
+        },
+        {
+          "id": 89,
+          "q": "Монорельс к аэропорту Ханэда?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tokyo Monorail"
+            },
+            {
+              "correct": false,
+              "text": "Yurikamome"
+            },
+            {
+              "correct": false,
+              "text": "Nankai"
+            },
+            {
+              "correct": false,
+              "text": "Keisei"
+            }
+          ],
+          "fact": "Соединяет Ханэда и центр."
+        },
+        {
+          "id": 90,
+          "q": "Адреса строятся по…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кварталам/блокам"
+            },
+            {
+              "correct": false,
+              "text": "Названиям улиц"
+            },
+            {
+              "correct": false,
+              "text": "Километрам"
+            },
+            {
+              "correct": false,
+              "text": "Секторам ветров"
+            }
+          ],
+          "fact": "Система кварталов, не улиц."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "questions": [
+        {
+          "id": 91,
+          "q": "Какая реформа изменила строй страны в 1868?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Реставрация Мэйдзи"
+            },
+            {
+              "correct": false,
+              "text": "Реформа Тайка"
+            },
+            {
+              "correct": false,
+              "text": "Сёгунат Эдо"
+            },
+            {
+              "correct": false,
+              "text": "Период Хэйсэй"
+            }
+          ],
+          "fact": "Модернизация, ликвидация сёгуната."
+        },
+        {
+          "id": 92,
+          "q": "Комплект регалий: меч, зеркало и…",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Ясакани‑но магатама"
+            },
+            {
+              "correct": false,
+              "text": "Свиток"
+            },
+            {
+              "correct": false,
+              "text": "Жезл"
+            },
+            {
+              "correct": false,
+              "text": "Кольцо"
+            }
+          ],
+          "fact": "Три святыни — меч, зеркало, яшма."
+        },
+        {
+          "id": 93,
+          "q": "Священная канатная верёвка в синто?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Симэнава"
+            },
+            {
+              "correct": false,
+              "text": "Татэбана"
+            },
+            {
+              "correct": false,
+              "text": "Ториитсуна"
+            },
+            {
+              "correct": false,
+              "text": "Кандзаси"
+            }
+          ],
+          "fact": "Отмечает священное пространство."
+        },
+        {
+          "id": 94,
+          "q": "Город «кухонная столица», родина такояки?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Кобе"
+            },
+            {
+              "correct": false,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нара"
+            }
+          ],
+          "fact": "Осака славится уличной едой."
+        },
+        {
+          "id": 95,
+          "q": "Какая философия сильно повлияла на бусидо?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Конфуцианство"
+            },
+            {
+              "correct": false,
+              "text": "Буддизм тхеравада"
+            },
+            {
+              "correct": false,
+              "text": "Деизм"
+            },
+            {
+              "correct": false,
+              "text": "Суфизм"
+            }
+          ],
+          "fact": "Конфуцианские ценности иерархии и долга."
+        },
+        {
+          "id": 96,
+          "q": "Короткая форма японской поэзии у Басё?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Хайку/Хокку"
+            },
+            {
+              "correct": false,
+              "text": "Танка"
+            },
+            {
+              "correct": false,
+              "text": "Рэнга"
+            },
+            {
+              "correct": false,
+              "text": "Сэнрю"
+            }
+          ],
+          "fact": "Басё — величайший мастер хайку."
+        },
+        {
+          "id": 97,
+          "q": "Исторический центр кузнецов мечей (город Сэки)?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Мино/Сэки"
+            },
+            {
+              "correct": false,
+              "text": "Бидзэн"
+            },
+            {
+              "correct": false,
+              "text": "Идзумо"
+            },
+            {
+              "correct": false,
+              "text": "Хита"
+            }
+          ],
+          "fact": "Сэки — известен клинками со средневековья."
+        },
+        {
+          "id": 98,
+          "q": "Автор «Повести о Гэндзи»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Мурасаки Сикибу"
+            },
+            {
+              "correct": false,
+              "text": "Сэй Сёнагон"
+            },
+            {
+              "correct": false,
+              "text": "Басё"
+            },
+            {
+              "correct": false,
+              "text": "Акутгава"
+            }
+          ],
+          "fact": "Классический роман эпохи Хэйан."
+        },
+        {
+          "id": 99,
+          "q": "Деревянная табличка для желаний?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Эма"
+            },
+            {
+              "correct": false,
+              "text": "Офуда"
+            },
+            {
+              "correct": false,
+              "text": "Омамори"
+            },
+            {
+              "correct": false,
+              "text": "Кумадэ"
+            }
+          ],
+          "fact": "Эма подвешивают у святилищ."
+        },
+        {
+          "id": 100,
+          "q": "Осакинское блюдо — жареные шпажки во фритюре?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кушикацу"
+            },
+            {
+              "correct": false,
+              "text": "Окономияки"
+            },
+            {
+              "correct": false,
+              "text": "Якитори"
+            },
+            {
+              "correct": false,
+              "text": "Якинику"
+            }
+          ],
+          "fact": "Кушикацу — специалитет Осаки."
+        }
+      ]
+    }
+  ]
+}

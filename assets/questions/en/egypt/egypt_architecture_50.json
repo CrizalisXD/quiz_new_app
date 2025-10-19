@@ -1,0 +1,581 @@
+{
+  "country": "Egypt",
+  "pack": "Architecture",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "What is the largest pyramid on the Giza Plateau called?",
+          "answers": [
+            {"correct": true, "text": "Pyramid of Khufu"},
+            {"correct": false, "text": "Pyramid of Khafre"},
+            {"correct": false, "text": "Pyramid of Menkaure"},
+            {"correct": false, "text": "Pyramid of Djoser"}
+          ],
+          "fact": "The Pyramid of Khufu originally stood about 146.6 m tall."
+        },
+        {
+          "id": 2,
+          "q": "Which material predominates in the facing of Old Kingdom pyramids?",
+          "answers": [
+            {"correct": true, "text": "Limestone"},
+            {"correct": false, "text": "Granite"},
+            {"correct": false, "text": "Sandstone"},
+            {"correct": false, "text": "Basalt"}
+          ],
+          "fact": "White Tura limestone was used for the outer casing."
+        },
+        {
+          "id": 3,
+          "q": "What is the ancient Egyptian step mausoleum by the architect Imhotep called?",
+          "answers": [
+            {"correct": true, "text": "Pyramid of Djoser"},
+            {"correct": false, "text": "Bent Pyramid"},
+            {"correct": false, "text": "Red (Pink) Pyramid"},
+            {"correct": false, "text": "Mastaba of Mereruka"}
+          ],
+          "fact": "The Pyramid of Djoser in Saqqara is Egypt’s first large stone monument."
+        },
+        {
+          "id": 4,
+          "q": "Which type of ancient Egyptian temple has an axial plan with a hypostyle hall?",
+          "answers": [
+            {"correct": true, "text": "Temple of Amun type"},
+            {"correct": false, "text": "Rock-cut Nabataean temple"},
+            {"correct": false, "text": "Ziggurat"},
+            {"correct": false, "text": "Megalithic dolmen"}
+          ],
+          "fact": "Typical sequence: pylons → courtyard → hypostyle hall → sanctuary."
+        },
+        {
+          "id": 5,
+          "q": "Where is the rock-cut temple complex of Abu Simbel located?",
+          "answers": [
+            {"correct": true, "text": "Nubia, southern Egypt"},
+            {"correct": false, "text": "Nile Delta"},
+            {"correct": false, "text": "Sinai"},
+            {"correct": false, "text": "Siwa Oasis"}
+          ],
+          "fact": "The temples of Ramesses II and Nefertari were relocated in the 20th century from a flood zone."
+        },
+        {
+          "id": 6,
+          "q": "What is the colonnaded hall with papyrus-shaped capitals in Egyptian temples called?",
+          "answers": [
+            {"correct": true, "text": "Hypostyle"},
+            {"correct": false, "text": "Peristyle"},
+            {"correct": false, "text": "Tripod"},
+            {"correct": false, "text": "Shaft"}
+          ],
+          "fact": "A hypostyle hall is a roofed space supported by many columns."
+        },
+        {
+          "id": 7,
+          "q": "Which New Kingdom capital is known for the Valley of the Kings?",
+          "answers": [
+            {"correct": true, "text": "Thebes"},
+            {"correct": false, "text": "Memphis"},
+            {"correct": false, "text": "Akhetaten"},
+            {"correct": false, "text": "Pi-Ramesses"}
+          ],
+          "fact": "The Valley of the Kings on the Nile’s west bank opposite Thebes holds rock-cut royal tombs."
+        },
+        {
+          "id": 8,
+          "q": "What is the Cairo tower with a lattice-like concrete structure built in the 20th century called?",
+          "answers": [
+            {"correct": true, "text": "Cairo Tower"},
+            {"correct": false, "text": "Iconic Tower"},
+            {"correct": false, "text": "Nile Tower"},
+            {"correct": false, "text": "Riverside Sky"}
+          ],
+          "fact": "Cairo Tower (about 187 m) opened in 1961 on Gezira Island."
+        },
+        {
+          "id": 9,
+          "q": "To which period does the Bent Pyramid at Dahshur belong?",
+          "answers": [
+            {"correct": true, "text": "Old Kingdom, 4th Dynasty"},
+            {"correct": false, "text": "Middle Kingdom, 12th Dynasty"},
+            {"correct": false, "text": "New Kingdom, 18th Dynasty"},
+            {"correct": false, "text": "Late Period"}
+          ],
+          "fact": "The Bent Pyramid is attributed to King Sneferu."
+        },
+        {
+          "id": 10,
+          "q": "What is the form of early royal tombs in Egypt before pyramids?",
+          "answers": [
+            {"correct": true, "text": "Mastaba"},
+            {"correct": false, "text": "Hypostyle"},
+            {"correct": false, "text": "Serdab"},
+            {"correct": false, "text": "Naos"}
+          ],
+          "fact": "A mastaba is a rectangular superstructure with sloping sides."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Which Luxor complex is famous for massive pylons and obelisks?",
+          "answers": [
+            {"correct": true, "text": "Temple of Amun-Ra at Karnak"},
+            {"correct": false, "text": "Temple of Hatshepsut"},
+            {"correct": false, "text": "Temple of Kom Ombo"},
+            {"correct": false, "text": "Temple of Edfu"}
+          ],
+          "fact": "Karnak is one of the largest temple complexes in the world."
+        },
+        {
+          "id": 12,
+          "q": "What type of roof was used in Egyptian hypostyle halls?",
+          "answers": [
+            {"correct": true, "text": "Stone lintel roofing"},
+            {"correct": false, "text": "Groin vaults"},
+            {"correct": false, "text": "Pendentive domes"},
+            {"correct": false, "text": "Timber arches"}
+          ],
+          "fact": "Stone beams rested on dense rows of columns."
+        },
+        {
+          "id": 13,
+          "q": "Where was the Amarna-period capital Akhetaten located?",
+          "answers": [
+            {"correct": true, "text": "El-Amarna"},
+            {"correct": false, "text": "Heliopolis"},
+            {"correct": false, "text": "Alexandria"},
+            {"correct": false, "text": "Tanis"}
+          ],
+          "fact": "The city was founded by Akhenaten and abandoned after his death."
+        },
+        {
+          "id": 14,
+          "q": "What is the name of Egypt’s new administrative capital under construction east of Cairo?",
+          "answers": [
+            {"correct": true, "text": "New Administrative Capital"},
+            {"correct": false, "text": "New Heliopolis"},
+            {"correct": false, "text": "New Giza"},
+            {"correct": false, "text": "Delta City"}
+          ],
+          "fact": "The project includes a business district, government buildings, and skyscrapers."
+        },
+        {
+          "id": 15,
+          "q": "Which bridge in Cairo is known as one of the world’s widest cable-stayed bridges?",
+          "answers": [
+            {"correct": true, "text": "Rod El-Farag Bridge"},
+            {"correct": false, "text": "Qasr El-Nil Bridge"},
+            {"correct": false, "text": "Shubra El-Kheima Bridge"},
+            {"correct": false, "text": "October 6 Bridge"}
+          ],
+          "fact": "The bridge crosses the Nile and features a very wide cable-stayed section."
+        },
+        {
+          "id": 16,
+          "q": "Which rock-cut temple on Thebes’ west bank is dedicated to an 18th Dynasty queen?",
+          "answers": [
+            {"correct": true, "text": "Temple of Hatshepsut at Deir el-Bahari"},
+            {"correct": false, "text": "Temple of Ramesses III at Medinet Habu"},
+            {"correct": false, "text": "Temple of Seti I at Abydos"},
+            {"correct": false, "text": "Temple of Horus at Edfu"}
+          ],
+          "fact": "The complex consists of terraced colonnades built into the cliff."
+        },
+        {
+          "id": 17,
+          "q": "Which stone was often used for monumental statues and inner chamber linings?",
+          "answers": [
+            {"correct": true, "text": "Granite"},
+            {"correct": false, "text": "Marble"},
+            {"correct": false, "text": "Tuff"},
+            {"correct": false, "text": "Slate"}
+          ],
+          "fact": "Aswan granite was used for obelisks and sarcophagi."
+        },
+        {
+          "id": 18,
+          "q": "What is the elongated, boat-like form of an ancient Egyptian capital called?",
+          "answers": [
+            {"correct": true, "text": "Lotus capital"},
+            {"correct": false, "text": "Corinthian capital"},
+            {"correct": false, "text": "Doric capital"},
+            {"correct": false, "text": "Palmette"}
+          ],
+          "fact": "Capitals depicted Nile plants: lotus and papyrus."
+        },
+        {
+          "id": 19,
+          "q": "Which tomb is famous for the mask of Tutankhamun?",
+          "answers": [
+            {"correct": true, "text": "KV62 in the Valley of the Kings"},
+            {"correct": false, "text": "TT100 in Thebes"},
+            {"correct": false, "text": "QH34 at Beni Hasan"},
+            {"correct": false, "text": "SA3038 at Saqqara"}
+          ],
+          "fact": "Howard Carter discovered the tomb in 1922."
+        },
+        {
+          "id": 20,
+          "q": "Which site is known for a group of pyramids including the Bent and the Red?",
+          "answers": [
+            {"correct": true, "text": "Dahshur"},
+            {"correct": false, "text": "Saqqara"},
+            {"correct": false, "text": "Meidum"},
+            {"correct": false, "text": "Giza"}
+          ],
+          "fact": "Dahshur contains pyramids dating to the 4th Dynasty."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Which Greco-Roman city in Egypt is famed for its library in a modern form?",
+          "answers": [
+            {"correct": true, "text": "Alexandria (Library of Alexandria/Bibliotheca Alexandrina)"},
+            {"correct": false, "text": "Thebes"},
+            {"correct": false, "text": "Edfu"},
+            {"correct": false, "text": "Kom El Shoqafa"}
+          ],
+          "fact": "The modern Bibliotheca Alexandrina opened in 2002 with a circular façade."
+        },
+        {
+          "id": 22,
+          "q": "What is the gate type with two massive towers in Egyptian temples called?",
+          "answers": [
+            {"correct": true, "text": "Pylon"},
+            {"correct": false, "text": "Propylaea"},
+            {"correct": false, "text": "Portico"},
+            {"correct": false, "text": "Hypostyle"}
+          ],
+          "fact": "Pylons were decorated with reliefs and flag masts."
+        },
+        {
+          "id": 23,
+          "q": "Which monument was relocated due to the Aswan High Dam in the 1960s?",
+          "answers": [
+            {"correct": true, "text": "Abu Simbel"},
+            {"correct": false, "text": "Temple of Esna"},
+            {"correct": false, "text": "Temple of Philae (Isis)"},
+            {"correct": false, "text": "Temple of Horus at Edfu"}
+          ],
+          "fact": "Abu Simbel was cut into blocks and reassembled above the waterline."
+        },
+        {
+          "id": 24,
+          "q": "Which Cairo district is known for the medieval Bab Zuweila gates?",
+          "answers": [
+            {"correct": true, "text": "Islamic Cairo"},
+            {"correct": false, "text": "Zamalek"},
+            {"correct": false, "text": "Garden City"},
+            {"correct": false, "text": "Heliopolis"}
+          ],
+          "fact": "Bab Zuweila is among the surviving Fatimid-era city gates."
+        },
+        {
+          "id": 25,
+          "q": "What is the traditional courtyard with a colonnade in Hellenistic houses of Alexandria called?",
+          "answers": [
+            {"correct": true, "text": "Peristyle"},
+            {"correct": false, "text": "Atrium"},
+            {"correct": false, "text": "Cloister"},
+            {"correct": false, "text": "Iwan"}
+          ],
+          "fact": "A peristyle is a courtyard surrounded by columns."
+        },
+        {
+          "id": 26,
+          "q": "Which temple on the island of Philae is dedicated to the goddess Isis?",
+          "answers": [
+            {"correct": true, "text": "Temple of Isis at Philae"},
+            {"correct": false, "text": "Temple of Montu"},
+            {"correct": false, "text": "Temple of Sobek"},
+            {"correct": false, "text": "Temple of Hathor at Dendera"}
+          ],
+          "fact": "The complex was also moved to Agilkia Island during reservoir construction."
+        },
+        {
+          "id": 27,
+          "q": "Which skyscraper in the New Administrative Capital is billed as Africa’s tallest (under construction)?",
+          "answers": [
+            {"correct": true, "text": "Iconic Tower"},
+            {"correct": false, "text": "Nile City Towers"},
+            {"correct": false, "text": "Cairo Capital Tower"},
+            {"correct": false, "text": "Gezira Tower"}
+          ],
+          "fact": "Iconic Tower is designed to exceed 350 m in height."
+        },
+        {
+          "id": 28,
+          "q": "Which style is characteristic of Mamluk mausoleums in Cairo?",
+          "answers": [
+            {"correct": true, "text": "Domed tombs with stone carving"},
+            {"correct": false, "text": "Wooden tents"},
+            {"correct": false, "text": "Adobe pyramids"},
+            {"correct": false, "text": "Metal pavilions"}
+          ],
+          "fact": "Mamluk architecture is rich in muqarnas and inlays."
+        },
+        {
+          "id": 29,
+          "q": "What is the niche-like cellular decorative technique in Islamic architecture called?",
+          "answers": [
+            {"correct": true, "text": "Muqarnas"},
+            {"correct": false, "text": "Stereobate"},
+            {"correct": false, "text": "Tughra"},
+            {"correct": false, "text": "Ziggurat"}
+          ],
+          "fact": "Muqarnas creates stalactite forms in domes and portals."
+        },
+        {
+          "id": 30,
+          "q": "Which material is widely used in traditional rural architecture of the Nile Valley?",
+          "answers": [
+            {"correct": true, "text": "Adobe (mud brick)"},
+            {"correct": false, "text": "Wood-concrete"},
+            {"correct": false, "text": "Travertine"},
+            {"correct": false, "text": "Slate"}
+          ],
+          "fact": "Sun-dried bricks have been used since antiquity."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "What is the twin-temple complex at Kom Ombo on both banks of the Nile called?",
+          "answers": [
+            {"correct": true, "text": "Double Temple of Sobek and Haroeris"},
+            {"correct": false, "text": "Temple of Amun and Mut"},
+            {"correct": false, "text": "Temple of Ra-Horakhty"},
+            {"correct": false, "text": "Temple of Ptah and Sekhmet"}
+          ],
+          "fact": "The temple is symmetrical and dedicated to two deities."
+        },
+        {
+          "id": 32,
+          "q": "What type of monuments are the Catacombs of Kom El Shoqafa in Alexandria?",
+          "answers": [
+            {"correct": true, "text": "Underground Greco-Roman tombs"},
+            {"correct": false, "text": "Roman baths"},
+            {"correct": false, "text": "Fortifications"},
+            {"correct": false, "text": "Amphitheatre"}
+          ],
+          "fact": "They combine Greek, Roman, and Egyptian elements."
+        },
+        {
+          "id": 33,
+          "q": "Which well-preserved temple at Edfu is dedicated to the god Horus?",
+          "answers": [
+            {"correct": true, "text": "Temple of Horus at Edfu"},
+            {"correct": false, "text": "Temple of Montu at Medinet Habu"},
+            {"correct": false, "text": "Temple of Nekhbet at El-Kab"},
+            {"correct": false, "text": "Temple of Khonsu at Karnak"}
+          ],
+          "fact": "Built in the Ptolemaic period, it is notable for its complete plan."
+        },
+        {
+          "id": 34,
+          "q": "Which bridge over the Nile is known for the lion statues at its approaches?",
+          "answers": [
+            {"correct": true, "text": "Qasr El-Nil Bridge"},
+            {"correct": false, "text": "Imbaba Bridge"},
+            {"correct": false, "text": "Manyal Bridge"},
+            {"correct": false, "text": "Shubra Bridge"}
+          ],
+          "fact": "Cast-iron lions are a symbol of central Cairo."
+        },
+        {
+          "id": 35,
+          "q": "What is the long market arcade in Islamic Cairo that forms part of the historic street network?",
+          "answers": [
+            {"correct": true, "text": "Khan el-Khalili"},
+            {"correct": false, "text": "Souq el-Gomaa"},
+            {"correct": false, "text": "Wadi el-Muluk"},
+            {"correct": false, "text": "Al-Azhar Souq"}
+          ],
+          "fact": "The district has evolved since the Middle Ages and retains historic fabric."
+        },
+        {
+          "id": 36,
+          "q": "Which façade element is common in traditional Cairene houses for ventilation?",
+          "answers": [
+            {"correct": true, "text": "Mashrabiya"},
+            {"correct": false, "text": "Rosette"},
+            {"correct": false, "text": "Cross-carved casing"},
+            {"correct": false, "text": "Oikos"}
+          ],
+          "fact": "Projecting wooden lattice balconies improve indoor microclimate."
+        },
+        {
+          "id": 37,
+          "q": "Which dam created Lake Nasser and affected the preservation of Nubian monuments?",
+          "answers": [
+            {"correct": true, "text": "Aswan High Dam"},
+            {"correct": false, "text": "Delta Dam"},
+            {"correct": false, "text": "Et-Tibbin Dam"},
+            {"correct": false, "text": "Esna Dam"}
+          ],
+          "fact": "Construction required relocating several temples, including Philae and Abu Simbel."
+        },
+        {
+          "id": 38,
+          "q": "Which plan typifies elite Mamluk houses in Cairo?",
+          "answers": [
+            {"correct": true, "text": "Iwan-and-courtyard layout"},
+            {"correct": false, "text": "Corridor dormitory type"},
+            {"correct": false, "text": "Basilica with naves"},
+            {"correct": false, "text": "Round plan without a courtyard"}
+          ],
+          "fact": "Iwans are three-walled halls opening onto the courtyard."
+        },
+        {
+          "id": 39,
+          "q": "What is the modern pedestrian bridge over the Nile near Zamalek Island with arching elements called?",
+          "answers": [
+            {"correct": true, "text": "El-Tahrir Pedestrian Bridge (Nile Pedestrian Bridge)"},
+            {"correct": false, "text": "October 6 Bridge"},
+            {"correct": false, "text": "Imbaba Bridge"},
+            {"correct": false, "text": "Manyal Bridge"}
+          ],
+          "fact": "New pedestrian links improve access to the riverfront."
+        },
+        {
+          "id": 40,
+          "q": "Which major Cairo complex has included a mosque and university since the 10th century?",
+          "answers": [
+            {"correct": true, "text": "Al-Azhar"},
+            {"correct": false, "text": "Ibn Tulun"},
+            {"correct": false, "text": "Sultan Hassan"},
+            {"correct": false, "text": "Al-Hakim"}
+          ],
+          "fact": "Al-Azhar is one of the oldest functioning Islamic universities."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Which temple complex features the giant entrance statues known as the Colossi of Memnon?",
+          "answers": [
+            {"correct": true, "text": "Mortuary Temple of Amenhotep III"},
+            {"correct": false, "text": "Temple of Ramesses II (Ramesseum)"},
+            {"correct": false, "text": "Temple of Hatshepsut"},
+            {"correct": false, "text": "Temple of Seti I"}
+          ],
+          "fact": "The Colossi are two seated statues made of quartzite sandstone."
+        },
+        {
+          "id": 42,
+          "q": "Which column type often has a capital in the form of an open papyrus?",
+          "answers": [
+            {"correct": true, "text": "Papyrus columns"},
+            {"correct": false, "text": "Tuscan columns"},
+            {"correct": false, "text": "Ionic columns"},
+            {"correct": false, "text": "Composite columns"}
+          ],
+          "fact": "Nile vegetation motifs are a hallmark of temple decoration."
+        },
+        {
+          "id": 43,
+          "q": "Which Islamic monument in Cairo is renowned for its monumental madrasa and 14th-century dome?",
+          "answers": [
+            {"correct": true, "text": "Mosque-Madrasa of Sultan Hassan"},
+            {"correct": false, "text": "Ibn Tulun Mosque"},
+            {"correct": false, "text": "Al-Rifa'i Mosque"},
+            {"correct": false, "text": "Al-Hakim bi-Amr Allah Mosque"}
+          ],
+          "fact": "The Sultan Hassan complex is a masterpiece of Mamluk architecture."
+        },
+        {
+          "id": 44,
+          "q": "Which museum near the Giza pyramids opened in the 21st century as the world’s largest archaeological museum?",
+          "answers": [
+            {"correct": true, "text": "Grand Egyptian Museum (GEM)"},
+            {"correct": false, "text": "Egyptian Museum at Tahrir"},
+            {"correct": false, "text": "Alexandria National Museum"},
+            {"correct": false, "text": "Luxor Museum"}
+          ],
+          "fact": "GEM is located near the Giza Plateau and designed for vast collections."
+        },
+        {
+          "id": 45,
+          "q": "Which element often precedes the sanctuary in an Egyptian temple and is filled with columns?",
+          "answers": [
+            {"correct": true, "text": "Hypostyle hall"},
+            {"correct": false, "text": "Foundation-bedstain"},
+            {"correct": false, "text": "Exonarthex"},
+            {"correct": false, "text": "Crypt"}
+          ],
+          "fact": "The hall provides a gradual transition to the dark sanctuary."
+        },
+        {
+          "id": 46,
+          "q": "Which Cairo district is famed for early 20th-century Modernist and Art Deco buildings?",
+          "answers": [
+            {"correct": true, "text": "Garden City/Downtown"},
+            {"correct": false, "text": "Shubra"},
+            {"correct": false, "text": "Matareya"},
+            {"correct": false, "text": "Helwan"}
+          ],
+          "fact": "Central Cairo preserves eclectic and Art Deco façades from the late 19th–20th centuries."
+        },
+        {
+          "id": 47,
+          "q": "Which ancient Egyptian site is famous for a temple aligned to sunrise on specific solar dates?",
+          "answers": [
+            {"correct": true, "text": "Abu Simbel"},
+            {"correct": false, "text": "Dendera"},
+            {"correct": false, "text": "Edfu"},
+            {"correct": false, "text": "Esna"}
+          ],
+          "fact": "Twice a year a sunbeam illuminates statues deep in the sanctuary."
+        },
+        {
+          "id": 48,
+          "q": "Which major Cairo hub has been redeveloped and is known for its adjoining square?",
+          "answers": [
+            {"correct": true, "text": "Tahrir Square and surrounding quarters"},
+            {"correct": false, "text": "Ramses Square"},
+            {"correct": false, "text": "Opera Square"},
+            {"correct": false, "text": "Ataba Square"}
+          ],
+          "fact": "Upgrades strengthened pedestrian links and greenery."
+        },
+        {
+          "id": 49,
+          "q": "Which royal burials feature underground corridors and chambers instead of above-ground pyramids?",
+          "answers": [
+            {"correct": true, "text": "Rock-cut tombs of the Valley of the Kings"},
+            {"correct": false, "text": "Saqqara mastabas"},
+            {"correct": false, "text": "Dahshur pyramids"},
+            {"correct": false, "text": "Abu Rawash pyramids"}
+          ],
+          "fact": "In the New Kingdom, pharaohs were buried in rock-cut tombs."
+        },
+        {
+          "id": 50,
+          "q": "Which modern urban element is commonly created along Cairo’s Nile embankments?",
+          "answers": [
+            {"correct": true, "text": "Pedestrian and recreational promenades"},
+            {"correct": false, "text": "City ramparts"},
+            {"correct": false, "text": "Adobe dikes"},
+            {"correct": false, "text": "Underground water jets"}
+          ],
+          "fact": "Promenades improve river access and the urban microclimate."
+        }
+      ]
+    }
+  ]
+}

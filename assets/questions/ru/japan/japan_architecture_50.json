@@ -1,0 +1,1181 @@
+{
+  "country": "Japan",
+  "pack": "Architecture & Technology",
+  "levels": [
+    {
+      "level": 1,
+      "questions": [
+        {
+          "id": 1,
+          "q": "Как называется традиционная японская арка-ворота при входе в синтоистское святилище?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тории"
+            },
+            {
+              "correct": false,
+              "text": "Пагода"
+            },
+            {
+              "correct": false,
+              "text": "Тэмпл"
+            },
+            {
+              "correct": false,
+              "text": "Сёин"
+            }
+          ],
+          "fact": "Тории символизируют границу между миром людей и богов."
+        },
+        {
+          "id": 2,
+          "q": "Какая деревянная башня в Токио была высочайшей до 2012 года?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tokyo Tower"
+            },
+            {
+              "correct": false,
+              "text": "Kyoto Tower"
+            },
+            {
+              "correct": false,
+              "text": "Osaka Tower"
+            },
+            {
+              "correct": false,
+              "text": "Skytree"
+            }
+          ],
+          "fact": "Tokyo Tower — 333 м, вдохновлена Эйфелевой башней."
+        },
+        {
+          "id": 3,
+          "q": "Какая современная телебашня в Токио является самой высокой в Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tokyo Skytree"
+            },
+            {
+              "correct": false,
+              "text": "Tokyo Tower"
+            },
+            {
+              "correct": false,
+              "text": "Osaka Sky"
+            },
+            {
+              "correct": false,
+              "text": "Nagoya TV"
+            }
+          ],
+          "fact": "Tokyo Skytree — 634 м, вторая в мире по высоте."
+        },
+        {
+          "id": 4,
+          "q": "Какой замок называют «Белой цаплей»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Химэдзи"
+            },
+            {
+              "correct": false,
+              "text": "Осака"
+            },
+            {
+              "correct": false,
+              "text": "Нагойя"
+            },
+            {
+              "correct": false,
+              "text": "Нидзё"
+            }
+          ],
+          "fact": "Замок Химэдзи — объект ЮНЕСКО и символ феодальной Японии."
+        },
+        {
+          "id": 5,
+          "q": "Как называется резиденция императора в Киото?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Императорский дворец Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нидзё"
+            },
+            {
+              "correct": false,
+              "text": "Кацура"
+            },
+            {
+              "correct": false,
+              "text": "Сандзюсангэндо"
+            }
+          ],
+          "fact": "Императорский дворец был центром власти до 1869."
+        },
+        {
+          "id": 6,
+          "q": "Какая пагода в Нара является одной из самых высоких деревянных структур?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кофукудзи"
+            },
+            {
+              "correct": false,
+              "text": "Тодайдзи"
+            },
+            {
+              "correct": false,
+              "text": "Хорюдзи"
+            },
+            {
+              "correct": false,
+              "text": "Сандзюсангэндо"
+            }
+          ],
+          "fact": "Пятиэтажная пагода Кофукудзи — 50 м."
+        },
+        {
+          "id": 7,
+          "q": "Какой храм хранит гигантского бронзового Будду?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тодайдзи"
+            },
+            {
+              "correct": false,
+              "text": "Сэнсо-дзи"
+            },
+            {
+              "correct": false,
+              "text": "Киёмидзу-дэра"
+            },
+            {
+              "correct": false,
+              "text": "Рёандзи"
+            }
+          ],
+          "fact": "В Нара, храм Тодайдзи хранит статую Дайбуцу (15 м)."
+        },
+        {
+          "id": 8,
+          "q": "Как называется храм в Киото, знаменитый деревянной террасой?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Киёмидзу-дэра"
+            },
+            {
+              "correct": false,
+              "text": "Кинкаку-дзи"
+            },
+            {
+              "correct": false,
+              "text": "Гинкакудзи"
+            },
+            {
+              "correct": false,
+              "text": "Сандзюсангэндо"
+            }
+          ],
+          "fact": "Киёмидзу-дэра — храм чистой воды."
+        },
+        {
+          "id": 9,
+          "q": "Как называется золотой павильон в Киото?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кинкаку-дзи"
+            },
+            {
+              "correct": false,
+              "text": "Гинкакудзи"
+            },
+            {
+              "correct": false,
+              "text": "Киёмидзу"
+            },
+            {
+              "correct": false,
+              "text": "Нидзё"
+            }
+          ],
+          "fact": "Кинкаку-дзи — Золотой павильон, покрыт золотой фольгой."
+        },
+        {
+          "id": 10,
+          "q": "Какой храм известен садом камней дзэн?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Рёандзи"
+            },
+            {
+              "correct": false,
+              "text": "Сандзюсангэндо"
+            },
+            {
+              "correct": false,
+              "text": "Тодайдзи"
+            },
+            {
+              "correct": false,
+              "text": "Кофукудзи"
+            }
+          ],
+          "fact": "Рёандзи — классический каменный сад дзэн."
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "questions": [
+        {
+          "id": 11,
+          "q": "Какой деловой район Токио известен небоскрёбами и правительственными зданиями?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синдзюку"
+            },
+            {
+              "correct": false,
+              "text": "Сибуя"
+            },
+            {
+              "correct": false,
+              "text": "Гинза"
+            },
+            {
+              "correct": false,
+              "text": "Акихабара"
+            }
+          ],
+          "fact": "Синдзюку — центр небоскрёбов и мэрии Токио."
+        },
+        {
+          "id": 12,
+          "q": "Как называется знаменитый перекрёсток с гигантскими экранами в Сибуя?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Scramble Crossing"
+            },
+            {
+              "correct": false,
+              "text": "Times Square"
+            },
+            {
+              "correct": false,
+              "text": "Piccadilly"
+            },
+            {
+              "correct": false,
+              "text": "Cross City"
+            }
+          ],
+          "fact": "Shibuya Scramble — самый загруженный перекрёсток мира."
+        },
+        {
+          "id": 13,
+          "q": "Какой стадион принимал Олимпийские игры 1964 и 2020 годов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Национальный стадион Токио"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама Арена"
+            },
+            {
+              "correct": false,
+              "text": "Киото Арена"
+            },
+            {
+              "correct": false,
+              "text": "Осака Доум"
+            }
+          ],
+          "fact": "Национальный стадион — символ спортивных событий Японии."
+        },
+        {
+          "id": 14,
+          "q": "Какой небоскрёб в Осаке славится смотровой площадкой Umeda Sky Building?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Umeda Sky Building"
+            },
+            {
+              "correct": false,
+              "text": "Abeno Harukas"
+            },
+            {
+              "correct": false,
+              "text": "Osaka Castle Tower"
+            },
+            {
+              "correct": false,
+              "text": "Sky Garden"
+            }
+          ],
+          "fact": "Umeda Sky Building соединён мостом-садом на высоте."
+        },
+        {
+          "id": 15,
+          "q": "Какое здание является самым высоким небоскрёбом Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Abeno Harukas"
+            },
+            {
+              "correct": false,
+              "text": "Tokyo Tower"
+            },
+            {
+              "correct": false,
+              "text": "Nagoya JR Central"
+            },
+            {
+              "correct": false,
+              "text": "Midtown Tower"
+            }
+          ],
+          "fact": "Abeno Harukas в Осаке — 300 м."
+        },
+        {
+          "id": 16,
+          "q": "Какой университетский кампус в Цукубе считается центром научных исследований?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tsukuba Science City"
+            },
+            {
+              "correct": false,
+              "text": "Kyoto Tech"
+            },
+            {
+              "correct": false,
+              "text": "Tokyo U"
+            },
+            {
+              "correct": false,
+              "text": "Nagoya Tech"
+            }
+          ],
+          "fact": "Tsukuba Science City — центр R&D и науки."
+        },
+        {
+          "id": 17,
+          "q": "Какой термин описывает японскую робототехнику и автоматизацию?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Мехатроника"
+            },
+            {
+              "correct": false,
+              "text": "Кибернетика"
+            },
+            {
+              "correct": false,
+              "text": "Айронроника"
+            },
+            {
+              "correct": false,
+              "text": "Дигитроника"
+            }
+          ],
+          "fact": "Япония лидирует в мехатронике и робототехнике."
+        },
+        {
+          "id": 18,
+          "q": "Какой робот-гуманоид от Honda известен во всём мире?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "ASIMO"
+            },
+            {
+              "correct": false,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "QRIO"
+            }
+          ],
+          "fact": "ASIMO — проект Honda, один из первых гуманоидов."
+        },
+        {
+          "id": 19,
+          "q": "Какой робот от Sony стал электронным питомцем?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "ASIMO"
+            },
+            {
+              "correct": false,
+              "text": "Robi"
+            }
+          ],
+          "fact": "Aibo — собака-робот."
+        },
+        {
+          "id": 20,
+          "q": "Какой робот-компаньон SoftBank известен общением с людьми?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "ASIMO"
+            },
+            {
+              "correct": false,
+              "text": "Robi"
+            },
+            {
+              "correct": false,
+              "text": "Paro"
+            }
+          ],
+          "fact": "Pepper умеет распознавать эмоции и общаться."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "questions": [
+        {
+          "id": 21,
+          "q": "Как называется традиционный японский дом с татами и сдвижными дверями?",
+          "answers": [
+            {
+              "correct": false,
+              "text": "Матиа"
+            },
+            {
+              "correct": false,
+              "text": "Рёкан"
+            },
+            {
+              "correct": true,
+              "text": "Минка"
+            },
+            {
+              "correct": false,
+              "text": "Капсула"
+            }
+          ],
+          "fact": "Минка — традиционный жилой дом."
+        },
+        {
+          "id": 22,
+          "q": "Как называются бумажные раздвижные перегородки?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Сёдзи"
+            },
+            {
+              "correct": false,
+              "text": "Фусума"
+            },
+            {
+              "correct": false,
+              "text": "Татами"
+            },
+            {
+              "correct": false,
+              "text": "Тори"
+            }
+          ],
+          "fact": "Сёдзи делают из дерева и бумаги."
+        },
+        {
+          "id": 23,
+          "q": "Как называются толстые соломенные маты на полу?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Татами"
+            },
+            {
+              "correct": false,
+              "text": "Фусума"
+            },
+            {
+              "correct": false,
+              "text": "Сёдзи"
+            },
+            {
+              "correct": false,
+              "text": "Офуро"
+            }
+          ],
+          "fact": "Татами — стандартная мера площади комнат."
+        },
+        {
+          "id": 24,
+          "q": "Как называется глубокая ванна в японском доме?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Офуро"
+            },
+            {
+              "correct": false,
+              "text": "Онсэн"
+            },
+            {
+              "correct": false,
+              "text": "Сэнто"
+            },
+            {
+              "correct": false,
+              "text": "Фуро"
+            }
+          ],
+          "fact": "Офуро — домашняя ванна для расслабления."
+        },
+        {
+          "id": 25,
+          "q": "Как называются японские мини-сады в домах и храмах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Каре-сансуй"
+            },
+            {
+              "correct": false,
+              "text": "Бонсай"
+            },
+            {
+              "correct": false,
+              "text": "Икебана"
+            },
+            {
+              "correct": false,
+              "text": "Тэйэн"
+            }
+          ],
+          "fact": "Каре-сансуй — сухой сад камней."
+        },
+        {
+          "id": 26,
+          "q": "Как называется техника ухода за миниатюрными деревьями?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Бонсай"
+            },
+            {
+              "correct": false,
+              "text": "Икебана"
+            },
+            {
+              "correct": false,
+              "text": "Суми-э"
+            },
+            {
+              "correct": false,
+              "text": "Сёдо"
+            }
+          ],
+          "fact": "Бонсай — выращивание миниатюрных деревьев."
+        },
+        {
+          "id": 27,
+          "q": "Какой тип гостиницы сочетает татами, футон и онсэн?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Рёкан"
+            },
+            {
+              "correct": false,
+              "text": "Капсульный отель"
+            },
+            {
+              "correct": false,
+              "text": "Хостел"
+            },
+            {
+              "correct": false,
+              "text": "Мотель"
+            }
+          ],
+          "fact": "Рёкан — традиционный японский гостиничный дом."
+        },
+        {
+          "id": 28,
+          "q": "Как называется чайная церемония?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тяною"
+            },
+            {
+              "correct": false,
+              "text": "Маття‑сики"
+            },
+            {
+              "correct": false,
+              "text": "Сакэ‑но ю"
+            },
+            {
+              "correct": false,
+              "text": "Сюку"
+            }
+          ],
+          "fact": "Тяною — искусство приготовления и подачи чая."
+        },
+        {
+          "id": 29,
+          "q": "Как называется архитектурный стиль японских замков?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Тэнсю"
+            },
+            {
+              "correct": false,
+              "text": "Пагода"
+            },
+            {
+              "correct": false,
+              "text": "Дзэн"
+            },
+            {
+              "correct": false,
+              "text": "Сёин"
+            }
+          ],
+          "fact": "Тэнсю — главная башня замка."
+        },
+        {
+          "id": 30,
+          "q": "Какая постройка символизирует синтоистский стиль и строится без гвоздей?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Исэ дзингу"
+            },
+            {
+              "correct": false,
+              "text": "Тодайдзи"
+            },
+            {
+              "correct": false,
+              "text": "Кофукудзи"
+            },
+            {
+              "correct": false,
+              "text": "Рёандзи"
+            }
+          ],
+          "fact": "Исэ дзингу перестраивается каждые 20 лет."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "questions": [
+        {
+          "id": 31,
+          "q": "Как называется сеть скоростных поездов Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синкансэн"
+            },
+            {
+              "correct": false,
+              "text": "ICE"
+            },
+            {
+              "correct": false,
+              "text": "TGV"
+            },
+            {
+              "correct": false,
+              "text": "AVE"
+            }
+          ],
+          "fact": "Синкансэн — «пули» до 320 км/ч."
+        },
+        {
+          "id": 32,
+          "q": "Как называется карта оплаты в Токио для метро и поездов?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Suica/PASMO"
+            },
+            {
+              "correct": false,
+              "text": "Oyster"
+            },
+            {
+              "correct": false,
+              "text": "Octopus"
+            },
+            {
+              "correct": false,
+              "text": "ICOCA"
+            }
+          ],
+          "fact": "Suica и PASMO — бесконтактные карты."
+        },
+        {
+          "id": 33,
+          "q": "Какой монорельс соединяет Ханэда и центр Токио?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Tokyo Monorail"
+            },
+            {
+              "correct": false,
+              "text": "Yurikamome"
+            },
+            {
+              "correct": false,
+              "text": "Keisei"
+            },
+            {
+              "correct": false,
+              "text": "Nankai"
+            }
+          ],
+          "fact": "Tokyo Monorail работает с 1964 года."
+        },
+        {
+          "id": 34,
+          "q": "Какой футуристический район построен на искусственных островах?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Одайба"
+            },
+            {
+              "correct": false,
+              "text": "Сибуя"
+            },
+            {
+              "correct": false,
+              "text": "Гинза"
+            },
+            {
+              "correct": false,
+              "text": "Канда"
+            }
+          ],
+          "fact": "Одайба — искусственные острова Tokyo Bay."
+        },
+        {
+          "id": 35,
+          "q": "Как называется сеть автоматических магазинов 24/7?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Конбини"
+            },
+            {
+              "correct": false,
+              "text": "Супермаркет"
+            },
+            {
+              "correct": false,
+              "text": "Минимаркет"
+            },
+            {
+              "correct": false,
+              "text": "Киоск"
+            }
+          ],
+          "fact": "Конбини — Lawson, FamilyMart, 7‑Eleven."
+        },
+        {
+          "id": 36,
+          "q": "Как называется пересадочный узел — крупнейший в мире по пассажиропотоку?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Синдзюку"
+            },
+            {
+              "correct": false,
+              "text": "Токио"
+            },
+            {
+              "correct": false,
+              "text": "Шин-Осака"
+            },
+            {
+              "correct": false,
+              "text": "Йокогама"
+            }
+          ],
+          "fact": "Синдзюку перевозит более 3 млн пассажиров в день."
+        },
+        {
+          "id": 37,
+          "q": "Как называется региональная карта в Осаке и Киото?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "ICOCA"
+            },
+            {
+              "correct": false,
+              "text": "Suica"
+            },
+            {
+              "correct": false,
+              "text": "PASMO"
+            },
+            {
+              "correct": false,
+              "text": "Kitaca"
+            }
+          ],
+          "fact": "ICOCA действует на Kansai JR West."
+        },
+        {
+          "id": 38,
+          "q": "Какой поезд‑пуля имеет «утконосый» нос?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "E5 Shinkansen"
+            },
+            {
+              "correct": false,
+              "text": "ICE4"
+            },
+            {
+              "correct": false,
+              "text": "TGV Duplex"
+            },
+            {
+              "correct": false,
+              "text": "AVE"
+            }
+          ],
+          "fact": "Аэродинамика снижает шум в тоннелях."
+        },
+        {
+          "id": 39,
+          "q": "Какой аэропорт построен на искусственном острове в Осаке?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Чубу"
+            }
+          ],
+          "fact": "Аэропорт Кансай открыт в 1994 году."
+        },
+        {
+          "id": 40,
+          "q": "Какой аэропорт обслуживает Токио как международный главный?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Нарита"
+            },
+            {
+              "correct": false,
+              "text": "Ханэда"
+            },
+            {
+              "correct": false,
+              "text": "Кансай"
+            },
+            {
+              "correct": false,
+              "text": "Итами"
+            }
+          ],
+          "fact": "Нарита обслуживает основную часть международных рейсов."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "questions": [
+        {
+          "id": 41,
+          "q": "Какая компания выпустила робота‑питомца Aibo?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "SoftBank"
+            },
+            {
+              "correct": false,
+              "text": "Panasonic"
+            }
+          ],
+          "fact": "Aibo — робот‑собака."
+        },
+        {
+          "id": 42,
+          "q": "Какая компания выпустила робота ASIMO?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "Toyota"
+            },
+            {
+              "correct": false,
+              "text": "SoftBank"
+            }
+          ],
+          "fact": "ASIMO — гуманоид Honda."
+        },
+        {
+          "id": 43,
+          "q": "Какой робот SoftBank умеет распознавать эмоции?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "ASIMO"
+            },
+            {
+              "correct": false,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "Paro"
+            }
+          ],
+          "fact": "Pepper стал популярным в магазинах и сервисах."
+        },
+        {
+          "id": 44,
+          "q": "Какой робот‑тюлень используется в терапии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Paro"
+            },
+            {
+              "correct": false,
+              "text": "Pepper"
+            },
+            {
+              "correct": false,
+              "text": "Aibo"
+            },
+            {
+              "correct": false,
+              "text": "Robi"
+            }
+          ],
+          "fact": "Paro — терапевтический робот‑питомец."
+        },
+        {
+          "id": 45,
+          "q": "Какой город называют «японской силиконовой долиной»?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Цукуба"
+            },
+            {
+              "correct": false,
+              "text": "Киото"
+            },
+            {
+              "correct": false,
+              "text": "Нагоя"
+            },
+            {
+              "correct": false,
+              "text": "Осака"
+            }
+          ],
+          "fact": "Цукуба — центр научных исследований."
+        },
+        {
+          "id": 46,
+          "q": "Какая технология поездов развивается как альтернатива Shinkansen?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Маглев"
+            },
+            {
+              "correct": false,
+              "text": "Монорельс"
+            },
+            {
+              "correct": false,
+              "text": "Метро"
+            },
+            {
+              "correct": false,
+              "text": "Hyperloop"
+            }
+          ],
+          "fact": "Маглев — магнитная левитация, JR Central строит линию."
+        },
+        {
+          "id": 47,
+          "q": "Какой маглев показал рекордную скорость 603 км/ч?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "JR Central L0"
+            },
+            {
+              "correct": false,
+              "text": "JR East E5"
+            },
+            {
+              "correct": false,
+              "text": "MagnetoX"
+            },
+            {
+              "correct": false,
+              "text": "SuperRail"
+            }
+          ],
+          "fact": "L0 Series JR Central — мировой рекорд."
+        },
+        {
+          "id": 48,
+          "q": "Какая концепция «умных домов» популярна в Японии?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Smart Home"
+            },
+            {
+              "correct": false,
+              "text": "Digital House"
+            },
+            {
+              "correct": false,
+              "text": "NeoHouse"
+            },
+            {
+              "correct": false,
+              "text": "CyberHome"
+            }
+          ],
+          "fact": "Японские компании внедряют Smart Home технологии."
+        },
+        {
+          "id": 49,
+          "q": "Как называется технология безналичной оплаты с помощью телефона?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Osaifu-Keitai"
+            },
+            {
+              "correct": false,
+              "text": "Apple Pay"
+            },
+            {
+              "correct": false,
+              "text": "Samsung Pay"
+            },
+            {
+              "correct": false,
+              "text": "PayPass"
+            }
+          ],
+          "fact": "Osaifu‑Keitai внедрена в Японии в 2004 году."
+        },
+        {
+          "id": 50,
+          "q": "Какая японская компания известна промышленными роботами?",
+          "answers": [
+            {
+              "correct": true,
+              "text": "Fanuc"
+            },
+            {
+              "correct": false,
+              "text": "Honda"
+            },
+            {
+              "correct": false,
+              "text": "Sony"
+            },
+            {
+              "correct": false,
+              "text": "NEC"
+            }
+          ],
+          "fact": "Fanuc — лидер в промышленных роботах."
+        }
+      ]
+    }
+  ]
+}

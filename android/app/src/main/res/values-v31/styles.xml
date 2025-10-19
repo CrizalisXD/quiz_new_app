@@ -1,0 +1,11 @@
+<resources>
+  <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+      <item name="android:windowSplashScreenBackground">@color/splash_bg</item>
+      <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+      <item name="android:windowSplashScreenIconBackgroundColor">@null</item>
+  </style>
+
+  <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+      <item name="android:windowBackground">@android:color/white</item>
+  </style>
+</resources>

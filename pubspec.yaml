@@ -1,0 +1,104 @@
+name: quiz_new_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  shared_preferences: ^2.3.2
+  image_picker: ^1.1.2
+  share_plus: ^8.0.3
+  cross_file: ^0.3.4
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  http: ^1.2.2
+  url_launcher: ^6.3.0
+  package_info_plus: ^8.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.2
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/logo/logo_game.png
+    - assets/images/categories/japan.png
+    - assets/images/categories/egypt.png
+    - assets/images/categories/france.png
+    - assets/images/categories/brazil.png
+    - assets/images/categories/norway.png
+    - assets/images/bg/home/home.png
+    - assets/images/bg/category/
+    - assets/images/ui/japan_cat/
+    - assets/images/ui/japan_classic_lvl/
+    - assets/images/ui/japan_hard_lvl/
+    - assets/images/ui/japan_games_lvl/
+    - assets/images/ui/japan_legends_lvl/
+    - assets/images/ui/japan_cinema_lvl/
+    - assets/images/ui/japan_cuisine_lvl/
+    - assets/images/ui/japan_transport_lvl/
+    - assets/images/ui/japan_unexpected_lvl/
+    - assets/images/ui/japan_history_personalities_lvl/  
+    - assets/images/ui/japan_architecture_lvl/    
+    - assets/questions/ru/brazil/
+    - assets/questions/ru/japan/
+    - assets/questions/ru/egypt/
+    - assets/questions/ru/france/
+    - assets/questions/ru/norway/
+    - assets/questions/en/japan/
+    - assets/questions/en/brazil/
+    - assets/questions/en/egypt/  
+    - assets/questions/en/france/
+    - assets/questions/en/norway/
+    - assets/images/bg/level/
+    - assets/images/bg/quiz/
+    - assets/images/reward/japan/japan_classic_lvl/
+    - assets/images/reward/japan/japan_hard_lvl/  
+    - assets/images/reward/japan/japan_games_lvl/
+    - assets/images/reward/japan/japan_legends_lvl/   
+    - assets/images/reward/japan/japan_cinema_lvl/
+    - assets/images/reward/japan/japan_cuisine_lvl/
+    - assets/images/reward/japan/japan_transport_lvl/
+    - assets/images/reward/japan/japan_unexpected_lvl/  
+    - assets/images/reward/japan/japan_history_personalities_lvl/
+    - assets/images/reward/japan/japan_architecture_lvl/
+    - assets/images/profile/avatar/
+
+
+
+flutter_launcher_icons:
+  ios: true
+  android: true
+  image_path: assets/images/logo/logo_game.png
+  remove_alpha_ios: true
+  android_12:
+    image: assets/images/logo/logo_game_android12.png
+    color: "#E6F7F5"
+    # Можно использовать цвет вместо файла: icon_background: "#ffffff"
+  min_sdk_android: 21
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  # общий сплэш (до Android 11 включительно и iOS)
+  background_image: assets/images/backgrounds/splash/background_splash.png
+  image: assets/images/logo/logo_game.png
+
+  # отдельные требования Android 12+
+  android_12:
+    color: "#E6F7F5"
+    image: assets/images/logo/logo_game.png
+    android_gravity: center
