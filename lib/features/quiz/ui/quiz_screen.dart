@@ -15,24 +15,51 @@ import '../../../services/report_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 /// ===== МОДЕЛИ =====
+enum QuizDifficulty { easy, normal, hard }
+
 class QA {
   final String q;
   final List<Ans> answers;
   final int timeSec;
   final String? fact;
   final int? id;
-  QA({required this.q, required this.answers, required this.timeSec, this.fact, this.id});
+  // Новые поля (необязательные)
+  final QuizDifficulty difficulty;
+  final List<String> tags;
+
+  QA({
+    required this.q,
+    required this.answers,
+    required this.timeSec,
+    this.fact,
+    this.id,
+    this.difficulty = QuizDifficulty.normal,
+    this.tags = const [],
+  });
 
   factory QA.fromMap(Map m) {
     final qText = (m['q'] ?? '').toString();
     final fact = (m['fact'] as String?)?.trim();
     final timeSec = (m['timeSec'] is int) ? m['timeSec'] as int : 20;
     final id = (m['id'] is int) ? m['id'] as int : null;
+    // Разбор сложности и тегов (необязательно)
+    final rawDiff = (m['difficulty'] ?? 'normal').toString().toLowerCase();
+    QuizDifficulty diff;
+    if (rawDiff == 'easy') {
+      diff = QuizDifficulty.easy;
+    } else if (rawDiff == 'hard') {
+      diff = QuizDifficulty.hard;
+    } else {
+      diff = QuizDifficulty.normal;
+    }
+    final tags = (m['tags'] is List)
+        ? (m['tags'] as List).map((e) => e.toString()).where((e) => e.isNotEmpty).toList()
+        : const <String>[];
 
     // Формат 1: { answers: [ {text, correct}, ... ] }
     if (m['answers'] is List) {
       final list = (m['answers'] as List).map((e) => Ans.fromMap(e as Map)).toList();
-      return QA(q: qText, answers: list, timeSec: timeSec, fact: fact, id: id);
+      return QA(q: qText, answers: list, timeSec: timeSec, fact: fact, id: id, difficulty: diff, tags: tags);
     }
     // Формат 2 (country.json): { options: [...], answerIndex: N }
     if (m['options'] is List) {
@@ -42,10 +69,10 @@ class QA {
           .entries
           .map((e) => Ans(text: e.value.toString(), correct: e.key == idx))
           .toList();
-      return QA(q: qText, answers: opts, timeSec: timeSec, fact: fact, id: id);
+      return QA(q: qText, answers: opts, timeSec: timeSec, fact: fact, id: id, difficulty: diff, tags: tags);
     }
     // Fallback: пустой вопрос, чтобы не падать
-    return QA(q: qText, answers: const [], timeSec: timeSec, fact: fact, id: id);
+    return QA(q: qText, answers: const [], timeSec: timeSec, fact: fact, id: id, difficulty: diff, tags: tags);
   }
 }
 
@@ -61,11 +88,18 @@ class Ans {
   }
 }
 
+// Добавьте тип коллбэка-загрузчика, чтобы подменять источник вопросов (API/Mock/Assets).
+typedef QuestionLoader = Future<List<QA>> Function(String pack, int level);
+
 /// ===== ЭКРАН =====
 class QuizScreen extends ConsumerStatefulWidget {
   final String pack; // имя файла в assets/questions/ru без .json (country/subcategory key)
   final int level;   // 1..N
-  const QuizScreen({super.key, required this.pack, required this.level});
+  // Новый необязательный загрузчик: если задан — возьмём вопросы из него (например, из API),
+  // иначе используется текущая загрузка из ассетов.
+  final QuestionLoader? loader;
+
+  const QuizScreen({super.key, required this.pack, required this.level, this.loader});
 
   @override
   ConsumerState<QuizScreen> createState() => _QState();
@@ -87,7 +121,23 @@ class _QState extends ConsumerState<QuizScreen> {
   @override
   void initState() {
     super.initState();
-  _future = _loadLevel(widget.pack, widget.level);
+    // Если передан кастомный loader — используем его и гарантированно запускаем таймер после получения данных.
+    if (widget.loader != null) {
+      _future = widget.loader!(widget.pack, widget.level).then((qs) {
+        final normalized = _normalizeQuestions(qs);
+        if (normalized.isEmpty) {
+          throw Exception('Нет валидных вопросов для уровня ${widget.level} (loader вернул пустой список)');
+        }
+        _startTimer(normalized.first.timeSec);
+        _logEvent('quiz_start', {'pack': widget.pack, 'level': widget.level, 'count': normalized.length});
+        return normalized;
+      });
+    } else {
+      _future = _loadLevel(widget.pack, widget.level).then((qs) {
+        _logEvent('quiz_start', {'pack': widget.pack, 'level': widget.level, 'count': qs.length});
+        return qs;
+      });
+    }
     // Подгрузим индекс ассетов заранее, чтобы можно было выбрать фон
     AssetsIndex.ensureLoaded();
     // Попробуем выгрузить локальную очередь отчётов
@@ -150,6 +200,15 @@ class _QState extends ConsumerState<QuizScreen> {
   'assets/questions/ru/$country/${pack}_50.json',
     }.toList();
 
+    // Fallback на частую опечатку в имени файла: egypt -> egypet (только для файлов в подпапке country)
+    if (country.toLowerCase() == 'egypt') {
+      final typoPack = pack.replaceFirst('egypt', 'egypet');
+      candidates.addAll([
+        'assets/questions/$qLocale/$country/${typoPack}_100.json',
+        'assets/questions/$qLocale/$country/${typoPack}_50.json',
+      ]);
+    }
+
     for (final p in candidates) {
       raw = await tryLoad(p);
       if (raw != null) {
@@ -182,7 +241,12 @@ class _QState extends ConsumerState<QuizScreen> {
     if (qs.isEmpty) {
       throw Exception('Нет вопросов для уровня $level в $pack.json');
     }
-    // Перемешаем варианты ответов, чтобы правильный не был всегда первым
+
+    // Нормализуем вопросы (>=2 ответа, ровно 1 correct), затем перемешаем варианты.
+    qs = _normalizeQuestions(qs);
+    if (qs.isEmpty) {
+      throw Exception('После валидации не осталось валидных вопросов для уровня $level');
+    }
     final rng = Random();
     for (final q in qs) {
       q.answers.shuffle(rng);
@@ -191,9 +255,36 @@ class _QState extends ConsumerState<QuizScreen> {
     return qs;
   }
 
+  // Нормализация вопросов: >=2 варианта и ровно 1 correct. Если 0 correct — помечаем первый; если >1 — оставляем первым найденным.
+  List<QA> _normalizeQuestions(List<QA> input) {
+    final out = <QA>[];
+    for (final qa in input) {
+      final ans = qa.answers;
+      if (ans.length < 2) continue;
+      final firstCorrectIdx = ans.indexWhere((a) => a.correct);
+      int ensureCorrectIdx = firstCorrectIdx >= 0 ? firstCorrectIdx : 0;
+      final normalizedAnswers = ans.asMap().entries.map((e) {
+        final makeCorrect = e.key == ensureCorrectIdx;
+        return Ans(text: e.value.text, correct: makeCorrect);
+      }).toList();
+      final safeTime = qa.timeSec >= 1 ? qa.timeSec : 20;
+      out.add(QA(
+        q: qa.q,
+        answers: normalizedAnswers,
+        timeSec: safeTime,
+        fact: qa.fact,
+        id: qa.id,
+        difficulty: qa.difficulty,
+        tags: qa.tags,
+      ));
+    }
+    return out;
+  }
+
   void _startTimer(int sec) {
     _t?.cancel();
-    setState(() => _left = sec);
+    final start = (sec >= 1) ? sec : 20;
+    setState(() => _left = start);
     _t = Timer.periodic(const Duration(seconds: 1), (tm) {
       if (_left <= 1) {
         tm.cancel();
@@ -217,6 +308,7 @@ class _QState extends ConsumerState<QuizScreen> {
 
   void _pick(int idx, QA qa) {
     if (_locked) return;
+    if (idx < 0 || idx >= qa.answers.length) return;
     final ok = qa.answers[idx].correct;
     setState(() {
       _locked = true;
@@ -224,6 +316,14 @@ class _QState extends ConsumerState<QuizScreen> {
       if (ok) _score++;
     });
     _t?.cancel();
+    _logEvent('answer', {
+      'pack': widget.pack,
+      'level': widget.level,
+      'index': _i,
+      'correct': ok,
+      'difficulty': qa.difficulty.name,
+      'timeSpent': (qa.timeSec - _left).clamp(0, qa.timeSec),
+    });
   }
 
   void _next(List<QA> all) {
@@ -291,6 +391,7 @@ class _QState extends ConsumerState<QuizScreen> {
       _hidden.addAll(toHide);
       _fiftyLeft--;
     });
+    _logEvent('hint_50', {'pack': widget.pack, 'level': widget.level, 'index': _i});
   }
 
   void _useAddTime() {
@@ -299,9 +400,90 @@ class _QState extends ConsumerState<QuizScreen> {
       _left += 5;
       _addTimeLeft--;
     });
+    _logEvent('hint_time', {'pack': widget.pack, 'level': widget.level, 'index': _i});
   }
 
-  Future<void> _report(QA qa) async {
+  void _logEvent(String name, Map<String, Object?> data) {
+    // Лёгкая локальная аналитика (замените на Firebase/Segment при необходимости)
+    // ignore: avoid_print
+    print('[analytics] $name ${jsonEncode(data)}');
+  }
+
+  Future<void> _openReportDialog(QA qa) async {
+    String reason = 'wrong_fact';
+    String? comment;
+
+    final submitted = await showDialog<bool>(
+      context: context,
+      builder: (ctx) {
+        String localReason = reason;
+        final controller = TextEditingController(text: comment ?? '');
+        return StatefulBuilder(
+          builder: (ctx, setState) => AlertDialog(
+            title: const Text('Пожаловаться на вопрос'),
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RadioListTile<String>(
+                    title: const Text('Ошибка факта'),
+                    value: 'wrong_fact',
+                    groupValue: localReason,
+                    onChanged: (v) => setState(() => localReason = v!),
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Двусмысленность'),
+                    value: 'ambiguous',
+                    groupValue: localReason,
+                    onChanged: (v) => setState(() => localReason = v!),
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Опечатка'),
+                    value: 'typo',
+                    groupValue: localReason,
+                    onChanged: (v) => setState(() => localReason = v!),
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Другое'),
+                    value: 'other',
+                    groupValue: localReason,
+                    onChanged: (v) => setState(() => localReason = v!),
+                  ),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: controller,
+                    decoration: const InputDecoration(hintText: 'Комментарий (необязательно)'),
+                    maxLines: 3,
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text('Отмена'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  reason = localReason;
+                  final text = controller.text.trim();
+                  comment = text.isEmpty ? null : text;
+                  Navigator.pop(ctx, true);
+                },
+                child: const Text('Отправить'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+
+    if (submitted == true) {
+      await _report(qa, reason: reason, comment: comment);
+    }
+  }
+
+  Future<void> _report(QA qa, {String? reason, String? comment}) async {
     String version = 'unknown';
     try {
       final info = await PackageInfo.fromPlatform();
@@ -310,6 +492,10 @@ class _QState extends ConsumerState<QuizScreen> {
     final parts = widget.pack.split('_');
     final country = parts.isNotEmpty ? parts.first : widget.pack;
     final options = qa.answers.map((e) => e.text).toList();
+    // Прокинем причину/комментарий в meta, не ломая ReportService
+    if (reason != null) options.add('[reason] $reason');
+    if (comment != null && comment.isNotEmpty) options.add('[comment] $comment');
+
     final payload = ReportPayload(
       country: country,
       pack: widget.pack,
@@ -331,12 +517,8 @@ class _QState extends ConsumerState<QuizScreen> {
     final hasHttp = ReportConfig.httpEndpoint.isNotEmpty;
     final message = ok
         ? 'Откроется почтовый клиент'
-        : (hasHttp
-            ? 'Сохранено и будет отправлено позже'
-            : 'Не удалось открыть почтовое приложение. Установите Gmail/Outlook и попробуйте снова.');
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+        : (hasHttp ? 'Сохранено и будет отправлено позже' : 'Не удалось открыть почтовое приложение. Установите Gmail/Outlook и попробуйте снова.');
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -369,9 +551,16 @@ class _QState extends ConsumerState<QuizScreen> {
         // Определим страну/подкатегорию на основе pack (до/после первого '_')
         final parts = widget.pack.split('_');
         final country = parts.isNotEmpty ? parts.first : widget.pack;
-  final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
-  final subcat = _imageSubcatAlias(subcatRaw);
-  final quizBg = _pickQuizBackground(country, subcat, widget.level);
+        final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
+        final subcat = _imageSubcatAlias(subcatRaw);
+        final quizBg = _pickQuizBackground(country, subcat, widget.level);
+        // Precache выбранный фон
+        if (quizBg != null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) precacheImage(AssetImage(quizBg), context);
+          });
+        }
+
         return Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
@@ -406,7 +595,7 @@ class _QState extends ConsumerState<QuizScreen> {
                 padding: EdgeInsets.fromLTRB(16, contentTopPadding(context), 16, 16),
                 child: Column(
                   children: [
-                    // Вопрос — карточка растягивается, занимает всю доступную высоту до ответов
+                    // Вопрос — карточка
                     Expanded(
                       child: Card(
                         color: Colors.white.withOpacity(0.95),
@@ -417,10 +606,20 @@ class _QState extends ConsumerState<QuizScreen> {
                           child: SingleChildScrollView(
                             physics: const BouncingScrollPhysics(),
                             child: Center(
-                              child: Text(
-                                qa.q,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  // Метка сложности
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 8),
+                                    child: _DifficultyChip(difficulty: qa.difficulty),
+                                  ),
+                                  Text(
+                                    qa.q,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -467,7 +666,10 @@ class _QState extends ConsumerState<QuizScreen> {
                         builder: (context) {
                           final primary = Theme.of(context).colorScheme.primary;
                           return TextButton.icon(
-                            onPressed: () => _report(qa),
+                            onPressed: () async {
+                              await _openReportDialog(qa);
+                              _logEvent('report', {'pack': widget.pack, 'level': widget.level, 'index': _i});
+                            },
                             icon: const Icon(Icons.flag_outlined, size: 20),
                             label: const Text('Пожаловаться на вопрос'),
                             style: TextButton.styleFrom(
@@ -478,10 +680,10 @@ class _QState extends ConsumerState<QuizScreen> {
                             ).copyWith(
                               overlayColor: MaterialStateProperty.resolveWith((states) {
                                 if (states.contains(MaterialState.pressed)) {
-                                  return primary.withValues(alpha: 0.12);
+                                  return primary.withOpacity(0.12);
                                 }
                                 if (states.contains(MaterialState.hovered)) {
-                                  return primary.withValues(alpha: 0.08);
+                                  return primary.withOpacity(0.08);
                                 }
                                 return null;
                               }),
@@ -516,7 +718,19 @@ class _QState extends ConsumerState<QuizScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: (_picked != null && _picked! >= 0) ? () => _next(all) : null,
+                        onPressed: (_picked != null && _picked! >= 0)
+                            ? () {
+                                if (_i + 1 >= all.length) {
+                                  _logEvent('quiz_finish', {
+                                    'pack': widget.pack,
+                                    'level': widget.level,
+                                    'score': _score,
+                                    'total': all.length,
+                                  });
+                                }
+                                _next(all);
+                              }
+                            : null,
                         child: Text(_i + 1 >= all.length
                             ? AppLocalizations.of(context).finish
                             : AppLocalizations.of(context).next),
@@ -533,34 +747,44 @@ class _QState extends ConsumerState<QuizScreen> {
   }
 }
 
-/// Фон для экрана вопроса из assets/images/bg/quiz/
-/// Новый приоритет по договорённости:
-/// 1) background_{country}.png
-/// Fallbacks (оставляем поддержку старых схем на случай присутствия файлов):
-/// 2) {country}_{subcat}_{level}.png
-/// 3) {country}_{subcat}.png
-/// 4) {country}.png
-/// 5) любой .png из папки
-String? _pickQuizBackground(String country, String subcat, int level) {
-  final byNewPattern = 'assets/images/bg/quiz/background_${country}.png';
-  if (AssetsIndex.has(byNewPattern)) return byNewPattern;
-  final specificLevel = 'assets/images/bg/quiz/${country}_${subcat}_${level}.png';
-  if (AssetsIndex.has(specificLevel)) return specificLevel;
-  final specificPack = 'assets/images/bg/quiz/${country}_${subcat}.png';
-  if (AssetsIndex.has(specificPack)) return specificPack;
-  final byCountry = 'assets/images/bg/quiz/${country}.png';
-  if (AssetsIndex.has(byCountry)) return byCountry;
-  return AssetsIndex.firstInDir('assets/images/bg/quiz/');
-}
+// Фишка доступности: метка сложности
+class _DifficultyChip extends StatelessWidget {
+  final QuizDifficulty difficulty;
+  const _DifficultyChip({required this.difficulty});
+  Color _bg() {
+    switch (difficulty) {
+      case QuizDifficulty.easy:
+        return const Color(0xFFE8F5E9);
+      case QuizDifficulty.hard:
+        return const Color(0xFFFFEBEE);
+      case QuizDifficulty.normal:
+      default:
+        return const Color(0xFFE3F2FD);
+    }
+  }
 
-String _imageSubcatAlias(String subcatKey) {
-  switch (subcatKey) {
-    case 'food':
-      return 'cuisine';
-    case 'history_persons':
-      return 'history_personalities';
-    default:
-      return subcatKey;
+  String _label() {
+    switch (difficulty) {
+      case QuizDifficulty.easy:
+        return 'Лёгкий';
+      case QuizDifficulty.hard:
+        return 'Сложный';
+      case QuizDifficulty.normal:
+      default:
+        return 'Средний';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      label: 'Сложность: ${_label()}',
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(color: _bg(), borderRadius: BorderRadius.circular(999)),
+        child: Text(_label(), style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
+      ),
+    );
   }
 }
 
@@ -653,37 +877,39 @@ class _AnswersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Оставляем только не скрытые ответы
     final visibleEntries = qa.answers.asMap().entries.where((e) => !hidden.contains(e.key)).toList();
-    // Делаем список виджетов для GridView (макс 4, но поддержим и меньше)
     final items = visibleEntries.map((entry) {
       final idx = entry.key;
       final a = entry.value;
-      return Material(
-        color: answerColor(idx),
-        borderRadius: BorderRadius.circular(12),
-        child: InkWell(
+      final isBtnEnabled = !locked;
+      final isCorrectNow = locked ? a.correct : null;
+      return Semantics(
+        button: true,
+        enabled: isBtnEnabled,
+        // Читатели экрана получат понятный текст
+        label: 'Вариант ${idx + 1}: ${a.text}${locked ? (isCorrectNow == true ? ", правильный" : isCorrectNow == false ? ", неправильный" : "") : ""}',
+        child: Material(
+          color: answerColor(idx),
           borderRadius: BorderRadius.circular(12),
-          onTap: !locked ? () => onPick(idx) : null,
-          child: AnimatedOpacity(
-            duration: const Duration(milliseconds: 180),
-            opacity: answerOpacity(idx),
-            child: Container(
-              constraints: const BoxConstraints(minHeight: 56),
-              padding: const EdgeInsets.all(14),
-              child: Row(
-                children: [
-                  Icon(
-                    locked
-                        ? (a.correct ? Icons.check_circle : Icons.cancel)
-                        : Icons.circle_outlined,
-                    color: locked
-                        ? (a.correct ? Colors.green : Colors.red)
-                        : Colors.black45,
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(child: Text(a.text, style: const TextStyle(fontSize: 16))),
-                ],
+          child: InkWell(
+            borderRadius: BorderRadius.circular(12),
+            onTap: isBtnEnabled ? () => onPick(idx) : null,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 180),
+              opacity: answerOpacity(idx),
+              child: Container(
+                constraints: const BoxConstraints(minHeight: 56),
+                padding: const EdgeInsets.all(14),
+                child: Row(
+                  children: [
+                    Icon(
+                      locked ? (a.correct ? Icons.check_circle : Icons.cancel) : Icons.circle_outlined,
+                      color: locked ? (a.correct ? Colors.green : Colors.red) : Colors.black45,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(child: Text(a.text, style: const TextStyle(fontSize: 16))),
+                  ],
+                ),
               ),
             ),
           ),
@@ -701,4 +927,40 @@ class _AnswersGrid extends StatelessWidget {
       children: items,
     );
   }
+}
+
+// ===== УТИЛИТЫ ДЛЯ АЛИАСОВ И ФОНОВ =====
+
+// Алиасы подкатегорий (для совместимости с именами файлов ассетов)
+String _imageSubcatAlias(String subcatKey) {
+  switch (subcatKey) {
+    case 'food':
+      return 'cuisine';
+    case 'history_persons':
+      return 'history_personalities';
+    default:
+      return subcatKey;
+  }
+}
+
+/// Фон для экрана вопроса из assets/images/bg/quiz/// Приоритет:
+/// 1) background_{country}.png
+/// 2) {country}_{subcat}_{level}.png
+/// 3) {country}_{subcat}.png
+/// 4) {country}.png
+/// 5) любой .png из папки
+String? _pickQuizBackground(String country, String subcat, int level) {
+  final byNewPattern = 'assets/images/bg/quiz/background_${country}.png';
+  if (AssetsIndex.has(byNewPattern)) return byNewPattern;
+
+  final specificLevel = 'assets/images/bg/quiz/${country}_${subcat}_${level}.png';
+  if (AssetsIndex.has(specificLevel)) return specificLevel;
+
+  final specificPack = 'assets/images/bg/quiz/${country}_${subcat}.png';
+  if (AssetsIndex.has(specificPack)) return specificPack;
+
+  final byCountry = 'assets/images/bg/quiz/${country}.png';
+  if (AssetsIndex.has(byCountry)) return byCountry;
+
+  return AssetsIndex.firstInDir('assets/images/bg/quiz/');
 }
