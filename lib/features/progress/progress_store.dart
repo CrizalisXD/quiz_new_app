@@ -123,6 +123,32 @@ class ProgressStore {
     return (starsList, unlockedList);
   }
 
+  static String _soundVolumeKey(String userId) => '${_pfx(userId)}|sound_volume'; // 0.0..1.0 (double)
+  static String _soundMutedKey(String userId) => '${_pfx(userId)}|sound_muted';   // bool
+
+  /// ========== SOUND SETTINGS ==========
+  static Future<double> getSoundVolume(String userId) async {
+    final p = await SharedPreferences.getInstance();
+    // SharedPreferences не хранит double на web одинаково? но в Flutter есть getDouble/setDouble.
+    return (p.getDouble(_soundVolumeKey(userId)) ?? 1.0).clamp(0.0, 1.0);
+  }
+
+  static Future<void> setSoundVolume(String userId, double volume) async {
+    final v = volume.clamp(0.0, 1.0);
+    final p = await SharedPreferences.getInstance();
+    await p.setDouble(_soundVolumeKey(userId), v);
+  }
+
+  static Future<bool> isSoundMuted(String userId) async {
+    final p = await SharedPreferences.getInstance();
+    return p.getBool(_soundMutedKey(userId)) ?? false;
+  }
+
+  static Future<void> setSoundMuted(String userId, bool muted) async {
+    final p = await SharedPreferences.getInstance();
+    await p.setBool(_soundMutedKey(userId), muted);
+  }
+
   /// Удаляем ВСЕ записи для конкретного пользователя ("новая игра" для него)
   static Future<void> wipeUser(String userId) async {
     final p = await SharedPreferences.getInstance();

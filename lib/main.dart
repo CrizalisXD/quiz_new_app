@@ -51,16 +51,18 @@ class App extends ConsumerWidget {
       },
       // Gate: сначала логин, затем Home; при повторных запусках сразу Home.
       home: const StartGate(),
+      initialRoute: '/home',
       routes: {
         '/login': (_) => const LoginScreen(),
-        '/home': (_) => const HomeScreen(),
+        '/home': (context) => const HomeScreen(),
         '/profile': (_) => const ProfileScreen(),
-  '/category': (_) => const CategoryScreen(),
-    '/levels': (_) => const LevelsScreen(),
+        '/category': (_) => const CategoryScreen(),
+        '/levels': (_) => const LevelsScreen(),
         SettingsScreen.route: (_) => const SettingsScreen(),
-  '/season': (_) => const _StubScreen(title: 'Сезон'),
-  AchievementsScreen.route: (_) => const AchievementsScreen(),
-  '/shop': (_) => const ShopScreen(),
+        '/season': (_) => const _StubScreen(title: 'Сезон'),
+        AchievementsScreen.route: (_) => const AchievementsScreen(),
+        '/shop': (_) => const ShopScreen(),
+        // '/countriesFlow': (context) => const CountriesFlowScreen(), // удалён, файла нет
         // Опциональный прямой маршрут (если нужно вызовом Navigator.pushNamed):
         '/quiz': (c) => const QuizScreen(pack: 'demo', level: 1), // демо; обычно используйте push с параметрами
       },

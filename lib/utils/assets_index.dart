@@ -1,23 +1,52 @@
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/foundation.dart';
+import 'dart:convert' show jsonDecode;
 
-/// Глобальный индекс ассетов из AssetManifest.json
 class AssetsIndex {
   static Set<String>? _keys;
 
   static Future<void> ensureLoaded() async {
     if (_keys != null) return;
     try {
-      final manifest = await rootBundle.loadString('AssetManifest.json');
-      _keys = manifest
-          .split('"')
-          .where((s) => s.startsWith('assets/'))
-          .toSet();
-    } catch (_) {
+      final manifestStr = await rootBundle.loadString('AssetManifest.json');
+
+      // ✅ корректно парсим JSON манифеста: ключи = пути ассетов
+      final decoded = jsonDecode(manifestStr);
+      if (decoded is Map) {
+        _keys = decoded.keys.whereType<String>().toSet();
+      } else {
+        _keys = <String>{};
+      }
+
+      if (kDebugMode) {
+        debugPrint('[AssetsIndex] Загружено ${_keys!.length} ассетов');
+        // Проверяем наличие фонов уровней
+        final levelBgKeys = _keys!.where((k) => k.contains('bg/level')).toList();
+        debugPrint('[AssetsIndex] Фоны уровней: $levelBgKeys');
+        // Проверяем наличие изображений для уровней Японии
+        final japanClassicKeys = _keys!.where((k) => k.contains('japan_classic_lvl')).toList();
+        debugPrint('[AssetsIndex] Изображения Japan Classic уровней: $japanClassicKeys');
+        // Выводим первые 20 ассетов для отладки
+        if (_keys!.isNotEmpty) {
+          final firstAssets = _keys!.take(20).toList();
+          debugPrint('[AssetsIndex] Первые 20 ассетов: $firstAssets');
+        }
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('[AssetsIndex] Ошибка загрузки манифеста: $e');
+      }
       _keys = <String>{};
     }
   }
 
-  static bool has(String path) => _keys?.contains(path) ?? false;
+  static bool has(String path) {
+    final bool exists = _keys?.contains(path) ?? false;
+    if (kDebugMode && !exists) {
+      debugPrint('[AssetsIndex] Ассет не найден: $path');
+    }
+    return exists;
+  }
 
   static String? firstByPrefixes(List<String> prefixes, {String extension = '.png'}) {
     if (_keys == null) return null;
@@ -69,17 +98,27 @@ class AssetsIndex {
   /// Приоритет подбора:
   /// 1) точное совпадение по суффиксу _{level}.png
   /// 2) если нет точного совпадения — берём файл с индексом level-1 после естественной сортировки
-  static String? rewardForLevel({required String country, required String alias, required int level}) {
-    if (_keys == null) return null;
-    final dir = 'assets/images/reward/$country/${country}_${alias}_lvl/';
-    final files = listInDir(dir);
-    if (files.isEmpty) return null;
-    final exact = files.firstWhere(
-      (p) => p.endsWith('_$level.png'),
-      orElse: () => '',
-    );
-    if (exact.isNotEmpty) return exact;
-    if (level - 1 < files.length) return files[level - 1];
-    return null;
+  static String? rewardForLevel({
+    required String country,
+    required String alias,
+    required int level,
+  }) {
+    final path =
+        'assets/images/reward/$country/${country}_${alias}_lvl/${country}_${alias}_$level.png';
+    return has(path) ? path : null;
+  }
+
+  static int countRewardsForCountry(String country) {
+    final keys = _keys;
+    if (keys == null || keys.isEmpty) return 0;
+
+    final prefix = 'assets/images/reward/$country/';
+    var total = 0;
+    for (final asset in keys) {
+      if (asset.startsWith(prefix) && asset.toLowerCase().endsWith('.png')) {
+        total++;
+      }
+    }
+    return total;
   }
 }

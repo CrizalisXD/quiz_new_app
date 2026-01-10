@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../auth/current_user.dart';
 import 'progress_store.dart';
+import '../achievements/achievements_store.dart';
 
 /// Provider монет текущего пользователя с авто-обновлением через refresh вызов.
 final coinsProvider = FutureProvider<int>((ref) async {
@@ -16,4 +17,10 @@ final levelsProgressProvider = FutureProvider.family<(
   final (packKey, levelsCount) = tuple;
   final userId = ref.watch(currentUserProvider);
   return ProgressStore.getLevelsProgress(userId, packKey, levelsCount);
+});
+
+/// Provider донатной валюты (diamond) текущего пользователя.
+final diamondsProvider = FutureProvider<int>((ref) async {
+  final userId = ref.watch(currentUserProvider);
+  return AchievementsStore.getDiamond(userId);
 });

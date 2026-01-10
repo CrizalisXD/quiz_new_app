@@ -5,7 +5,30 @@ import 'package:flutter/services.dart';
 import 'widgets/category_card.dart';
 import '../progress/progress_providers.dart';
 import '../settings/settings_screen.dart';
+import '../achievements/achievements_screen.dart';
 import 'package:quiz_new_app/l10n/app_localizations.dart';
+import '../../utils/sound_manager.dart';
+import '../auth/current_user.dart';
+import '../achievements/achievements_store.dart'; // ✅ добавить
+import '../../utils/assets_index.dart'; // ✅ добавить
+
+// Единый маппинг трека по стране
+String _musicForCountryKey(String countryKey) {
+  switch (countryKey) {
+    case 'japan':
+      return 'assets/sound/japan.mp3';
+    case 'egypt':
+      return 'assets/sound/egypt.mp3';
+    case 'france':
+      return 'assets/sound/france.mp3';
+    case 'brazil':
+      return 'assets/sound/brazil.mp3';
+    case 'norway':
+      return 'assets/sound/norway.mp3';
+    default:
+      return 'assets/sound/home.mp3';
+  }
+}
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -14,13 +37,45 @@ class HomeScreen extends ConsumerStatefulWidget {
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObserver {
   static bool _assetSelfTestDone = false; // гарантируем один запуск
+  static bool _audioWarmupDone = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+
+    // ✅ грузим индекс ассетов, чтобы можно было выбирать картинку из папки
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await AssetsIndex.ensureLoaded();
+      if (mounted) setState(() {}); // пересобрать UI, чтобы подхватить ui/egypt_cat/*
+    });
+
     _runAssetSelfTestOnce();
+
+    // Включаем музыку главного меню при старте
+    SoundManager.playMusic('assets/sound/home.mp3');
+
+    // Прогрев аудио (один раз), чтобы снизить/убрать задержку при первом переключении треков
+    if (!_audioWarmupDone) {
+      _audioWarmupDone = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        try {
+          final sm = SoundManager as dynamic;
+          // если в SoundManager есть preload/precache — воспользуемся
+          await sm.preload?.call('assets/sound/home.mp3');
+          await sm.preload?.call('assets/sound/japan.mp3');
+          await sm.preload?.call('assets/sound/egypt.mp3');
+          await sm.preload?.call('assets/sound/france.mp3');
+          await sm.preload?.call('assets/sound/brazil.mp3');
+          await sm.preload?.call('assets/sound/norway.mp3');
+          await sm.preload?.call('assets/sound/click.mp3');
+        } catch (_) {
+          // нет preload — оставляем как есть (тогда нужно добавить preload в SoundManager)
+        }
+      });
+    }
   }
 
   void _runAssetSelfTestOnce() {
@@ -30,27 +85,54 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
         final manifestStr = await rootBundle.loadString('AssetManifest.json');
-  final contains = manifestStr.contains('assets/images/bg/home/home.png');
+        final contains = manifestStr.contains('assets/images/bg/home/home.png');
         debugPrint('[AssetSelfTest] length=${manifestStr.length}');
-        // Для точного разбора:
-        // final map = jsonDecode(manifestStr) as Map<String, dynamic>;
-        // map.keys.where((k) => k.contains('bg/home')).forEach(debugPrint);
-
-    debugPrint(contains
-      ? '[AssetSelfTest] FOUND assets/images/bg/home/home.png'
-      : '[AssetSelfTest] STILL NOT FOUND (assets/images/bg/home/home.png)');
+        debugPrint(contains
+            ? '[AssetSelfTest] FOUND assets/images/bg/home/home.png'
+            : '[AssetSelfTest] STILL NOT FOUND (assets/images/bg/home/home.png)');
       } catch (e) {
         debugPrint('[AssetSelfTest] error: $e');
       }
     });
   }
 
+  String _categoryImageForCountry(String countryKey) {
+    // В папке assets/images/ui/{country}_cat/ теперь лежат картинки ПОДКАТЕГОРИЙ,
+    // поэтому на Home не выбираем "первую попавшуюся" из этой папки.
+    return 'assets/images/categories/$countryKey.png';
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // При заходе/возврате на Home принудительно подтягиваем актуальные валюты.
+    ref.invalidate(coinsProvider);
+    ref.invalidate(diamondsProvider);
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      // Возврат в приложение — обновим валюты (чтобы “в реальном времени” догоняло изменения).
+      ref.invalidate(coinsProvider);
+      ref.invalidate(diamondsProvider);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final ref = this.ref; // доступ к ref из ConsumerState
+    final ref = this.ref;
     final countryKeys = const ['japan', 'egypt', 'france', 'brazil', 'norway'];
-  // userId доступен при необходимости: ref.watch(currentUserProvider);
+
     final coinsAsync = ref.watch(coinsProvider);
+    final diamondsAsync = ref.watch(diamondsProvider);
+    final userId = ref.watch(currentUserProvider);
 
     return Scaffold(
       body: Stack(
@@ -63,99 +145,139 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             errorBuilder: (_, __, ___) => const ColoredBox(color: Colors.black),
           ),
           SafeArea(
-            child: Column(
-            children: [
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 720),
+                child: Column(
                   children: [
-                    coinsAsync.when(
-                      data: (v) => _CurrencyBadge(
-                        colors: const [Color(0xFFE3D7FF), Color(0xFFFFFFFF)],
-                        icon: Icons.monetization_on_outlined,
-                        label: v.toString(),
-                        semanticsLabel: 'Монеты',
+                    const SizedBox(height: 8),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        children: [
+                          coinsAsync.when(
+                            data: (v) => const SizedBox.shrink(), // значение ниже, через _CurrencyAssetBadge
+                            loading: () => const SizedBox.shrink(),
+                            error: (_, __) => const SizedBox.shrink(),
+                          ),
+                          coinsAsync.when(
+                            data: (v) => _CurrencyAssetBadge(
+                              colors: const [Color(0xFFFFE08A), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/gold.png',
+                              label: v.toString(),
+                              semanticsLabel: 'Gold',
+                            ),
+                            loading: () => const _CurrencyAssetBadge(
+                              colors: [Color(0xFFFFE08A), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/gold.png',
+                              label: '...',
+                              semanticsLabel: 'Gold',
+                            ),
+                            error: (_, __) => const _CurrencyAssetBadge(
+                              colors: [Color(0xFFFFE08A), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/gold.png',
+                              label: 'ERR',
+                              semanticsLabel: 'Gold',
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          diamondsAsync.when(
+                            data: (v) => _CurrencyAssetBadge(
+                              colors: const [Color(0xFFFFD1EE), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/diamond.png',
+                              label: v.toString(),
+                              semanticsLabel: 'Diamond',
+                            ),
+                            loading: () => const _CurrencyAssetBadge(
+                              colors: [Color(0xFFFFD1EE), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/diamond.png',
+                              label: '...',
+                              semanticsLabel: 'Diamond',
+                            ),
+                            error: (_, __) => const _CurrencyAssetBadge(
+                              colors: [Color(0xFFFFD1EE), Color(0xFFFFFFFF)],
+                              assetPath: 'assets/images/ui/currency/diamond.png',
+                              label: 'ERR',
+                              semanticsLabel: 'Diamond',
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          const _CurrencyBadge(
+                            colors: [Color(0xFFD7F9FF), Color(0xFFFFFFFF)],
+                            icon: Icons.confirmation_number_outlined,
+                            label: '—',
+                            semanticsLabel: 'Билеты',
+                          ),
+                          const Spacer(),
+                          IconButton(
+                            onPressed: () {
+                              SoundManager.playSfx('assets/sound/click.mp3');
+                              Navigator.pushNamed(context, SettingsScreen.route);
+                            },
+                            icon: const Icon(Icons.settings, color: Colors.black87),
+                          ),
+                        ],
                       ),
-                      loading: () => const _CurrencyBadge(
-                        colors: [Color(0xFFE3D7FF), Color(0xFFFFFFFF)],
-                        icon: Icons.monetization_on_outlined,
-                        label: '...',
-                        semanticsLabel: 'Монеты',
+                    ),
+                    const SizedBox(height: 8),
+                    Expanded(
+                      child: ListView.separated(
+                        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                        itemCount: countryKeys.length,
+                        separatorBuilder: (_, __) => const SizedBox(height: 16),
+                        itemBuilder: (c, i) {
+                          final key = countryKeys[i];
+                          final title = _countryNameLocalized(context, key);
+                          final imageAsset = _categoryImageForCountry(key); // ✅
+
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 4, bottom: 8),
+                                child: Text(
+                                  title,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ),
+                              CategoryCard(
+                                imageAsset: imageAsset, // ✅ было assets/images/categories/$key.png
+                                onTap: () async {
+                                  SoundManager.playSfx('assets/sound/click.mp3');
+                                  SoundManager.playMusic(_musicForCountryKey(key));
+
+                                  // Ожидается: внутри markCountryOpenedOnce должен инкрементить counter 'countries_opened'
+                                  await AchievementsStore.markCountryOpenedOnce(userId, key);
+
+                                  if (!context.mounted) return;
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/category',
+                                    arguments: {
+                                      'countryKey': key,
+                                      'title': title,
+                                      'imageAsset': imageAsset, // ✅ чтобы CategoryScreen тоже показал эту картинку
+                                    },
+                                  ).then((_) {
+                                    SoundManager.playMusic('assets/sound/home.mp3');
+                                  });
+                                },
+                              ),
+                            ],
+                          );
+                        },
                       ),
-                      error: (_, __) => const _CurrencyBadge(
-                        colors: [Color(0xFFE3D7FF), Color(0xFFFFFFFF)],
-                        icon: Icons.monetization_on_outlined,
-                        label: 'ERR',
-                        semanticsLabel: 'Монеты',
-                      ),
                     ),
-                    const SizedBox(width: 8),
-                    const _CurrencyBadge(
-                      colors: [Color(0xFFFFF4CC), Color(0xFFFFFFFF)],
-                      icon: Icons.star_border_rounded,
-                      label: '?',
-                      semanticsLabel: 'Звёзды',
-                    ),
-                    const SizedBox(width: 8),
-                    const _CurrencyBadge(
-                      colors: [Color(0xFFD7F9FF), Color(0xFFFFFFFF)],
-                      icon: Icons.confirmation_number_outlined,
-                      label: '—',
-                      semanticsLabel: 'Билеты',
-                    ),
-                    const Spacer(),
-                    IconButton(
-                      onPressed: () => Navigator.pushNamed(context, SettingsScreen.route),
-                      icon: const Icon(Icons.settings, color: Colors.black87),
-                    ),
+                    const SizedBox(height: 8),
                   ],
                 ),
               ),
-              const SizedBox(height: 8),
-              Expanded(
-                child: ListView.separated(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                  itemCount: countryKeys.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 16),
-                  itemBuilder: (c, i) {
-                    final key = countryKeys[i]; // countryKey
-                    final title = _countryNameLocalized(context, key);
-                    // progress not displayed now (stars/level removed per request)
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 4, bottom: 8),
-                          child: Text(
-                            title,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
-                        CategoryCard(
-                          imageAsset: 'assets/images/categories/$key.png',
-                          onTap: () => Navigator.pushNamed(
-                            context,
-                            '/category',
-                            arguments: {
-                              'countryKey': key,
-                              'title': title,
-                              // будущий packId можно вычислять в CategoryScreen
-                            },
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 8),
-            ],
-          ),
+            ),
           ),
         ],
       ),
@@ -174,17 +296,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               _BottomItem(
                 icon: Icons.emoji_events_outlined,
                 label: AppLocalizations.of(context).home_achievements,
-                onTap: () => Navigator.pushNamed(context, '/achievements'),
+                onTap: () {
+                  SoundManager.playSfx('assets/sound/click.mp3');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const AchievementsScreen()),
+                  );
+                },
               ),
               _BottomItem(
                 icon: Icons.person_outline,
                 label: AppLocalizations.of(context).home_profile,
-                onTap: () => Navigator.pushNamed(context, '/profile'),
+                onTap: () {
+                  SoundManager.playSfx('assets/sound/click.mp3');
+                  Navigator.pushNamed(context, '/profile');
+                },
               ),
               _BottomItem(
                 icon: Icons.storefront_outlined,
                 label: AppLocalizations.of(context).home_shop,
-                onTap: () => Navigator.pushNamed(context, '/shop'),
+                onTap: () {
+                  SoundManager.playSfx('assets/sound/click.mp3');
+                  Navigator.pushNamed(context, '/shop');
+                },
               ),
             ],
           ),
@@ -208,21 +341,89 @@ class _CurrencyBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       label: semanticsLabel,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: colors),
-          borderRadius: BorderRadius.circular(20),
+      child: SizedBox(
+        height: 34, // ✅ фикс высоты, чтобы не "плясало"
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: colors),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: 16, color: Colors.black87),
+              const SizedBox(width: 6),
+              Flexible(
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w700,
+                    fontFeatures: [FontFeature.tabularFigures()], // ✅ стабильная ширина цифр
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-        child: Row(
-          children: [
-            Icon(icon, size: 16, color: Colors.black87),
-            const SizedBox(width: 6),
-            Text(
-              label,
-              style: const TextStyle(color: Colors.black87, fontWeight: FontWeight.w700),
-            ),
-          ],
+      ),
+    );
+  }
+}
+
+class _CurrencyAssetBadge extends StatelessWidget {
+  final List<Color> colors;
+  final String assetPath;
+  final String label;
+  final String? semanticsLabel;
+
+  const _CurrencyAssetBadge({
+    required this.colors,
+    required this.assetPath,
+    required this.label,
+    this.semanticsLabel,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      label: semanticsLabel,
+      child: SizedBox(
+        height: 34, // ✅ фикс высоты
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: colors),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                assetPath,
+                width: 18,
+                height: 18,
+                fit: BoxFit.contain,
+                errorBuilder: (_, __, ___) => const Icon(Icons.monetization_on_outlined, size: 18, color: Colors.black87),
+              ),
+              const SizedBox(width: 6),
+              Flexible(
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w700,
+                    fontFeatures: [FontFeature.tabularFigures()],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

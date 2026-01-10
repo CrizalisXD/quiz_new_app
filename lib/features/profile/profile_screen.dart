@@ -12,7 +12,9 @@ import '../../utils/rank_utils.dart';
 import 'widgets/country_stats_screen.dart';
 import 'package:quiz_new_app/l10n/app_localizations.dart';
 import '../progress/progress_store.dart';
+import '../progress/progress_providers.dart';
 import '../../data/categories_config.dart';
+import '../achievements/achievements_store.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -51,30 +53,35 @@ class _BodyState extends ConsumerState<_Body> {
   Widget build(BuildContext context) {
     final userId = ref.watch(currentUserProvider);
     final profile = widget.profile; // удобный алиас
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        _AvatarHeader(profile: profile),
-        const SizedBox(height: 12),
-        _DevActionsRow(userId: userId),
-        const SizedBox(height: 24),
-        Row(
+    return Align(
+      alignment: Alignment.topCenter,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 720),
+        child: ListView(
+          padding: const EdgeInsets.all(16),
           children: [
-            Text(AppLocalizations.of(context).profile_progress_by_countries, style: Theme.of(context).textTheme.titleMedium),
-            const Spacer(),
-            TextButton(
-              onPressed: () => setState(() => _showCountryProgress = !_showCountryProgress),
-              child: Text(_showCountryProgress ? _t(context, ru: 'Скрыть', en: 'Hide') : _t(context, ru: 'Показать', en: 'Show')),
-            )
+            _AvatarHeader(profile: profile),
+            const SizedBox(height: 12),
+            _DevActionsRow(userId: userId),
+            const SizedBox(height: 24),
+            Row(
+              children: [
+                Text(AppLocalizations.of(context).profile_progress_by_countries, style: Theme.of(context).textTheme.titleMedium),
+                const Spacer(),
+                TextButton(
+                  onPressed: () => setState(() => _showCountryProgress = !_showCountryProgress),
+                  child: Text(_showCountryProgress ? _t(context, ru: 'Скрыть', en: 'Hide') : _t(context, ru: 'Показать', en: 'Show')),
+                )
+              ],
+            ),
+            const SizedBox(height: 8),
+  if (_showCountryProgress) const CountryProgressList() else const SizedBox.shrink(),
+            const SizedBox(height: 24),
+            RewardsByCountrySection(userId: userId),
+            const SizedBox(height: 32),
           ],
         ),
-        const SizedBox(height: 8),
-  if (_showCountryProgress) const CountryProgressList() else const SizedBox.shrink(),
-        const SizedBox(height: 24),
-        // Секция достижений скрыта по требованию
-        RewardsByCountrySection(userId: userId),
-        const SizedBox(height: 32),
-      ],
+      ),
     );
   }
 }
@@ -336,7 +343,10 @@ class _DevActionsRow extends ConsumerWidget {
     if (ok == true) {
       await action();
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_t(context, ru: 'Готово', en: 'Done'))));
+        // ❌ убрать нижний попап "Готово"
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   SnackBar(content: Text(_t(context, ru: 'Готово', en: 'Done'))),
+        // );
       }
     }
   }
@@ -349,46 +359,48 @@ class _DevActionsRow extends ConsumerWidget {
           child: OutlinedButton.icon(
             icon: const Icon(Icons.delete_forever),
             label: Text(_t(context, ru: 'Сбросить всё', en: 'Reset all')),
-            onPressed: () => _confirm(context, _t(context, ru: 'Сбросить прогресс и коллекцию', en: 'Reset progress & collection'), () async {
-              await ProgressStore.wipeUser(userId);
-              await RewardsStore.clear(userId);
-              // Профиль сбросим через провайдер (генерация нового гостя)
-              await ref.read(profileProvider.notifier).reset();
-            }),
+            onPressed: () => _confirm(
+              context,
+              _t(context, ru: 'Сбросить прогресс и коллекцию', en: 'Reset progress & collection'),
+              () async {
+                await ProgressStore.wipeUser(userId);
+                await RewardsStore.clear(userId);
+
+                // достижения (counters/claimed/diamond-wallet)
+                await AchievementsStore.wipeUser(userId);
+
+                // ✅ обновить валюты в UI сразу
+                ref.invalidate(coinsProvider);
+                ref.invalidate(diamondsProvider);
+
+                await ref.read(profileProvider.notifier).reset();
+              },
+            ),
           ),
         ),
         const SizedBox(width: 12),
         Expanded(
-          child: OutlinedButton.icon(
-            icon: const Icon(Icons.star_rate),
-            label: Text(_t(context, ru: 'Всё на 3★ + коллекция', en: 'All 3★ + collection')),
-            onPressed: () => _confirm(context, _t(context, ru: 'Отметить все уровни как пройденные на 3★ и пополнить коллекцию', en: 'Mark all levels as 3★ and fill collection'), () async {
-              // Для всех стран и их подкатегорий выставим 10 уровней (classic/hard) и 5 уровней (остальные) как пройденные на 3★
-              // и добавим соответствующие постеры в коллекцию, если ассеты существуют.
-              await AssetsIndex.ensureLoaded();
-              for (final entry in countrySubcategories.entries) {
-                final country = entry.key;
-                for (final sc in entry.value) {
-                  final packKey = '${country}_${sc.key}';
-                  final limit = (sc.key == 'classic' || sc.key == 'hard') ? 10 : 5;
-                  for (int level = 1; level <= limit; level++) {
-                    await ProgressStore.setLevelStars(userId, packKey, level, 3);
-                    if (level < limit) {
-                      await ProgressStore.unlockLevel(userId, packKey, level + 1);
-                    }
-                    // Выдадим постер по новой схеме, как в LevelsScreen
-                    final alias = _imageSubcatAlias(sc.key);
-                    final found = AssetsIndex.rewardForLevel(country: country, alias: alias, level: level);
-                    if (found != null && AssetsIndex.has(found)) {
-                      await RewardsStore.addReward(userId, found);
-                    }
-                  }
-                }
-              }
-              // Обновим локальный профиль (пересчитать totalStars грубо не будем; данные подтянутся при следующем запуске/игре)
-              // Здесь просто уведомим UI
-              ref.invalidate(profileProvider);
-            }),
+          child: FilledButton.icon(
+            icon: const Icon(Icons.auto_awesome),
+            label: Text(_t(context, ru: 'Получить всё', en: 'Get all')),
+            onPressed: () => _confirm(
+              context,
+              _t(context, ru: 'Выдать максимум прогресса и наград', en: 'Grant max progress & rewards'),
+              () async {
+                // 1) прогресс (уровни/звёзды) — нужен метод в ProgressStore (dev)
+                // 2) постеры — нужен метод в RewardsStore (dev)
+                // 3) валюта/claimed/counters — метод в AchievementsStore (dev)
+
+                await AchievementsStore.grantAllDev(userId);
+
+                // если вы добавите dev-методы в эти сторы — раскомментируйте:
+                // await ProgressStore.grantAllDev(userId);
+                // await RewardsStore.grantAllDev(userId);
+
+                // обновим профиль (перечитает coins/stars/gamesPlayed и т.п.)
+                ref.invalidate(profileProvider);
+              },
+            ),
           ),
         ),
       ],
@@ -410,6 +422,16 @@ String _imageSubcatAlias(String subcatKey) {
   }
 }
 
+String _levelRewardPath({
+  required String country,
+  required String subcatAlias,
+  required int level,
+}) {
+  return 'assets/images/reward/$country/'
+      '${country}_${subcatAlias}_lvl/'
+      '${country}_${subcatAlias}_$level.png';
+}
+
 class RewardsByCountrySection extends StatefulWidget {
   final String userId;
   const RewardsByCountrySection({super.key, required this.userId});
@@ -421,24 +443,29 @@ class RewardsByCountrySection extends StatefulWidget {
 class _RewardsByCountrySectionState extends State<RewardsByCountrySection> {
   final Map<String, bool> _expanded = {};
 
+  Future<List<String>> _loadRewards() async {
+    await AssetsIndex.ensureLoaded();
+    return RewardsStore.getRewards(widget.userId);
+  }
+
+  int _totalForCountry(String key, List<String> items) {
+    if (key == 'other') return items.length;
+    final total = AssetsIndex.countRewardsForCountry(key);
+    return total == 0 ? items.length : total;
+  }
+
   String _countryFromPath(String p) {
-    // Новая структура:
-    // assets/images/reward/{country}/{country}_{alias}_lvl/{country}_{alias}_{level}.png
-    // Также поддержка старых вариантов и путей с обратными слешами.
     final norm = p.replaceAll('\\', '/');
     final parts = norm.split('/');
-    final idx = parts.indexOf('reward');
-    if (idx != -1 && idx + 1 < parts.length && parts[idx + 1].isNotEmpty) {
-      return parts[idx + 1];
+    final rewardIdx = parts.indexOf('reward');
+    if (rewardIdx != -1 && rewardIdx + 1 < parts.length && parts[rewardIdx + 1].isNotEmpty) {
+      return parts[rewardIdx + 1];
     }
-    // Фоллбек: пробуем извлечь страну из имени файла (префикс до первого '_' или '/')
     final file = parts.isNotEmpty ? parts.last : '';
-    // Сначала пробуем по полному шаблону {country}_{alias}_{level}.png
-    final mFull = RegExp(r'^([A-Za-z]+)_[A-Za-z]+_\d+\.png$').firstMatch(file);
-    if (mFull != null) return mFull.group(1)!;
-    // Затем общий префикс до '_' или '/'
-    final m = RegExp(r'^([A-Za-z]+)[_/]').firstMatch('$file/');
-    if (m != null) return m.group(1)!;
+    final matchFull = RegExp(r'^([A-Za-z]+)_[A-Za-z]+_\d+\.png$').firstMatch(file);
+    if (matchFull != null) return matchFull.group(1)!;
+    final matchPrefix = RegExp(r'^([A-Za-z]+)[_/]').firstMatch('$file/');
+    if (matchPrefix != null) return matchPrefix.group(1)!;
     return 'other';
   }
 
@@ -463,57 +490,79 @@ class _RewardsByCountrySectionState extends State<RewardsByCountrySection> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<String>>(
-      // Гарантируем, что индекс ассетов загружен для корректной работы подсчёта total
-      future: () async {
-        await AssetsIndex.ensureLoaded();
-        return RewardsStore.getRewards(widget.userId);
-      }(),
-      builder: (context, snap) {
-        if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-        final rewards = snap.data!;
+      future: _loadRewards(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final rewards = snapshot.data!;
         if (rewards.isEmpty) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(AppLocalizations.of(context).profile_rewards, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-              const SizedBox(height: 8),
-              Text(AppLocalizations.of(context).profile_no_rewards, style: const TextStyle(color: Colors.black54)),
-            ],
+          return Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            margin: EdgeInsets.zero,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(_t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
+                      style: Theme.of(context).textTheme.titleMedium),
+                  const SizedBox(height: 8),
+                  Text(AppLocalizations.of(context).profile_no_rewards,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black54)),
+                ],
+              ),
+            ),
           );
         }
 
-        // Группируем по стране
         final Map<String, List<String>> byCountry = {};
-        for (final p in rewards) {
-          final c = _countryFromPath(p);
-          byCountry.putIfAbsent(c, () => []).add(p);
+        for (final item in rewards) {
+          final key = _countryFromPath(item);
+          byCountry.putIfAbsent(key, () => []).add(item);
         }
-
-        // Порядок: Япония первой, затем остальное по алфавиту
-        final keys = byCountry.keys.toList();
-        keys.sort();
+        final keys = byCountry.keys.toList()..sort();
         if (keys.contains('japan')) {
           keys.remove('japan');
           keys.insert(0, 'japan');
         }
 
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(AppLocalizations.of(context).profile_rewards, style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(height: 8),
-            for (final key in keys) ...[
-              _CountryRewardsBlock(
-                countryKey: key,
-                label: _countryLabel(context, key),
-                items: byCountry[key]!,
-                expanded: _expanded[key] ?? false,
-                total: AssetsIndex.countByPrefix('assets/images/reward/$key/'),
-                onToggle: () => setState(() => _expanded[key] = !(_expanded[key] ?? false)),
-              ),
-              const SizedBox(height: 16),
-            ],
-          ],
+        final totalCollected = rewards.length;
+        final totalAvailable = keys.fold<int>(
+          0,
+          (sum, key) => sum + _totalForCountry(key, byCountry[key]!),
+        );
+
+        return Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          margin: EdgeInsets.zero,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(_t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
+                    style: Theme.of(context).textTheme.titleMedium),
+                const SizedBox(height: 4),
+                Text(
+                  '${_t(context, ru: 'Собрано постеров', en: 'Posters collected')}: $totalCollected/$totalAvailable',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 16),
+                for (final key in keys) ...[
+                  _CountryRewardsBlock(
+                    countryKey: key,
+                    label: _countryLabel(context, key),
+                    items: byCountry[key]!,
+                    expanded: _expanded[key] ?? false,
+                    total: _totalForCountry(key, byCountry[key]!),
+                    onToggle: () => setState(() => _expanded[key] = !(_expanded[key] ?? false)),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ],
+            ),
+          ),
         );
       },
     );
@@ -540,18 +589,18 @@ class _CountryRewardsBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final visibleItems = expanded ? items : items.take(4).toList();
-    final countStr = total > 0 ? '$label — ${items.length}/$total' : '$label — ${items.length}/∞';
+    final countLabel = total > 0 ? '$label — ${items.length}/$total' : '$label — ${items.length}/∞';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text(countStr, style: Theme.of(context).textTheme.titleSmall),
+            Text(countLabel, style: Theme.of(context).textTheme.titleSmall),
             const Spacer(),
             TextButton(
               onPressed: onToggle,
               child: Text(expanded ? _t(context, ru: 'Свернуть', en: 'Show less') : _t(context, ru: 'Показать больше', en: 'Show more')),
-            )
+            ),
           ],
         ),
         GridView.builder(
@@ -561,22 +610,22 @@ class _CountryRewardsBlock extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 12,
             crossAxisSpacing: 12,
-            childAspectRatio: 16/9,
+            childAspectRatio: 16 / 9,
           ),
           itemCount: visibleItems.length,
-          itemBuilder: (_, i) {
-            final p = visibleItems[i];
+          itemBuilder: (_, index) {
+            final assetPath = visibleItems[index];
             return ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => Navigator.of(context).push(PosterPreviewScreen.route(p)),
+                  onTap: () => Navigator.of(context).push(PosterPreviewScreen.route(assetPath)),
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
                       Image.asset(
-                        p,
+                        assetPath,
                         fit: BoxFit.cover,
                         errorBuilder: (_, __, ___) => Container(
                           color: Colors.grey.shade300,

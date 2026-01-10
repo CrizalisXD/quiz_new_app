@@ -13,6 +13,9 @@ import '../../../l10n/app_localizations.dart';
 import '../../../utils/ui_metrics.dart';
 import '../../../services/report_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import '../../../utils/sound_manager.dart';
+import '../../achievements/achievements_store.dart';
+import '../../auth/current_user.dart';
 
 /// ===== МОДЕЛИ =====
 enum QuizDifficulty { easy, normal, hard }
@@ -91,15 +94,21 @@ class Ans {
 // Добавьте тип коллбэка-загрузчика, чтобы подменять источник вопросов (API/Mock/Assets).
 typedef QuestionLoader = Future<List<QA>> Function(String pack, int level);
 
-/// ===== ЭКРАН =====
 class QuizScreen extends ConsumerStatefulWidget {
-  final String pack; // имя файла в assets/questions/ru без .json (country/subcategory key)
-  final int level;   // 1..N
-  // Новый необязательный загрузчик: если задан — возьмём вопросы из него (например, из API),
-  // иначе используется текущая загрузка из ассетов.
+  final String pack;
+  final int level;
+  final String? countryKey;
+
+  // ✅ было: final QuizLoader? loader;
   final QuestionLoader? loader;
 
-  const QuizScreen({super.key, required this.pack, required this.level, this.loader});
+  const QuizScreen({
+    super.key,
+    required this.pack,
+    required this.level,
+    this.countryKey,
+    this.loader,
+  });
 
   @override
   ConsumerState<QuizScreen> createState() => _QState();
@@ -118,12 +127,19 @@ class _QState extends ConsumerState<QuizScreen> {
   int _addTimeLeft = 1;
   final Set<int> _hidden = <int>{};
 
+  QuestionLoader? loader;
+
   @override
   void initState() {
     super.initState();
+
+    // Музыку здесь не трогаем — она должна продолжать играть без рестартов при входе/выходе.
+    // _initMusicForPack();
+
     // Если передан кастомный loader — используем его и гарантированно запускаем таймер после получения данных.
     if (widget.loader != null) {
-      _future = widget.loader!(widget.pack, widget.level).then((qs) {
+      loader = widget.loader;
+      _future = loader!(widget.pack, widget.level).then((qs) {
         final normalized = _normalizeQuestions(qs);
         if (normalized.isEmpty) {
           throw Exception('Нет валидных вопросов для уровня ${widget.level} (loader вернул пустой список)');
@@ -144,9 +160,24 @@ class _QState extends ConsumerState<QuizScreen> {
     ReportService.flushQueue();
   }
 
+  // Оставляем метод, но он не вызывается
+  void _initMusicForPack() {
+    // widget.pack — строка вроде "japan_classic", "egypt_food", "brazil_classic" и т.п.
+    final pack = widget.pack.toLowerCase();
+    String asset = 'assets/sound/home.mp3';
+    if (pack.startsWith('japan')) {
+      asset = 'assets/sound/japan.mp3';
+    } else if (pack.startsWith('egypt')) {
+      asset = 'assets/sound/egypt.mp3';
+    } else if (pack.startsWith('brazil')) {
+      asset = 'assets/sound/brazil.mp3';
+    }
+    SoundManager.playMusic(asset);
+  }
+
   @override
   void dispose() {
-    _t?.cancel();
+    // Музыку не останавливаем
     super.dispose();
   }
 
@@ -306,9 +337,10 @@ class _QState extends ConsumerState<QuizScreen> {
     }
   }
 
-  void _pick(int idx, QA qa) {
+  void _pick(int idx, QA qa) async {
     if (_locked) return;
     if (idx < 0 || idx >= qa.answers.length) return;
+
     final ok = qa.answers[idx].correct;
     setState(() {
       _locked = true;
@@ -316,6 +348,11 @@ class _QState extends ConsumerState<QuizScreen> {
       if (ok) _score++;
     });
     _t?.cancel();
+
+    // ✅ событие: игрок ответил на вопрос (любой)
+    final userId = ref.read(currentUserProvider);
+    await AchievementsStore.incCounter(userId, 'questions_answered', 1);
+
     _logEvent('answer', {
       'pack': widget.pack,
       'level': widget.level,
@@ -326,27 +363,37 @@ class _QState extends ConsumerState<QuizScreen> {
     });
   }
 
-  void _next(List<QA> all) {
+  void _next(List<QA> all) async {
     if (_i + 1 >= all.length) {
-      // конец — показываем экран результатов и возвращаемся с данными
       final starsEarned = StarUtils.fromScore(_score, all.length);
       _t?.cancel();
-      Navigator.of(context).push<Map<String, dynamic>>(
-        MaterialPageRoute(
-          builder: (_) => _ResultsScreen(
-            total: all.length,
-            score: _score,
-            stars: starsEarned,
-          ),
-        ),
-      ).then((_) {
-        Navigator.pop(context, {
-          'answered': all.length,
-          'score': _score,
-          'level': widget.level,
-          'pack': widget.pack,
-          'starsEarned': starsEarned,
-        });
+      await SoundManager.playSfx('assets/sound/finish.mp3');
+
+      final userId = ref.read(currentUserProvider);
+
+      // ✅ событие: уровень завершён
+      await AchievementsStore.incCounter(userId, 'levels_completed', 1);
+
+      // ✅ событие: идеальный уровень
+      if (_score == all.length) {
+        await AchievementsStore.incCounter(userId, 'perfect_levels', 1);
+        _logEvent('perfect_level', {'pack': widget.pack, 'level': widget.level});
+      }
+
+      await _showResultsDialog(
+        context,
+        total: all.length,
+        score: _score,
+        stars: starsEarned,
+      );
+
+      if (!mounted) return;
+      Navigator.pop(context, {
+        'answered': all.length,
+        'score': _score,
+        'level': widget.level,
+        'pack': widget.pack,
+        'starsEarned': starsEarned,
       });
       return;
     }
@@ -523,6 +570,7 @@ class _QState extends ConsumerState<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final quizBg = _pickQuizBackground(widget.pack);
     return FutureBuilder<List<QA>>(
       future: _future,
       builder: (c, snap) {
@@ -553,7 +601,6 @@ class _QState extends ConsumerState<QuizScreen> {
         final country = parts.isNotEmpty ? parts.first : widget.pack;
         final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
         final subcat = _imageSubcatAlias(subcatRaw);
-        final quizBg = _pickQuizBackground(country, subcat, widget.level);
         // Precache выбранный фон
         if (quizBg != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -744,6 +791,11 @@ class _QState extends ConsumerState<QuizScreen> {
         );
       },
     );
+  }
+
+  void _onAnswerTap(int index) async {
+    await SoundManager.playSfx('assets/sound/click.mp3');
+    // ...existing логика выбора ответа...
   }
 }
 
@@ -949,18 +1001,152 @@ String _imageSubcatAlias(String subcatKey) {
 /// 3) {country}_{subcat}.png
 /// 4) {country}.png
 /// 5) любой .png из папки
-String? _pickQuizBackground(String country, String subcat, int level) {
-  final byNewPattern = 'assets/images/bg/quiz/background_${country}.png';
-  if (AssetsIndex.has(byNewPattern)) return byNewPattern;
+String? _pickQuizBackground(String pack) {
+  final parts = pack.split('_');
+  final country = parts.isNotEmpty ? parts.first : pack;
+  final subcat = parts.length > 1 ? parts.sublist(1).join('_') : country;
+  const exts = ['png', 'webp', 'jpg', 'jpeg'];
+  final candidates = <String>[
+    for (final ext in exts) 'assets/images/bg/quiz/background_${country}_$subcat.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/background_${country}.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/${country}_$subcat.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/${country}.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/background_default.$ext',
+  ];
+  for (final path in candidates) {
+    if (AssetsIndex.has(path)) return path;
+  }
+  return 'assets/images/bg/quiz/background_${country}.png';
+}
 
-  final specificLevel = 'assets/images/bg/quiz/${country}_${subcat}_${level}.png';
-  if (AssetsIndex.has(specificLevel)) return specificLevel;
+Future<void> _showResultsDialog(
+  BuildContext context, {
+  required int total,
+  required int score,
+  required int stars,
+}) {
+  return showGeneralDialog<void>(
+    context: context,
+    barrierLabel: 'results',
+    barrierDismissible: true,
+    barrierColor: Colors.black45,
+    transitionDuration: const Duration(milliseconds: 320),
+    pageBuilder: (_, __, ___) => const SizedBox.shrink(),
+    transitionBuilder: (ctx, anim, __, ___) {
+      final curved = CurvedAnimation(parent: anim, curve: Curves.easeOutBack);
+      return Opacity(
+        opacity: anim.value,
+        child: Transform.scale(
+          scale: curved.value,
+          child: Center(
+            child: _ResultsDialogContent(
+              total: total,
+              score: score,
+              stars: stars,
+              onClose: () => Navigator.of(ctx).pop(),
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
 
-  final specificPack = 'assets/images/bg/quiz/${country}_${subcat}.png';
-  if (AssetsIndex.has(specificPack)) return specificPack;
+class _ResultsDialogContent extends StatelessWidget {
+  final int total;
+  final int score;
+  final int stars;
+  final VoidCallback onClose;
 
-  final byCountry = 'assets/images/bg/quiz/${country}.png';
-  if (AssetsIndex.has(byCountry)) return byCountry;
+  const _ResultsDialogContent({
+    required this.total,
+    required this.score,
+    required this.stars,
+    required this.onClose,
+  });
 
-  return AssetsIndex.firstInDir('assets/images/bg/quiz/');
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(maxWidth: 360),
+      margin: const EdgeInsets.symmetric(horizontal: 24),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFF5ECFF), Color(0xFFFFFFFF)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.deepPurple.withOpacity(.18),
+            blurRadius: 28,
+            offset: const Offset(0, 16),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(28, 32, 28, 26),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              _t(context, ru: 'Результаты', en: 'Results'),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              _t(
+                context,
+                ru: 'Правильных ответов: $score из $total',
+                en: 'Correct answers: $score of $total',
+              ),
+              style: Theme.of(context).textTheme.titleMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            TweenAnimationBuilder<double>(
+              tween: Tween(begin: 0, end: 1),
+              duration: const Duration(milliseconds: 420),
+              curve: Curves.easeOut,
+              builder: (_, value, __) => Opacity(
+                opacity: value,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: List.generate(
+                    3,
+                    (i) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                      child: Icon(
+                        i < stars ? Icons.star_rounded : Icons.star_border_rounded,
+                        size: 30,
+                        color: i < stars ? Colors.amber : Colors.black26,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 28),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: onClose,
+                style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                  textStyle: Theme.of(context).textTheme.titleMedium,
+                ),
+                child: Text(_t(context, ru: 'Готово', en: 'Done')),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+String _t(BuildContext context, {required String ru, required String en}) {
+  return Localizations.localeOf(context).languageCode == 'ru' ? ru : en;
 }
