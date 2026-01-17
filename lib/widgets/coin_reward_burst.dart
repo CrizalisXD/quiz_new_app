@@ -56,12 +56,15 @@ class _CoinRewardBurstState extends State<CoinRewardBurst>
       builder: (_, __) {
         final v = _c.value;
 
-        // Overlay opacity curve: 0 -> 0.35 -> 0
         double overlayA = 0.0;
         if (widget.dimBackground) {
-          if (v < 0.10) overlayA = (v / 0.10) * 0.35;
-          else if (v > 0.70) overlayA = (1 - (v - 0.70) / 0.15) * 0.35;
-          else overlayA = 0.35;
+          if (v < 0.10) {
+            overlayA = (v / 0.10) * 0.35;
+          } else if (v > 0.70) {
+            overlayA = (1 - (v - 0.70) / 0.15) * 0.35;
+          } else {
+            overlayA = 0.35;
+          }
           overlayA = overlayA.clamp(0.0, 0.35);
         }
 
@@ -94,23 +97,23 @@ class _CoinRewardBurstState extends State<CoinRewardBurst>
             ..._coins.map((p) {
               final s = p.sample(center, size, v);
               return Positioned(
-              left: s.pos.dx - s.size / 2,
-              top: s.pos.dy - s.size / 2,
-              child: Opacity(
-                opacity: s.opacity,
-                child: Transform.rotate(
-                angle: s.rotation,
-                child: Transform.scale(
-                  scale: s.scale,
-                  child: Image.asset(
-                  _coinAsset,
-                  width: s.size,
-                  height: s.size,
-                  filterQuality: FilterQuality.high,
+                left: s.pos.dx - s.size / 2,
+                top: s.pos.dy - s.size / 2,
+                child: Opacity(
+                  opacity: s.opacity,
+                  child: Transform.rotate(
+                    angle: s.rotation,
+                    child: Transform.scale(
+                      scale: s.scale,
+                      child: Image.asset(
+                        _coinAsset,
+                        width: s.size,
+                        height: s.size,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
                   ),
                 ),
-                ),
-              ),
               );
             }),
 
@@ -119,20 +122,20 @@ class _CoinRewardBurstState extends State<CoinRewardBurst>
               left: center.dx - centerSize / 2,
               top: center.dy - centerSize / 2,
               child: Transform.scale(
-              scale: centerScale,
-              child: Image.asset(
-                _coinAsset,
-                width: centerSize,
-                height: centerSize,
-                filterQuality: FilterQuality.high,
-              ),
+                scale: centerScale,
+                child: Image.asset(
+                  _coinAsset,
+                  width: centerSize,
+                  height: centerSize,
+                  filterQuality: FilterQuality.high,
+                ),
               ),
             ),
-            ],
-          );
-          },
+          ],
         );
-        }
+      },
+    );
+  }
 
   double _popScale(double v) {
     // 0..0.18 grow, 0.18..0.35 settle, then 1.0
@@ -189,7 +192,7 @@ class _RaysPainter extends CustomPainter {
       final paint = Paint()
         ..shader = RadialGradient(
           colors: [
-            const Color(0xFFFFD36B).withOpacity(a),
+            const Color(0xFFFFD36B).withValues(alpha: a),
             const Color(0x00FFD36B),
           ],
           stops: const [0.0, 1.0],

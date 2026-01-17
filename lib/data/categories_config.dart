@@ -2,26 +2,17 @@
 
 class SubcategoryConfig {
   final String key; // internal id
-  final String label; // UI label (fallback; UI may override with l10n)
-  final String imageAsset; // asset path (may fallback to country image)
-  const SubcategoryConfig({required this.key, required this.label, required this.imageAsset});
+  final String label; // UI label (optional fallback)
+  final String imageAsset; // asset path
+
+  const SubcategoryConfig({
+    required this.key,
+    required this.imageAsset,
+    this.label = '', // CHANGED: можно не указывать label
+  });
 }
 
-// Helper removed (replaced by _fullSet)
-
-// Full set of subcategories mirroring Japan's structure, using country image as placeholder.
-List<SubcategoryConfig> _fullSet(String countryKey) => [
-      SubcategoryConfig(key: 'classic', label: 'Классический', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'hard', label: 'Сложный', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'food', label: 'Еда и напитки', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'games', label: 'Игры и развлечения', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'cinema', label: 'Кино и анимация', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'architecture', label: 'Архитектура', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'legends', label: 'Легенды и мифы', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'history_persons', label: 'История в личностях', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'transport', label: 'Транспорт и технологии', imageAsset: 'assets/images/categories/$countryKey.png'),
-      SubcategoryConfig(key: 'unexpected', label: 'Неожиданное', imageAsset: 'assets/images/categories/$countryKey.png'),
-    ];
+// REMOVE: генератор _fullSet больше не нужен
 
 // Explicit list for Japan using provided dedicated assets.
 const _japan = <SubcategoryConfig>[
@@ -37,12 +28,62 @@ const _japan = <SubcategoryConfig>[
   SubcategoryConfig(key: 'unexpected', label: 'Неожиданное', imageAsset: 'assets/images/ui/japan_cat/japan_unexpected.png'),
 ];
 
-/// Map countryKey -> ordered subcategories. First always classic, second always Профессионал.
+const _egypt = <SubcategoryConfig>[
+  SubcategoryConfig(key: 'classic', imageAsset: 'assets/images/ui/egypt_cat/egypt_classic.png'),
+  SubcategoryConfig(key: 'hard', imageAsset: 'assets/images/ui/egypt_cat/egypt_hard.png'),
+  SubcategoryConfig(key: 'food', imageAsset: 'assets/images/ui/egypt_cat/egypt_food.png'),
+  SubcategoryConfig(key: 'games', imageAsset: 'assets/images/ui/egypt_cat/egypt_games.png'),
+  SubcategoryConfig(key: 'cinema', imageAsset: 'assets/images/ui/egypt_cat/egypt_cinema.png'),
+  SubcategoryConfig(key: 'architecture', imageAsset: 'assets/images/ui/egypt_cat/egypt_architecture.png'),
+  SubcategoryConfig(key: 'legends', imageAsset: 'assets/images/ui/egypt_cat/egypt_legends.png'),
+  SubcategoryConfig(key: 'history_persons', imageAsset: 'assets/images/ui/egypt_cat/egypt_history_persons.png'),
+  SubcategoryConfig(key: 'transport', imageAsset: 'assets/images/ui/egypt_cat/egypt_transport.png'),
+  SubcategoryConfig(key: 'unexpected', imageAsset: 'assets/images/ui/egypt_cat/egypt_unexpected.png'),
+];
+
+const _france = <SubcategoryConfig>[
+  SubcategoryConfig(key: 'classic', imageAsset: 'assets/images/ui/france_cat/france_classic.png'),
+  SubcategoryConfig(key: 'hard', imageAsset: 'assets/images/ui/france_cat/france_hard.png'),
+  SubcategoryConfig(key: 'food', imageAsset: 'assets/images/ui/france_cat/france_food.png'),
+  SubcategoryConfig(key: 'games', imageAsset: 'assets/images/ui/france_cat/france_games.png'),
+  SubcategoryConfig(key: 'cinema', imageAsset: 'assets/images/ui/france_cat/france_cinema.png'),
+  SubcategoryConfig(key: 'architecture', imageAsset: 'assets/images/ui/france_cat/france_architecture.png'),
+  SubcategoryConfig(key: 'legends', imageAsset: 'assets/images/ui/france_cat/france_legends.png'),
+  SubcategoryConfig(key: 'history_persons', imageAsset: 'assets/images/ui/france_cat/france_history_persons.png'),
+  SubcategoryConfig(key: 'transport', imageAsset: 'assets/images/ui/france_cat/france_transport.png'),
+  SubcategoryConfig(key: 'unexpected', imageAsset: 'assets/images/ui/france_cat/france_unexpected.png'),
+];
+
+const _brazil = <SubcategoryConfig>[
+  SubcategoryConfig(key: 'classic', imageAsset: 'assets/images/ui/brazil_cat/brazil_classic.png'),
+  SubcategoryConfig(key: 'hard', imageAsset: 'assets/images/ui/brazil_cat/brazil_hard.png'),
+  SubcategoryConfig(key: 'food', imageAsset: 'assets/images/ui/brazil_cat/brazil_food.png'),
+  SubcategoryConfig(key: 'games', imageAsset: 'assets/images/ui/brazil_cat/brazil_games.png'),
+  SubcategoryConfig(key: 'cinema', imageAsset: 'assets/images/ui/brazil_cat/brazil_cinema.png'),
+  SubcategoryConfig(key: 'architecture', imageAsset: 'assets/images/ui/brazil_cat/brazil_architecture.png'),
+  SubcategoryConfig(key: 'legends', imageAsset: 'assets/images/ui/brazil_cat/brazil_legends.png'),
+  SubcategoryConfig(key: 'history_persons', imageAsset: 'assets/images/ui/brazil_cat/brazil_history_persons.png'),
+  SubcategoryConfig(key: 'transport', imageAsset: 'assets/images/ui/brazil_cat/brazil_transport.png'),
+  SubcategoryConfig(key: 'unexpected', imageAsset: 'assets/images/ui/brazil_cat/brazil_unexpected.png'),
+];
+
+const _norway = <SubcategoryConfig>[
+  SubcategoryConfig(key: 'classic', imageAsset: 'assets/images/ui/norway_cat/norway_classic.png'),
+  SubcategoryConfig(key: 'hard', imageAsset: 'assets/images/ui/norway_cat/norway_hard.png'),
+  SubcategoryConfig(key: 'food', imageAsset: 'assets/images/ui/norway_cat/norway_food.png'),
+  SubcategoryConfig(key: 'games', imageAsset: 'assets/images/ui/norway_cat/norway_games.png'),
+  SubcategoryConfig(key: 'cinema', imageAsset: 'assets/images/ui/norway_cat/norway_cinema.png'),
+  SubcategoryConfig(key: 'architecture', imageAsset: 'assets/images/ui/norway_cat/norway_architecture.png'),
+  SubcategoryConfig(key: 'legends', imageAsset: 'assets/images/ui/norway_cat/norway_legends.png'),
+  SubcategoryConfig(key: 'history_persons', imageAsset: 'assets/images/ui/norway_cat/norway_history_persons.png'),
+  SubcategoryConfig(key: 'transport', imageAsset: 'assets/images/ui/norway_cat/norway_transport.png'),
+  SubcategoryConfig(key: 'unexpected', imageAsset: 'assets/images/ui/norway_cat/norway_unexpected.png'),
+];
+
 final Map<String, List<SubcategoryConfig>> countrySubcategories = {
   'japan': _japan,
-  // Mirror Japan structure for these countries (using generic images for now).
-  'egypt': _fullSet('egypt'),
-  'france': _fullSet('france'),
-  'brazil': _fullSet('brazil'),
-  'norway': _fullSet('norway'),
+  'egypt': _egypt,
+  'france': _france,
+  'brazil': _brazil,
+  'norway': _norway,
 };

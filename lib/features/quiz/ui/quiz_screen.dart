@@ -1,19 +1,22 @@
 import 'dart:async';
-import 'dart:math';
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show rootBundle, AssetManifest;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/foundation.dart';
+
 import '../../../core/app/locale_provider.dart';
-// Background removed per request.
 import '../../progress/star_utils.dart';
 import '../../../utils/json_path.dart';
-import '../../../utils/assets_index.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../utils/ui_metrics.dart';
 import '../../../services/report_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import '../../../utils/sound_manager.dart';
+
+import '../../../audio/audio_keys.dart'; // ADD
+import '../../../audio/audio_ref_ext.dart'; // ADD
+
 import '../../achievements/achievements_store.dart';
 import '../../auth/current_user.dart';
 
@@ -129,12 +132,11 @@ class _QState extends ConsumerState<QuizScreen> {
 
   QuestionLoader? loader;
 
+  Set<String>? _quizBgAssets; // ADD: кэш доступных фонов из assets/images/bg/quiz/
+
   @override
   void initState() {
     super.initState();
-
-    // Музыку здесь не трогаем — она должна продолжать играть без рестартов при входе/выходе.
-    // _initMusicForPack();
 
     // Если передан кастомный loader — используем его и гарантированно запускаем таймер после получения данных.
     if (widget.loader != null) {
@@ -154,31 +156,45 @@ class _QState extends ConsumerState<QuizScreen> {
         return qs;
       });
     }
-    // Подгрузим индекс ассетов заранее, чтобы можно было выбрать фон
-    AssetsIndex.ensureLoaded();
-    // Попробуем выгрузить локальную очередь отчётов
-    ReportService.flushQueue();
-  }
 
-  // Оставляем метод, но он не вызывается
-  void _initMusicForPack() {
-    // widget.pack — строка вроде "japan_classic", "egypt_food", "brazil_classic" и т.п.
-    final pack = widget.pack.toLowerCase();
-    String asset = 'assets/sound/home.mp3';
-    if (pack.startsWith('japan')) {
-      asset = 'assets/sound/japan.mp3';
-    } else if (pack.startsWith('egypt')) {
-      asset = 'assets/sound/egypt.mp3';
-    } else if (pack.startsWith('brazil')) {
-      asset = 'assets/sound/brazil.mp3';
-    }
-    SoundManager.playMusic(asset);
+    // CHANGED: грузим индекс всегда (а логируем только в debug)
+    // ignore: discarded_futures
+    unawaited(_loadQuizBgAssetsIndex());
+
+    ReportService.flushQueue();
   }
 
   @override
   void dispose() {
-    // Музыку не останавливаем
+    _t?.cancel(); // ADD: иначе таймер продолжает тикать после ухода
     super.dispose();
+  }
+
+  Future<void> _loadQuizBgAssetsIndex() async {
+    try {
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      final keys = manifest
+          .listAssets()
+          .where((k) => k.startsWith('assets/images/bg/quiz/'))
+          .toSet();
+
+      if (!mounted) return;
+      setState(() => _quizBgAssets = keys);
+
+      if (kDebugMode) {
+        final country = widget.pack.split('_').first;
+        final probe = 'assets/images/bg/quiz/background_$country.png'; // CHANGED
+        debugPrint('[QuizBG] indexed ${keys.length} assets under assets/images/bg/quiz/');
+        debugPrint('[QuizBG] has($probe) = ${keys.contains(probe)}');
+        for (final k in keys.where((k) => k.contains('background_$country')).take(20)) {
+          debugPrint('[QuizBG] match: $k');
+        }
+      }
+    } catch (e) {
+      if (kDebugMode) debugPrint('[QuizBG] manifest load error: $e');
+      if (!mounted) return;
+      setState(() => _quizBgAssets = const <String>{});
+    }
   }
 
   Future<List<QA>> _loadLevel(String pack, int level) async {
@@ -367,7 +383,8 @@ class _QState extends ConsumerState<QuizScreen> {
     if (_i + 1 >= all.length) {
       final starsEarned = StarUtils.fromScore(_score, all.length);
       _t?.cancel();
-      await SoundManager.playSfx('assets/sound/finish.mp3');
+
+      await ref.playSfx(SfxKey.finish); // CHANGED: единый AudioManager
 
       final userId = ref.read(currentUserProvider);
 
@@ -451,9 +468,9 @@ class _QState extends ConsumerState<QuizScreen> {
   }
 
   void _logEvent(String name, Map<String, Object?> data) {
-    // Лёгкая локальная аналитика (замените на Firebase/Segment при необходимости)
-    // ignore: avoid_print
-    print('[analytics] $name ${jsonEncode(data)}');
+    // CHANGED: не шумим в release
+    if (!kDebugMode) return;
+    debugPrint('[analytics] $name ${jsonEncode(data)}');
   }
 
   Future<void> _openReportDialog(QA qa) async {
@@ -570,7 +587,9 @@ class _QState extends ConsumerState<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final quizBg = _pickQuizBackground(widget.pack);
+    // CHANGED: выбираем фон только если он реально существует в манифесте
+    final quizBg = _pickQuizBackground(widget.pack, available: _quizBgAssets);
+
     return FutureBuilder<List<QA>>(
       future: _future,
       builder: (c, snap) {
@@ -593,18 +612,6 @@ class _QState extends ConsumerState<QuizScreen> {
               _shouldAutoNext = false;
               _next(all);
             }
-          });
-        }
-
-        // Определим страну/подкатегорию на основе pack (до/после первого '_')
-        final parts = widget.pack.split('_');
-        final country = parts.isNotEmpty ? parts.first : widget.pack;
-        final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
-        final subcat = _imageSubcatAlias(subcatRaw);
-        // Precache выбранный фон
-        if (quizBg != null) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) precacheImage(AssetImage(quizBg), context);
           });
         }
 
@@ -636,7 +643,8 @@ class _QState extends ConsumerState<QuizScreen> {
                 Image.asset(
                   quizBg,
                   fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => const ColoredBox(color: Colors.black),
+                  // CHANGED: не рисуем чёрный прямоугольник при отсутствии ассета
+                  errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
               Padding(
                 padding: EdgeInsets.fromLTRB(16, contentTopPadding(context), 16, 16),
@@ -691,7 +699,6 @@ class _QState extends ConsumerState<QuizScreen> {
                       children: [
                         _HintButton(
                           icon: Icons.percent,
-                          label: '50/50',
                           counter: _fiftyLeft,
                           onTap: () => _useFifty(qa),
                           enabled: !_locked && _fiftyLeft > 0,
@@ -699,7 +706,6 @@ class _QState extends ConsumerState<QuizScreen> {
                         const SizedBox(width: 16),
                         _HintButton(
                           icon: Icons.timer,
-                          label: '+5s',
                           counter: _addTimeLeft,
                           onTap: _useAddTime,
                           enabled: !_locked && _addTimeLeft > 0,
@@ -792,11 +798,6 @@ class _QState extends ConsumerState<QuizScreen> {
       },
     );
   }
-
-  void _onAnswerTap(int index) async {
-    await SoundManager.playSfx('assets/sound/click.mp3');
-    // ...existing логика выбора ответа...
-  }
 }
 
 // Фишка доступности: метка сложности
@@ -840,184 +841,40 @@ class _DifficultyChip extends StatelessWidget {
   }
 }
 
-/// Простой экран результатов (минимум UI)
-class _ResultsScreen extends StatelessWidget {
-  final int total;
-  final int score;
-  final int stars;
-  const _ResultsScreen({required this.total, required this.score, required this.stars});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Результаты'), backgroundColor: Colors.transparent, elevation: 0),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('Правильных ответов: $score из $total', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-              const SizedBox(height: 12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(3, (i) => Icon(i < stars ? Icons.star_rounded : Icons.star_border_rounded, color: Colors.amber)),
-              ),
-              const SizedBox(height: 24),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Готово'),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _HintButton extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final int counter;
-  final bool enabled;
-  final VoidCallback onTap;
-  const _HintButton({required this.icon, required this.label, required this.counter, required this.onTap, this.enabled = true});
-  @override
-  Widget build(BuildContext context) {
-    final fg = enabled ? Colors.black87 : Colors.black26;
-    return Column(
-      children: [
-        InkResponse(
-          onTap: enabled ? onTap : null,
-          radius: 28,
-          child: CircleAvatar(
-            radius: 24,
-            backgroundColor: Colors.white,
-            child: Icon(icon, color: fg),
-          ),
-        ),
-        const SizedBox(height: 4),
-        Text('x$counter', style: TextStyle(color: fg, fontWeight: FontWeight.w600)),
-      ],
-    );
-  }
-}
-
-/// Сетка ответов 2x2, учитывает скрытые позиции (50/50)
-class _AnswersGrid extends StatelessWidget {
-  final QA qa;
-  final Set<int> hidden;
-  final bool locked;
-  final int? picked;
-  final void Function(int idx) onPick;
-  final Color Function(int idx) answerColor;
-  final double Function(int idx) answerOpacity;
-
-  const _AnswersGrid({
-    required this.qa,
-    required this.hidden,
-    required this.locked,
-    required this.picked,
-    required this.onPick,
-    required this.answerColor,
-    required this.answerOpacity,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final visibleEntries = qa.answers.asMap().entries.where((e) => !hidden.contains(e.key)).toList();
-    final items = visibleEntries.map((entry) {
-      final idx = entry.key;
-      final a = entry.value;
-      final isBtnEnabled = !locked;
-      final isCorrectNow = locked ? a.correct : null;
-      return Semantics(
-        button: true,
-        enabled: isBtnEnabled,
-        // Читатели экрана получат понятный текст
-        label: 'Вариант ${idx + 1}: ${a.text}${locked ? (isCorrectNow == true ? ", правильный" : isCorrectNow == false ? ", неправильный" : "") : ""}',
-        child: Material(
-          color: answerColor(idx),
-          borderRadius: BorderRadius.circular(12),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(12),
-            onTap: isBtnEnabled ? () => onPick(idx) : null,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 180),
-              opacity: answerOpacity(idx),
-              child: Container(
-                constraints: const BoxConstraints(minHeight: 56),
-                padding: const EdgeInsets.all(14),
-                child: Row(
-                  children: [
-                    Icon(
-                      locked ? (a.correct ? Icons.check_circle : Icons.cancel) : Icons.circle_outlined,
-                      color: locked ? (a.correct ? Colors.green : Colors.red) : Colors.black45,
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(child: Text(a.text, style: const TextStyle(fontSize: 16))),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    }).toList();
-
-    return GridView.count(
-      crossAxisCount: 2,
-      mainAxisSpacing: 12,
-      crossAxisSpacing: 12,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      childAspectRatio: 3.6, // достаточно широкие кнопки
-      children: items,
-    );
-  }
-}
-
-// ===== УТИЛИТЫ ДЛЯ АЛИАСОВ И ФОНОВ =====
-
-// Алиасы подкатегорий (для совместимости с именами файлов ассетов)
-String _imageSubcatAlias(String subcatKey) {
-  switch (subcatKey) {
-    case 'food':
-      return 'cuisine';
-    case 'history_persons':
-      return 'history_personalities';
-    default:
-      return subcatKey;
-  }
-}
-
 /// Фон для экрана вопроса из assets/images/bg/quiz/// Приоритет:
 /// 1) background_{country}.png
 /// 2) {country}_{subcat}_{level}.png
 /// 3) {country}_{subcat}.png
 /// 4) {country}.png
 /// 5) любой .png из папки
-String? _pickQuizBackground(String pack) {
+String? _pickQuizBackground(String pack, {Set<String>? available}) {
+  if (available == null || available.isEmpty) return null;
+
   final parts = pack.split('_');
   final country = parts.isNotEmpty ? parts.first : pack;
-  final subcat = parts.length > 1 ? parts.sublist(1).join('_') : country;
+  final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
+  final subcat = _imageSubcatAlias(subcatRaw);
+
   const exts = ['png', 'webp', 'jpg', 'jpeg'];
+
+  // CHANGED: приоритет — background_{country}.*
   final candidates = <String>[
+    for (final ext in exts) 'assets/images/bg/quiz/background_$country.$ext',
     for (final ext in exts) 'assets/images/bg/quiz/background_${country}_$subcat.$ext',
-    for (final ext in exts) 'assets/images/bg/quiz/background_${country}.$ext',
-    for (final ext in exts) 'assets/images/bg/quiz/${country}_$subcat.$ext',
-    for (final ext in exts) 'assets/images/bg/quiz/${country}.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/$country/$subcat.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/$pack.$ext',
+    for (final ext in exts) 'assets/images/bg/quiz/$country.$ext',
     for (final ext in exts) 'assets/images/bg/quiz/background_default.$ext',
   ];
-  for (final path in candidates) {
-    if (AssetsIndex.has(path)) return path;
+
+  for (final c in candidates) {
+    if (available.contains(c)) return c;
   }
-  return 'assets/images/bg/quiz/background_${country}.png';
+  return null;
 }
+
+// REMOVE: старый debug-метод, который читал AssetManifest.json (в новых Flutter может отсутствовать)
+// Future<void> _debugPrintQuizBgAssets() async { ... }
 
 Future<void> _showResultsDialog(
   BuildContext context, {
@@ -1149,4 +1006,154 @@ class _ResultsDialogContent extends StatelessWidget {
 
 String _t(BuildContext context, {required String ru, required String en}) {
   return Localizations.localeOf(context).languageCode == 'ru' ? ru : en;
+}
+
+// ADD: эти виджеты используются в build(), но сейчас их нет/они были удалены.
+class _HintButton extends StatelessWidget {
+  final IconData icon;
+  final int counter;
+  final bool enabled;
+  final VoidCallback onTap;
+
+  const _HintButton({
+    required this.icon,
+    required this.counter,
+    required this.onTap,
+    this.enabled = true,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final fg = enabled ? Colors.black87 : Colors.black26;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        InkResponse(
+          onTap: enabled ? onTap : null,
+          radius: 28,
+          child: CircleAvatar(
+            radius: 24,
+            backgroundColor: Colors.white,
+            child: Icon(icon, color: fg),
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text('x$counter', style: TextStyle(color: fg, fontWeight: FontWeight.w600)),
+      ],
+    );
+  }
+}
+
+class _AnswersGrid extends StatelessWidget {
+  final QA qa;
+  final Set<int> hidden;
+  final bool locked;
+  final int? picked;
+  final void Function(int idx) onPick;
+  final Color Function(int idx) answerColor;
+  final double Function(int idx) answerOpacity;
+
+  const _AnswersGrid({
+    required this.qa,
+    required this.hidden,
+    required this.locked,
+    required this.picked,
+    required this.onPick,
+    required this.answerColor,
+    required this.answerOpacity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final entries = qa.answers.asMap().entries.where((e) => !hidden.contains(e.key)).toList();
+
+    return GridView.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 12,
+      crossAxisSpacing: 12,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      childAspectRatio: 3.6,
+      children: [
+        for (final entry in entries)
+          _AnswerTile(
+            idx: entry.key,
+            text: entry.value.text,
+            correct: entry.value.correct,
+            locked: locked,
+            onPick: () => onPick(entry.key),
+            color: answerColor(entry.key),
+            opacity: answerOpacity(entry.key),
+          ),
+      ],
+    );
+  }
+}
+
+// маленький приватный тайл, чтобы не дублировать разметку
+class _AnswerTile extends StatelessWidget {
+  final int idx;
+  final String text;
+  final bool correct;
+  final bool locked;
+  final VoidCallback onPick;
+  final Color color;
+  final double opacity;
+
+  const _AnswerTile({
+    required this.idx,
+    required this.text,
+    required this.correct,
+    required this.locked,
+    required this.onPick,
+    required this.color,
+    required this.opacity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      enabled: !locked,
+      label: 'Вариант ${idx + 1}: $text${locked ? (correct ? ", правильный" : ", неправильный") : ""}',
+      child: Material(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: locked ? null : onPick,
+          child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 180),
+            opacity: opacity,
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 56),
+              padding: const EdgeInsets.all(14),
+              child: Row(
+                children: [
+                  Icon(
+                    locked ? (correct ? Icons.check_circle : Icons.cancel) : Icons.circle_outlined,
+                    color: locked ? (correct ? Colors.green : Colors.red) : Colors.black45,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(child: Text(text, style: const TextStyle(fontSize: 16))),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ADD: алиасы подкатегорий (используется и при загрузке вопросов, и при выборе фона)
+String _imageSubcatAlias(String subcatKey) {
+  switch (subcatKey) {
+    case 'food':
+      return 'cuisine';
+    case 'history_persons':
+      return 'history_personalities';
+    default:
+      return subcatKey;
+  }
 }

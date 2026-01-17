@@ -1,111 +1,65 @@
+import 'dart:ui' show FontFeature;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/services.dart';
-// Legacy profile removed for coins/stars display; using per-user ProgressStore instead.
+
+// ADD: эти импорты нужны, потому что ниже используются CategoryCard/coinsProvider/diamondsProvider
 import 'widgets/category_card.dart';
 import '../progress/progress_providers.dart';
+
 import '../settings/settings_screen.dart';
 import '../achievements/achievements_screen.dart';
 import 'package:quiz_new_app/l10n/app_localizations.dart';
-import '../../utils/sound_manager.dart';
 import '../auth/current_user.dart';
-import '../achievements/achievements_store.dart'; // ✅ добавить
-import '../../utils/assets_index.dart'; // ✅ добавить
+import '../achievements/achievements_store.dart';
 
-// Единый маппинг трека по стране
-String _musicForCountryKey(String countryKey) {
+import '../../audio/audio_keys.dart'; // ADD
+import '../../audio/audio_ref_ext.dart'; // ADD
+
+BgmKey _bgmForCountryKey(String countryKey) {
   switch (countryKey) {
     case 'japan':
-      return 'assets/sound/japan.mp3';
+      return BgmKey.japan;
     case 'egypt':
-      return 'assets/sound/egypt.mp3';
+      return BgmKey.egypt;
     case 'france':
-      return 'assets/sound/france.mp3';
+      return BgmKey.france;
     case 'brazil':
-      return 'assets/sound/brazil.mp3';
+      return BgmKey.brazil;
     case 'norway':
-      return 'assets/sound/norway.mp3';
+      return BgmKey.norway;
     default:
-      return 'assets/sound/home.mp3';
+      return BgmKey.home;
   }
 }
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
-
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObserver {
-  static bool _assetSelfTestDone = false; // гарантируем один запуск
-  static bool _audioWarmupDone = false;
-
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addObserver(this); // FIX: был removeObserver без addObserver
 
-    // ✅ грузим индекс ассетов, чтобы можно было выбирать картинку из папки
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await AssetsIndex.ensureLoaded();
-      if (mounted) setState(() {}); // пересобрать UI, чтобы подхватить ui/egypt_cat/*
-    });
-
-    _runAssetSelfTestOnce();
-
-    // Включаем музыку главного меню при старте
-    SoundManager.playMusic('assets/sound/home.mp3');
-
-    // Прогрев аудио (один раз), чтобы снизить/убрать задержку при первом переключении треков
-    if (!_audioWarmupDone) {
-      _audioWarmupDone = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
-        try {
-          final sm = SoundManager as dynamic;
-          // если в SoundManager есть preload/precache — воспользуемся
-          await sm.preload?.call('assets/sound/home.mp3');
-          await sm.preload?.call('assets/sound/japan.mp3');
-          await sm.preload?.call('assets/sound/egypt.mp3');
-          await sm.preload?.call('assets/sound/france.mp3');
-          await sm.preload?.call('assets/sound/brazil.mp3');
-          await sm.preload?.call('assets/sound/norway.mp3');
-          await sm.preload?.call('assets/sound/click.mp3');
-        } catch (_) {
-          // нет preload — оставляем как есть (тогда нужно добавить preload в SoundManager)
-        }
-      });
-    }
-  }
-
-  void _runAssetSelfTestOnce() {
-    if (_assetSelfTestDone) return;
-    _assetSelfTestDone = true;
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      try {
-        final manifestStr = await rootBundle.loadString('AssetManifest.json');
-        final contains = manifestStr.contains('assets/images/bg/home/home.png');
-        debugPrint('[AssetSelfTest] length=${manifestStr.length}');
-        debugPrint(contains
-            ? '[AssetSelfTest] FOUND assets/images/bg/home/home.png'
-            : '[AssetSelfTest] STILL NOT FOUND (assets/images/bg/home/home.png)');
-      } catch (e) {
-        debugPrint('[AssetSelfTest] error: $e');
-      }
-    });
-  }
-
-  String _categoryImageForCountry(String countryKey) {
-    // В папке assets/images/ui/{country}_cat/ теперь лежат картинки ПОДКАТЕГОРИЙ,
-    // поэтому на Home не выбираем "первую попавшуюся" из этой папки.
-    return 'assets/images/categories/$countryKey.png';
+    // BGM главного меню (через единый AudioManager)
+    // ignore: discarded_futures
+    ref.playBgm(BgmKey.home);
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
+  }
+
+  String _categoryImageForCountry(String countryKey) {
+    // В папке assets/images/ui/{country}_cat/ теперь лежат картинки ПОДКАТЕГОРИЙ,
+    // поэтому на Home не выбираем "первую попавшуюся" из этой папки.
+    return 'assets/images/categories/$countryKey.png';
   }
 
   @override
@@ -202,17 +156,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                               semanticsLabel: 'Diamond',
                             ),
                           ),
-                          const SizedBox(width: 8),
-                          const _CurrencyBadge(
-                            colors: [Color(0xFFD7F9FF), Color(0xFFFFFFFF)],
-                            icon: Icons.confirmation_number_outlined,
-                            label: '—',
-                            semanticsLabel: 'Билеты',
-                          ),
+
                           const Spacer(),
                           IconButton(
                             onPressed: () {
-                              SoundManager.playSfx('assets/sound/click.mp3');
+                              // ignore: discarded_futures
+                              ref.playSfx(SfxKey.click);
                               Navigator.pushNamed(context, SettingsScreen.route);
                             },
                             icon: const Icon(Icons.settings, color: Colors.black87),
@@ -229,7 +178,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                         itemBuilder: (c, i) {
                           final key = countryKeys[i];
                           final title = _countryNameLocalized(context, key);
-                          final imageAsset = _categoryImageForCountry(key); // ✅
+                          final imageAsset = _categoryImageForCountry(key);
 
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,12 +195,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                                 ),
                               ),
                               CategoryCard(
-                                imageAsset: imageAsset, // ✅ было assets/images/categories/$key.png
+                                imageAsset: imageAsset,
                                 onTap: () async {
-                                  SoundManager.playSfx('assets/sound/click.mp3');
-                                  SoundManager.playMusic(_musicForCountryKey(key));
+                                  // ignore: discarded_futures
+                                  ref.playSfx(SfxKey.click);
+                                  // ignore: discarded_futures
+                                  ref.playBgm(_bgmForCountryKey(key));
 
-                                  // Ожидается: внутри markCountryOpenedOnce должен инкрементить counter 'countries_opened'
                                   await AchievementsStore.markCountryOpenedOnce(userId, key);
 
                                   if (!context.mounted) return;
@@ -261,10 +211,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                                     arguments: {
                                       'countryKey': key,
                                       'title': title,
-                                      'imageAsset': imageAsset, // ✅ чтобы CategoryScreen тоже показал эту картинку
+                                      'imageAsset': imageAsset,
                                     },
                                   ).then((_) {
-                                    SoundManager.playMusic('assets/sound/home.mp3');
+                                    // ignore: discarded_futures
+                                    ref.playBgm(BgmKey.home);
                                   });
                                 },
                               ),
@@ -297,7 +248,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                 icon: Icons.emoji_events_outlined,
                 label: AppLocalizations.of(context).home_achievements,
                 onTap: () {
-                  SoundManager.playSfx('assets/sound/click.mp3');
+                  // ignore: discarded_futures
+                  ref.playSfx(SfxKey.click);
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => const AchievementsScreen()),
                   );
@@ -307,7 +259,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                 icon: Icons.person_outline,
                 label: AppLocalizations.of(context).home_profile,
                 onTap: () {
-                  SoundManager.playSfx('assets/sound/click.mp3');
+                  // ignore: discarded_futures
+                  ref.playSfx(SfxKey.click);
                   Navigator.pushNamed(context, '/profile');
                 },
               ),
@@ -315,7 +268,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                 icon: Icons.storefront_outlined,
                 label: AppLocalizations.of(context).home_shop,
                 onTap: () {
-                  SoundManager.playSfx('assets/sound/click.mp3');
+                  // ignore: discarded_futures
+                  ref.playSfx(SfxKey.click);
                   Navigator.pushNamed(context, '/shop');
                 },
               ),

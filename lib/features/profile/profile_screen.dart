@@ -23,12 +23,16 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final st = ref.watch(profileProvider);
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context).profile_title), actions: [
-        IconButton(
-          tooltip: 'Сбросить (гость)',
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context).profile_title),
+        actions: [
+          IconButton(
+            tooltip: 'Сбросить (гость)',
             onPressed: () => ref.read(profileProvider.notifier).reset(),
-            icon: const Icon(Icons.refresh)),
-      ]),
+            icon: const Icon(Icons.refresh),
+          ),
+        ],
+      ),
       body: st.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('Ошибка: $e')),
@@ -52,7 +56,7 @@ class _BodyState extends ConsumerState<_Body> {
   @override
   Widget build(BuildContext context) {
     final userId = ref.watch(currentUserProvider);
-    final profile = widget.profile; // удобный алиас
+    final profile = widget.profile;
     return Align(
       alignment: Alignment.topCenter,
       child: ConstrainedBox(
@@ -66,36 +70,29 @@ class _BodyState extends ConsumerState<_Body> {
             const SizedBox(height: 24),
             Row(
               children: [
-                Text(AppLocalizations.of(context).profile_progress_by_countries, style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  AppLocalizations.of(context).profile_progress_by_countries,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 const Spacer(),
                 TextButton(
                   onPressed: () => setState(() => _showCountryProgress = !_showCountryProgress),
-                  child: Text(_showCountryProgress ? _t(context, ru: 'Скрыть', en: 'Hide') : _t(context, ru: 'Показать', en: 'Show')),
-                )
+                  child: Text(
+                    _showCountryProgress
+                        ? _t(context, ru: 'Скрыть', en: 'Hide')
+                        : _t(context, ru: 'Показать', en: 'Show'),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 8),
-  if (_showCountryProgress) const CountryProgressList() else const SizedBox.shrink(),
+            if (_showCountryProgress) const CountryProgressList() else const SizedBox.shrink(),
             const SizedBox(height: 24),
             RewardsByCountrySection(userId: userId),
             const SizedBox(height: 32),
           ],
         ),
       ),
-    );
-  }
-}
-
-class _ChipStat extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  const _ChipStat({required this.icon, required this.label});
-  @override
-  Widget build(BuildContext context) {
-    return Chip(
-      avatar: Icon(icon, size: 18),
-      label: Text(label),
-      visualDensity: VisualDensity.compact,
     );
   }
 }
@@ -156,22 +153,18 @@ class _AvatarHeader extends StatelessWidget {
             children: [
               Text(profile.name, style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 4),
-              Text('${AppLocalizations.of(context).rank_title}: ${RankUtils.label(rank, context)}', style: const TextStyle(fontSize: 12, color: Colors.black87)),
+              Text(
+                '${AppLocalizations.of(context).rank_title}: ${RankUtils.label(rank, context)}',
+                style: const TextStyle(fontSize: 12, color: Colors.black87),
+              ),
               const SizedBox(height: 4),
-              Text('ID: ${profile.id}', style: const TextStyle(fontSize: 12, color: Colors.black54)),
-              const SizedBox(height: 8),
-              Wrap(
-                spacing: 12,
-                runSpacing: 4,
-                children: [
-                  _ChipStat(icon: Icons.monetization_on, label: profile.coins.toString()),
-                  _ChipStat(icon: Icons.star_rate, label: profile.totalStars.toString()),
-                  _ChipStat(icon: Icons.videogame_asset, label: profile.gamesPlayed.toString()),
-                ],
-              )
+              Text(
+                'ID: ${profile.id}',
+                style: const TextStyle(fontSize: 12, color: Colors.black54),
+              ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
@@ -193,7 +186,6 @@ class CountryProgressList extends ConsumerWidget {
       expected += exp;
       final packKey = '${country}_${sc.key}';
       final (starsList, unlocked) = await ProgressStore.getLevelsProgress(userId, packKey, exp);
-      // Считаем завершёнными уровни, где есть звёзды (>0) или уровень открыт (unlocked)
       int subCompleted = 0;
       for (var i = 0; i < exp; i++) {
         if (starsList[i] > 0 || unlocked[i]) subCompleted++;
@@ -212,7 +204,8 @@ class CountryProgressList extends ConsumerWidget {
           FutureBuilder<(int, int)>(
             future: _calcForCountry(context, ref, c),
             builder: (context, snap) {
-              final stats = snap.data ?? (0, (countrySubcategories[c]?.fold<int>(0, (p, sc) => p + _expectedForSub(sc.key)) ?? 0));
+              final stats = snap.data ??
+                  (0, (countrySubcategories[c]?.fold<int>(0, (p, sc) => p + _expectedForSub(sc.key)) ?? 0));
               return _CountryProgressTile(
                 countryKey: c,
                 label: _countryNameLocalized(context, c),
@@ -224,7 +217,7 @@ class CountryProgressList extends ConsumerWidget {
             },
           ),
           const SizedBox(height: 14),
-        ]
+        ],
       ],
     );
   }
@@ -332,22 +325,25 @@ class _DevActionsRow extends ConsumerWidget {
   const _DevActionsRow({required this.userId});
 
   Future<void> _confirm(BuildContext context, String title, Future<void> Function() action) async {
-    final ok = await showDialog<bool>(context: context, builder: (_) => AlertDialog(
-      title: Text(title),
-      content: Text(_t(context, ru: 'Действие нельзя отменить. Продолжить?', en: 'This action cannot be undone. Continue?')),
-      actions: [
-        TextButton(onPressed: () => Navigator.pop(context, false), child: Text(_t(context, ru: 'Отмена', en: 'Cancel'))),
-        FilledButton(onPressed: () => Navigator.pop(context, true), child: Text(_t(context, ru: 'Да', en: 'Yes'))),
-      ],
-    ));
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(title),
+        content: Text(_t(context, ru: 'Действие нельзя отменить. Продолжить?', en: 'This action cannot be undone. Continue?')),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(_t(context, ru: 'Отмена', en: 'Cancel')),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(_t(context, ru: 'Да', en: 'Yes')),
+          ),
+        ],
+      ),
+    );
     if (ok == true) {
       await action();
-      if (context.mounted) {
-        // ❌ убрать нижний попап "Готово"
-        // ScaffoldMessenger.of(context).showSnackBar(
-        //   SnackBar(content: Text(_t(context, ru: 'Готово', en: 'Done'))),
-        // );
-      }
     }
   }
 
@@ -365,11 +361,8 @@ class _DevActionsRow extends ConsumerWidget {
               () async {
                 await ProgressStore.wipeUser(userId);
                 await RewardsStore.clear(userId);
-
-                // достижения (counters/claimed/diamond-wallet)
                 await AchievementsStore.wipeUser(userId);
 
-                // ✅ обновить валюты в UI сразу
                 ref.invalidate(coinsProvider);
                 ref.invalidate(diamondsProvider);
 
@@ -387,17 +380,7 @@ class _DevActionsRow extends ConsumerWidget {
               context,
               _t(context, ru: 'Выдать максимум прогресса и наград', en: 'Grant max progress & rewards'),
               () async {
-                // 1) прогресс (уровни/звёзды) — нужен метод в ProgressStore (dev)
-                // 2) постеры — нужен метод в RewardsStore (dev)
-                // 3) валюта/claimed/counters — метод в AchievementsStore (dev)
-
                 await AchievementsStore.grantAllDev(userId);
-
-                // если вы добавите dev-методы в эти сторы — раскомментируйте:
-                // await ProgressStore.grantAllDev(userId);
-                // await RewardsStore.grantAllDev(userId);
-
-                // обновим профиль (перечитает coins/stars/gamesPlayed и т.п.)
                 ref.invalidate(profileProvider);
               },
             ),
@@ -407,8 +390,6 @@ class _DevActionsRow extends ConsumerWidget {
     );
   }
 }
-
-// Секции достижений временно нет на экране профиля
 
 // Соответствие ключей подкатегорий к алиасам картинок (дублирует логику из LevelsScreen)
 String _imageSubcatAlias(String subcatKey) {
@@ -505,11 +486,15 @@ class _RewardsByCountrySectionState extends State<RewardsByCountrySection> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(_t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
-                      style: Theme.of(context).textTheme.titleMedium),
+                  Text(
+                    _t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                   const SizedBox(height: 8),
-                  Text(AppLocalizations.of(context).profile_no_rewards,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black54)),
+                  Text(
+                    AppLocalizations.of(context).profile_no_rewards,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black54),
+                  ),
                 ],
               ),
             ),
@@ -541,8 +526,10 @@ class _RewardsByCountrySectionState extends State<RewardsByCountrySection> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(_t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
-                    style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  _t(context, ru: 'Коллекция постеров', en: 'Poster collection'),
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 const SizedBox(height: 4),
                 Text(
                   '${_t(context, ru: 'Собрано постеров', en: 'Posters collected')}: $totalCollected/$totalAvailable',
@@ -599,7 +586,11 @@ class _CountryRewardsBlock extends StatelessWidget {
             const Spacer(),
             TextButton(
               onPressed: onToggle,
-              child: Text(expanded ? _t(context, ru: 'Свернуть', en: 'Show less') : _t(context, ru: 'Показать больше', en: 'Show more')),
+              child: Text(
+                expanded
+                    ? _t(context, ru: 'Свернуть', en: 'Show less')
+                    : _t(context, ru: 'Показать больше', en: 'Show more'),
+              ),
             ),
           ],
         ),

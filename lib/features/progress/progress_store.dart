@@ -1,9 +1,21 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Ключи: u:<userId>|coins, u:<userId>|stars|<packKey>|<level>, u:<userId>|unlocked|<packKey>|<level>
+/// Ключи:
+/// - `u:{userId}|coins`
+/// - `u:{userId}|stars|{packKey}|{level}`
+/// - `u:{userId}|unlocked|{packKey}|{level}`
 /// Добавлен простой in-memory кэш + batch API для сокращения числа обращений/ FutureBuilder'ов.
 class ProgressStore {
-  static String _pfx(String userId) => 'u:$userId';
+  ProgressStore._();
+
+  static const String _anonUserId = 'anon';
+  static const String _userPrefix = 'u:'; // ADD
+  static const String _sep = '|'; // ADD
+
+  static String _pfx(String userId) => '$_userPrefix${userId.isEmpty ? _anonUserId : userId}';
+
+  // ADD: единый сборщик ключей prefs
+  static String _key(String userId, String tail) => '${_pfx(userId)}$_sep$tail';
 
   // КЭШИ (очень простой; не потокобезопасен, но для Flutter UI достаточно).
   static final Map<String, int> _coinsCache = {};
@@ -13,21 +25,24 @@ class ProgressStore {
   static String _starsKey(String packKey, int level) => '$packKey|$level';
   static String _unlockKey(String packKey, int level) => '$packKey|$level';
 
+  // CHANGED: max signed int32
+  static const int _maxCoins = 2147483647;
+
   /// ========== COINS ==========
   static Future<int> getCoins(String userId) async {
     final cached = _coinsCache[userId];
     if (cached != null) return cached;
     final p = await SharedPreferences.getInstance();
-    final v = p.getInt('${_pfx(userId)}|coins') ?? 0;
+    final v = p.getInt(_key(userId, 'coins')) ?? 0; // CHANGED
     _coinsCache[userId] = v;
     return v;
   }
 
   static Future<void> addCoins(String userId, int delta) async {
     final current = await getCoins(userId);
-    final next = (current + delta).clamp(0, 1 << 31);
+    final next = (current + delta).clamp(0, _maxCoins);
     final p = await SharedPreferences.getInstance();
-    await p.setInt('${_pfx(userId)}|coins', next);
+    await p.setInt(_key(userId, 'coins'), next); // CHANGED
     _coinsCache[userId] = next;
   }
 
@@ -38,15 +53,14 @@ class ProgressStore {
     final cached = packMap[composite];
     if (cached != null) return cached;
     final p = await SharedPreferences.getInstance();
-    final key = '${_pfx(userId)}|stars|$packKey|$level';
-    final v = p.getInt(key) ?? 0;
+    final v = p.getInt(_key(userId, 'stars|$packKey|$level')) ?? 0; // CHANGED
     packMap[composite] = v;
     return v;
   }
 
   static Future<void> setLevelStars(String userId, String packKey, int level, int stars) async {
     final p = await SharedPreferences.getInstance();
-    final key = '${_pfx(userId)}|stars|$packKey|$level';
+    final key = _key(userId, 'stars|$packKey|$level'); // CHANGED
     final prev = p.getInt(key) ?? 0;
     if (stars > prev) {
       final clamped = stars.clamp(0, 3);
@@ -57,23 +71,21 @@ class ProgressStore {
 
   /// ========== UNLOCK ==========
   static Future<bool> isLevelUnlocked(String userId, String packKey, int level) async {
-    if (level == 1) return true; // первый уровень всегда доступен
+    if (level == 1) return true;
     final userMap = _unlockCache.putIfAbsent(userId, () => {});
     final composite = _unlockKey(packKey, level);
     final cached = userMap[composite];
     if (cached != null) return cached;
     final p = await SharedPreferences.getInstance();
-    final key = '${_pfx(userId)}|unlocked|$packKey|$level';
-    final v = p.getBool(key) ?? false;
+    final v = p.getBool(_key(userId, 'unlocked|$packKey|$level')) ?? false; // CHANGED
     userMap[composite] = v;
     return v;
   }
 
   static Future<void> unlockLevel(String userId, String packKey, int level) async {
-    if (level <= 1) return; // первый и так открыт
+    if (level <= 1) return;
     final p = await SharedPreferences.getInstance();
-    final key = '${_pfx(userId)}|unlocked|$packKey|$level';
-    await p.setBool(key, true);
+    await p.setBool(_key(userId, 'unlocked|$packKey|$level'), true); // CHANGED
     _unlockCache.putIfAbsent(userId, () => {})[_unlockKey(packKey, level)] = true;
   }
 
@@ -114,8 +126,8 @@ class ProgressStore {
           unlocked = userUnlock[unlockComp]!;
         } else {
           final key = '${_pfx(userId)}|unlocked|$packKey|$i';
-            unlocked = p.getBool(key) ?? false;
-            userUnlock[unlockComp] = unlocked;
+          unlocked = p.getBool(key) ?? false;
+          userUnlock[unlockComp] = unlocked;
         }
       }
       unlockedList[i - 1] = unlocked;

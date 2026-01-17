@@ -40,40 +40,41 @@ flutter:
     - assets/images/categories/france.png
     - assets/images/categories/brazil.png
     - assets/images/categories/norway.png
+    # фоновые изображения
     - assets/images/bg/home/home.png
     - assets/images/bg/category/
-    - assets/images/ui/japan_cat/
-    - assets/images/ui/japan_classic_lvl/japan_classic_1.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_2.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_3.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_4.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_5.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_6.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_7.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_8.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_9.png
-    - assets/images/ui/japan_classic_lvl/japan_classic_10.png
-    - assets/images/ui/japan_hard_lvl/
-    - assets/images/ui/japan_games_lvl/
-    - assets/images/ui/japan_legends_lvl/
-    - assets/images/ui/japan_cinema_lvl/
-    - assets/images/ui/japan_cuisine_lvl/
-    - assets/images/ui/japan_transport_lvl/
-    - assets/images/ui/japan_unexpected_lvl/
-    - assets/images/ui/japan_history_personalities_lvl/  
-    - assets/images/ui/japan_architecture_lvl/ 
-    - assets/images/ui/egypt_cat/
-    - assets/images/ui/egypt_classic_lvl/
-    - assets/images/ui/egypt_hard_lvl/
-    - assets/images/ui/egypt_games_lvl/
-    - assets/images/ui/egypt_legends_lvl/
-    - assets/images/ui/egypt_cinema_lvl/
-    - assets/images/ui/egypt_cuisine_lvl/
-    - assets/images/ui/egypt_transport_lvl/
-    - assets/images/ui/egypt_unexpected_lvl/
-    - assets/images/ui/egypt_history_personalities_lvl/
-    - assets/images/ui/egypt_architecture_lvl/   
-    # Добавляем все папки уровней для всех стран   
+    - assets/images/bg/level/level_brazil.png
+    - assets/images/bg/level/level_egypt.png
+    - assets/images/bg/level/level_france.png
+    - assets/images/bg/level/level_japan.png
+    - assets/images/bg/level/level_norway.png
+    # ВАЖНО: эта строка подключает ВСЕ файлы внутри папки, но папка должна существовать,
+    # а имена файлов в коде должны совпадать 1-в-1 (включая регистр).
+    - assets/images/bg/quiz/
+    # папки с изображениями уровней для японии
+    - assets/images/ui/japan/japan_cat/
+    - assets/images/ui/japan/japan_classic_lvl/
+    - assets/images/ui/japan/japan_games_lvl/
+    - assets/images/ui/japan/japan_legends_lvl/
+    - assets/images/ui/japan/japan_cinema_lvl/
+    - assets/images/ui/japan/japan_cuisine_lvl/
+    - assets/images/ui/japan/japan_transport_lvl/
+    - assets/images/ui/japan/japan_unexpected_lvl/
+    - assets/images/ui/japan/japan_history_personalities_lvl/  
+    - assets/images/ui/japan/japan_architecture_lvl/ 
+    # папки с изображениями уровней для египта
+    - assets/images/ui/egypt/egypt_cat/
+    - assets/images/ui/egypt/egypt_classic_lvl/
+    - assets/images/ui/egypt/egypt_hard_lvl/
+    - assets/images/ui/egypt/egypt_games_lvl/
+    - assets/images/ui/egypt/egypt_legends_lvl/
+    - assets/images/ui/egypt/egypt_cinema_lvl/
+    - assets/images/ui/egypt/egypt_cuisine_lvl/
+    - assets/images/ui/egypt/egypt_transport_lvl/
+    - assets/images/ui/egypt/egypt_unexpected_lvl/
+    - assets/images/ui/egypt/egypt_history_personalities_lvl/
+    - assets/images/ui/egypt/egypt_architecture_lvl/   
+    # папка с вопросами   
     - assets/questions/ru/brazil/
     - assets/questions/ru/japan/
     - assets/questions/ru/egypt/
@@ -84,12 +85,7 @@ flutter:
     - assets/questions/en/egypt/  
     - assets/questions/en/france/
     - assets/questions/en/norway/
-    - assets/images/bg/level/level_brazil.png
-    - assets/images/bg/level/level_egypt.png
-    - assets/images/bg/level/level_france.png
-    - assets/images/bg/level/level_japan.png
-    - assets/images/bg/level/level_norway.png
-    - assets/images/bg/quiz/
+    # папки с наградами для японии
     - assets/images/reward/japan/japan_classic_lvl/
     - assets/images/reward/japan/japan_hard_lvl/  
     - assets/images/reward/japan/japan_games_lvl/
