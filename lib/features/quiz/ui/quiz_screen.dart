@@ -1,8 +1,10 @@
+// ignore_for_file: deprecated_member_use // только из-за RadioListTile в репорт-диалоге (TODO: убрать после замены)
+
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle, AssetManifest;
+import 'package:flutter/services.dart' show rootBundle; // CHANGED: убрали AssetManifest
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/foundation.dart';
 
@@ -46,7 +48,11 @@ class QA {
   factory QA.fromMap(Map m) {
     final qText = (m['q'] ?? '').toString();
     final fact = (m['fact'] as String?)?.trim();
-    final timeSec = (m['timeSec'] is int) ? m['timeSec'] as int : 20;
+
+    // CHANGED: поддержка num (int/double)
+    final ts = m['timeSec'];
+    final timeSec = (ts is num) ? ts.toInt() : 20;
+
     final id = (m['id'] is int) ? m['id'] as int : null;
     // Разбор сложности и тегов (необязательно)
     final rawDiff = (m['difficulty'] ?? 'normal').toString().toLowerCase();
@@ -132,8 +138,6 @@ class _QState extends ConsumerState<QuizScreen> {
 
   QuestionLoader? loader;
 
-  Set<String>? _quizBgAssets; // ADD: кэш доступных фонов из assets/images/bg/quiz/
-
   @override
   void initState() {
     super.initState();
@@ -157,10 +161,6 @@ class _QState extends ConsumerState<QuizScreen> {
       });
     }
 
-    // CHANGED: грузим индекс всегда (а логируем только в debug)
-    // ignore: discarded_futures
-    unawaited(_loadQuizBgAssetsIndex());
-
     ReportService.flushQueue();
   }
 
@@ -168,33 +168,6 @@ class _QState extends ConsumerState<QuizScreen> {
   void dispose() {
     _t?.cancel(); // ADD: иначе таймер продолжает тикать после ухода
     super.dispose();
-  }
-
-  Future<void> _loadQuizBgAssetsIndex() async {
-    try {
-      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
-      final keys = manifest
-          .listAssets()
-          .where((k) => k.startsWith('assets/images/bg/quiz/'))
-          .toSet();
-
-      if (!mounted) return;
-      setState(() => _quizBgAssets = keys);
-
-      if (kDebugMode) {
-        final country = widget.pack.split('_').first;
-        final probe = 'assets/images/bg/quiz/background_$country.png'; // CHANGED
-        debugPrint('[QuizBG] indexed ${keys.length} assets under assets/images/bg/quiz/');
-        debugPrint('[QuizBG] has($probe) = ${keys.contains(probe)}');
-        for (final k in keys.where((k) => k.contains('background_$country')).take(20)) {
-          debugPrint('[QuizBG] match: $k');
-        }
-      }
-    } catch (e) {
-      if (kDebugMode) debugPrint('[QuizBG] manifest load error: $e');
-      if (!mounted) return;
-      setState(() => _quizBgAssets = const <String>{});
-    }
   }
 
   Future<List<QA>> _loadLevel(String pack, int level) async {
@@ -548,11 +521,14 @@ class _QState extends ConsumerState<QuizScreen> {
   }
 
   Future<void> _report(QA qa, {String? reason, String? comment}) async {
+    final localeCode = Localizations.localeOf(context).languageCode; // CHANGED: до async gap
+
     String version = 'unknown';
     try {
       final info = await PackageInfo.fromPlatform();
       version = '${info.version}+${info.buildNumber}';
     } catch (_) {}
+
     final parts = widget.pack.split('_');
     final country = parts.isNotEmpty ? parts.first : widget.pack;
     final options = qa.answers.map((e) => e.text).toList();
@@ -572,7 +548,7 @@ class _QState extends ConsumerState<QuizScreen> {
       timedOut: _picked == -1,
       timeLimit: qa.timeSec,
       timeLeft: _left,
-      locale: Localizations.localeOf(context).languageCode,
+      locale: localeCode, // CHANGED
       appVersion: version,
       createdAt: DateTime.now(),
     );
@@ -587,8 +563,7 @@ class _QState extends ConsumerState<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // CHANGED: выбираем фон только если он реально существует в манифесте
-    final quizBg = _pickQuizBackground(widget.pack, available: _quizBgAssets);
+    final quizBg = _pickQuizBackground(widget.pack); // CHANGED: теперь String
 
     return FutureBuilder<List<QA>>(
       future: _future,
@@ -639,13 +614,12 @@ class _QState extends ConsumerState<QuizScreen> {
           body: Stack(
             fit: StackFit.expand,
             children: [
-              if (quizBg != null)
-                Image.asset(
-                  quizBg,
-                  fit: BoxFit.cover,
-                  // CHANGED: не рисуем чёрный прямоугольник при отсутствии ассета
-                  errorBuilder: (_, __, ___) => const SizedBox.shrink(),
-                ),
+              Image.asset( // CHANGED: без if (quizBg != null)
+                quizBg,
+                fit: BoxFit.cover,
+                gaplessPlayback: true,
+                errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+              ),
               Padding(
                 padding: EdgeInsets.fromLTRB(16, contentTopPadding(context), 16, 16),
                 child: Column(
@@ -731,12 +705,12 @@ class _QState extends ConsumerState<QuizScreen> {
                               visualDensity: VisualDensity.compact,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                             ).copyWith(
-                              overlayColor: MaterialStateProperty.resolveWith((states) {
-                                if (states.contains(MaterialState.pressed)) {
-                                  return primary.withOpacity(0.12);
+                              overlayColor: WidgetStateProperty.resolveWith((states) { // CHANGED
+                                if (states.contains(WidgetState.pressed)) { // CHANGED
+                                  return primary.withValues(alpha: 0.12); // CHANGED (вместо withOpacity)
                                 }
-                                if (states.contains(MaterialState.hovered)) {
-                                  return primary.withOpacity(0.08);
+                                if (states.contains(WidgetState.hovered)) { // CHANGED
+                                  return primary.withValues(alpha: 0.08); // CHANGED
                                 }
                                 return null;
                               }),
@@ -804,6 +778,7 @@ class _QState extends ConsumerState<QuizScreen> {
 class _DifficultyChip extends StatelessWidget {
   final QuizDifficulty difficulty;
   const _DifficultyChip({required this.difficulty});
+
   Color _bg() {
     switch (difficulty) {
       case QuizDifficulty.easy:
@@ -811,7 +786,6 @@ class _DifficultyChip extends StatelessWidget {
       case QuizDifficulty.hard:
         return const Color(0xFFFFEBEE);
       case QuizDifficulty.normal:
-      default:
         return const Color(0xFFE3F2FD);
     }
   }
@@ -823,7 +797,6 @@ class _DifficultyChip extends StatelessWidget {
       case QuizDifficulty.hard:
         return 'Сложный';
       case QuizDifficulty.normal:
-      default:
         return 'Средний';
     }
   }
@@ -841,23 +814,23 @@ class _DifficultyChip extends StatelessWidget {
   }
 }
 
-/// Фон для экрана вопроса из assets/images/bg/quiz/// Приоритет:
+/// Фон для экрана вопроса из assets/images/bg/quiz/
+/// (AssetManifest не используем: на iOS может отсутствовать AssetManifest.json)
+///
+/// Приоритет:
 /// 1) background_{country}.png
 /// 2) {country}_{subcat}_{level}.png
 /// 3) {country}_{subcat}.png
 /// 4) {country}.png
 /// 5) любой .png из папки
-String? _pickQuizBackground(String pack, {Set<String>? available}) {
-  if (available == null || available.isEmpty) return null;
-
+String _pickQuizBackground(String pack) { // CHANGED: было String?
   final parts = pack.split('_');
-  final country = parts.isNotEmpty ? parts.first : pack;
+  final country = (parts.isNotEmpty ? parts.first : pack).trim().toLowerCase();
   final subcatRaw = parts.length > 1 ? parts.sublist(1).join('_') : 'classic';
   final subcat = _imageSubcatAlias(subcatRaw);
 
   const exts = ['png', 'webp', 'jpg', 'jpeg'];
 
-  // CHANGED: приоритет — background_{country}.*
   final candidates = <String>[
     for (final ext in exts) 'assets/images/bg/quiz/background_$country.$ext',
     for (final ext in exts) 'assets/images/bg/quiz/background_${country}_$subcat.$ext',
@@ -867,10 +840,8 @@ String? _pickQuizBackground(String pack, {Set<String>? available}) {
     for (final ext in exts) 'assets/images/bg/quiz/background_default.$ext',
   ];
 
-  for (final c in candidates) {
-    if (available.contains(c)) return c;
-  }
-  return null;
+  // Возвращаем первый “лучший” путь; если его нет в ассетах — Image.asset errorBuilder всё скроет.
+  return candidates.first;
 }
 
 // REMOVE: старый debug-метод, который читал AssetManifest.json (в новых Flutter может отсутствовать)
@@ -936,7 +907,7 @@ class _ResultsDialogContent extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.deepPurple.withOpacity(.18),
+            color: Colors.deepPurple.withValues(alpha: .18), // CHANGED
             blurRadius: 28,
             offset: const Offset(0, 16),
           ),

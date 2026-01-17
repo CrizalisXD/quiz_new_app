@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+export '../../features/profile/local_profile.dart';
+
 class LocalProfile {
   final String id; // например, 'guest-1234'
   final String name;

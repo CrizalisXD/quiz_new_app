@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_new_app/core/profile/profile_providers.dart';
-import 'package:quiz_new_app/core/profile/local_profile.dart';
+
+// CHANGED: было core/profile/... (из-за этого invalidateProfile не виден/другой provider)
+import 'profile_providers.dart';
+import 'local_profile.dart';
+
 import 'edit_profile_screen.dart';
 import '../rewards/rewards_store.dart';
 import '../auth/current_user.dart';
@@ -381,7 +384,7 @@ class _DevActionsRow extends ConsumerWidget {
               _t(context, ru: 'Выдать максимум прогресса и наград', en: 'Grant max progress & rewards'),
               () async {
                 await AchievementsStore.grantAllDev(userId);
-                ref.invalidate(profileProvider);
+                invalidateProfile(ref); // FIX: теперь функция в scope (после правильного импорта)
               },
             ),
           ),
@@ -577,6 +580,7 @@ class _CountryRewardsBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     final visibleItems = expanded ? items : items.take(4).toList();
     final countLabel = total > 0 ? '$label — ${items.length}/$total' : '$label — ${items.length}/∞';
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -604,7 +608,7 @@ class _CountryRewardsBlock extends StatelessWidget {
             childAspectRatio: 16 / 9,
           ),
           itemCount: visibleItems.length,
-          itemBuilder: (_, index) {
+          itemBuilder: (ctx, index) {
             final assetPath = visibleItems[index];
             return ClipRRect(
               borderRadius: BorderRadius.circular(12),

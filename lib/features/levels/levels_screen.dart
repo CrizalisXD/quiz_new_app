@@ -11,10 +11,7 @@ import '../auth/current_user.dart';
 import '../progress/progress_store.dart';
 import '../progress/star_utils.dart';
 import '../home/widgets/category_card.dart';
-import '../../data/categories_config.dart';
-import '../../utils/assets_index.dart';
 import '../rewards/rewards_store.dart';
-import '../achievements/achievements_store.dart';
 import '../../utils/sound_manager.dart';
 
 // Простая модель уровня
@@ -175,13 +172,11 @@ class LevelsScreen extends ConsumerWidget {
               body: Stack(
                 fit: StackFit.expand,
                 children: [
-                  if (levelBg != null)
-                    Image.asset(
-                      levelBg,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) =>
-                          const ColoredBox(color: Colors.black),
-                    ),
+                  Image.asset(
+                    levelBg,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => const ColoredBox(color: Colors.black),
+                  ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
                     child: Align(
@@ -194,30 +189,12 @@ class LevelsScreen extends ConsumerWidget {
                           itemBuilder: (c, i) {
                             final l = levels[i];
 
-                            // Конфиг подкатегории для фонового изображения карточки
-                            final subcats = countrySubcategories[countryKey] ??
-                                countrySubcategories['japan'];
-                            final cfg = subcats?.firstWhere(
-                              (e) => e.key == subcatKey,
-                              orElse: () => SubcategoryConfig(
-                                key: subcatKey,
-                                label: subcatLabel,
-                                imageAsset:
-                                    'assets/images/categories/$countryKey.png',
-                              ),
-                            );
-                            final bgImage = cfg?.imageAsset ??
-                                'assets/images/categories/$countryKey.png';
-
-                            // Кнопка уровня:
-                            // assets/images/ui/{country}_{alias}_lvl/{country}_{alias}_{level}.png
-                            final levelImg = _levelButtonPath(
+                            // CHANGED: напрямую используем новую структуру
+                            final cardImage = _levelButtonPath(
                               countryKey: countryKey,
                               subcatAlias: subcatAlias,
                               level: l.number,
                             );
-
-                            final cardImage = levelImg;
 
                             Future<void> handleTap() async {
                               if (!l.unlocked) return;
@@ -442,27 +419,27 @@ Future<(List<int>, List<bool>)> _loadProgressAndAssets(
   String basePack,
   int totalLevels,
 ) async {
-  final results = await Future.wait([
-    ProgressStore.getLevelsProgress(userId, basePack, totalLevels),
-    AssetsIndex.ensureLoaded(),
-  ]);
-  return results.first as (List<int>, List<bool>);
+  // CHANGED: без AssetsIndex.ensureLoaded()
+  return ProgressStore.getLevelsProgress(userId, basePack, totalLevels);
 }
 
 /// Фон уровней:
 /// assets/images/bg/level/level_{country}.png
-String? _pickLevelBackground(String countryKey) {
+String _pickLevelBackground(String countryKey) { // CHANGED: было String?
   return 'assets/images/bg/level/level_$countryKey.png';
 }
 
-/// Путь к кнопке уровня:
-/// assets/images/ui/{country}_{alias}_lvl/{country}_{alias}_{level}.png
+/// Путь к кнопке уровня (NEW expected):
+/// assets/images/ui/{country}/{country}_{alias}_lvl/{country}_{alias}_{level}.png
+///
+/// Для твоего примера:
+/// assets/images/ui/japan/japan_architecture_lvl/japan_architecture_1.png
 String _levelButtonPath({
   required String countryKey,
   required String subcatAlias,
   required int level,
 }) {
-  return 'assets/images/ui/'
+  return 'assets/images/ui/$countryKey/'
       '${countryKey}_${subcatAlias}_lvl/'
       '${countryKey}_${subcatAlias}_$level.png';
 }
@@ -488,7 +465,7 @@ class _LevelStarsBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(.55),
+        color: Colors.black.withValues(alpha: .55), // CHANGED
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(

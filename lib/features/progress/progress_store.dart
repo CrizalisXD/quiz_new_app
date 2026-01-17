@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// - `u:{userId}|coins`
 /// - `u:{userId}|stars|{packKey}|{level}`
 /// - `u:{userId}|unlocked|{packKey}|{level}`
-/// Добавлен простой in-memory кэш + batch API для сокращения числа обращений/ FutureBuilder'ов.
+/// Добавлен простой in-memory кэш + batch API для сокращения числа обращений/ FutureBuilder'ов
 class ProgressStore {
   ProgressStore._();
 
@@ -40,9 +40,9 @@ class ProgressStore {
 
   static Future<void> addCoins(String userId, int delta) async {
     final current = await getCoins(userId);
-    final next = (current + delta).clamp(0, _maxCoins);
+    final next = (current + delta).clamp(0, _maxCoins).toInt(); // CHANGED
     final p = await SharedPreferences.getInstance();
-    await p.setInt(_key(userId, 'coins'), next); // CHANGED
+    await p.setInt(_key(userId, 'coins'), next);
     _coinsCache[userId] = next;
   }
 
@@ -60,10 +60,10 @@ class ProgressStore {
 
   static Future<void> setLevelStars(String userId, String packKey, int level, int stars) async {
     final p = await SharedPreferences.getInstance();
-    final key = _key(userId, 'stars|$packKey|$level'); // CHANGED
+    final key = _key(userId, 'stars|$packKey|$level');
     final prev = p.getInt(key) ?? 0;
     if (stars > prev) {
-      final clamped = stars.clamp(0, 3);
+      final clamped = stars.clamp(0, 3).toInt(); // CHANGED
       await p.setInt(key, clamped);
       _starsCache.putIfAbsent(userId, () => {})[_starsKey(packKey, level)] = clamped;
     }
@@ -96,6 +96,8 @@ class ProgressStore {
     String packKey,
     int levelsCount,
   ) async {
+    if (levelsCount <= 0) return (<int>[], <bool>[]); // ADD
+
     final p = await SharedPreferences.getInstance();
     final starsList = List<int>.filled(levelsCount, 0);
     final unlockedList = List<bool>.filled(levelsCount, false);
@@ -110,8 +112,7 @@ class ProgressStore {
       if (userStars.containsKey(starsComp)) {
         stars = userStars[starsComp]!;
       } else {
-        final key = '${_pfx(userId)}|stars|$packKey|$i';
-        stars = p.getInt(key) ?? 0;
+        stars = p.getInt(_key(userId, 'stars|$packKey|$i')) ?? 0; // CHANGED
         userStars[starsComp] = stars;
       }
       starsList[i - 1] = stars;
@@ -125,8 +126,7 @@ class ProgressStore {
         if (userUnlock.containsKey(unlockComp)) {
           unlocked = userUnlock[unlockComp]!;
         } else {
-          final key = '${_pfx(userId)}|unlocked|$packKey|$i';
-          unlocked = p.getBool(key) ?? false;
+          unlocked = p.getBool(_key(userId, 'unlocked|$packKey|$i')) ?? false; // CHANGED
           userUnlock[unlockComp] = unlocked;
         }
       }
@@ -135,18 +135,19 @@ class ProgressStore {
     return (starsList, unlockedList);
   }
 
-  static String _soundVolumeKey(String userId) => '${_pfx(userId)}|sound_volume'; // 0.0..1.0 (double)
-  static String _soundMutedKey(String userId) => '${_pfx(userId)}|sound_muted';   // bool
+  // CHANGED: через единый сборщик ключей
+  static String _soundVolumeKey(String userId) => _key(userId, 'sound_volume'); // 0.0..1.0 (double)
+  static String _soundMutedKey(String userId) => _key(userId, 'sound_muted');   // bool
 
   /// ========== SOUND SETTINGS ==========
   static Future<double> getSoundVolume(String userId) async {
     final p = await SharedPreferences.getInstance();
-    // SharedPreferences не хранит double на web одинаково? но в Flutter есть getDouble/setDouble.
-    return (p.getDouble(_soundVolumeKey(userId)) ?? 1.0).clamp(0.0, 1.0);
+    final v = p.getDouble(_soundVolumeKey(userId)) ?? 1.0; // CHANGED
+    return v.clamp(0.0, 1.0).toDouble();
   }
 
   static Future<void> setSoundVolume(String userId, double volume) async {
-    final v = volume.clamp(0.0, 1.0);
+    final v = volume.clamp(0.0, 1.0).toDouble(); // CHANGED
     final p = await SharedPreferences.getInstance();
     await p.setDouble(_soundVolumeKey(userId), v);
   }
@@ -164,7 +165,7 @@ class ProgressStore {
   /// Удаляем ВСЕ записи для конкретного пользователя ("новая игра" для него)
   static Future<void> wipeUser(String userId) async {
     final p = await SharedPreferences.getInstance();
-    final prefix = '${_pfx(userId)}|';
+    final prefix = '${_pfx(userId)}$_sep';
     final keys = p.getKeys().where((k) => k.startsWith(prefix)).toList();
     for (final k in keys) {
       await p.remove(k);

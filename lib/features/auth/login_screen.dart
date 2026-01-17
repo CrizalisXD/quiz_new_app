@@ -3,8 +3,11 @@ import 'package:flutter/services.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_new_app/core/profile/profile_providers.dart';
-import 'package:quiz_new_app/core/profile/local_profile.dart';
+
+// CHANGED: не тащим core/profile типы (они у тебя расходятся с features)
+import '../profile/profile_providers.dart';
+import '../profile/local_profile.dart';
+
 import '../../utils/sound_manager.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -46,11 +49,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     HapticFeedback.lightImpact();
     await SoundManager.playSfx('assets/sound/click.mp3');
     setState(() => _loading = true);
-    final notifier = ref.read(profileProvider.notifier);
-    final current = ref.read(profileProvider).valueOrNull ?? await notifier.build();
-    await _markLoginCompleted();
-    if (!mounted) return;
-    _goHome(current);
+    try {
+      final current = await ref.read(profileProvider.future); // CHANGED
+      await _markLoginCompleted();
+      if (!mounted) return;
+      _goHome(current);
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
   }
 
   Future<void> _signIn() async {
@@ -62,17 +68,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     HapticFeedback.mediumImpact();
     await SoundManager.playSfx('assets/sound/click.mp3');
     setState(() => _loading = true);
-    final notifier = ref.read(profileProvider.notifier);
-    final loaded = ref.read(profileProvider).valueOrNull ?? await notifier.build();
-    
-    // Псевдо «регистрация»: просто переименуем профиль
-    if (loaded.name != _email.text.trim()) {
-      await notifier.rename(_email.text.trim());
+    try {
+      final notifier = ref.read(profileProvider.notifier);
+      final loaded = await ref.read(profileProvider.future); // CHANGED
+
+      // Псевдо «регистрация»: просто переименуем профиль
+      final nextName = _email.text.trim();
+      if (loaded.name != nextName) {
+        await notifier.rename(nextName); // CHANGED: теперь метод есть
+      }
+
+      await _markLoginCompleted();
+      if (!mounted) return;
+
+      final after = ref.read(profileProvider).valueOrNull ?? loaded;
+      _goHome(after);
+    } finally {
+      if (mounted) setState(() => _loading = false);
     }
-    
-    await _markLoginCompleted();
-    if (!mounted) return;
-    _goHome(ref.read(profileProvider).valueOrNull ?? loaded);
   }
 
   void _goHome(LocalProfile p) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_new_app/features/home/home_screen.dart';
-import 'features/profile/profile_screen.dart';
+import 'package:quiz_new_app/features/home/home_screen.dart' show HomeScreen;
+import 'package:quiz_new_app/features/profile/profile_screen.dart' show ProfileScreen;
 import 'features/categories/category_screen.dart';
 import 'features/levels/levels_screen.dart';
 import 'features/quiz/ui/quiz_screen.dart';
@@ -54,8 +54,8 @@ class App extends ConsumerWidget {
       initialRoute: '/home',
       routes: {
         '/login': (_) => const LoginScreen(),
-        '/home': (context) => const HomeScreen(),
-        '/profile': (_) => const ProfileScreen(),
+        '/home': (context) => HomeScreen(),
+        '/profile': (_) => ProfileScreen(),
         '/category': (_) => const CategoryScreen(),
         '/levels': (_) => const LevelsScreen(),
         SettingsScreen.route: (_) => const SettingsScreen(),
@@ -113,7 +113,7 @@ class StartGate extends StatelessWidget {
         }
         final completed = snap.data!;
         if (!completed) return const LoginScreen();
-        return const HomeScreen();
+        return HomeScreen();
       },
     );
   }

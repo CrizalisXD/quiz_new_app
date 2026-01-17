@@ -48,9 +48,6 @@ flutter:
     - assets/images/bg/level/level_france.png
     - assets/images/bg/level/level_japan.png
     - assets/images/bg/level/level_norway.png
-    # ВАЖНО: эта строка подключает ВСЕ файлы внутри папки, но папка должна существовать,
-    # а имена файлов в коде должны совпадать 1-в-1 (включая регистр).
-    - assets/images/bg/quiz/
     # папки с изображениями уровней для японии
     - assets/images/ui/japan/japan_cat/
     - assets/images/ui/japan/japan_classic_lvl/
@@ -60,8 +57,8 @@ flutter:
     - assets/images/ui/japan/japan_cuisine_lvl/
     - assets/images/ui/japan/japan_transport_lvl/
     - assets/images/ui/japan/japan_unexpected_lvl/
-    - assets/images/ui/japan/japan_history_personalities_lvl/  
-    - assets/images/ui/japan/japan_architecture_lvl/ 
+    - assets/images/ui/japan/japan_history_personalities_lvl/
+    - assets/images/ui/japan/japan_architecture_lvl/
     # папки с изображениями уровней для египта
     - assets/images/ui/egypt/egypt_cat/
     - assets/images/ui/egypt/egypt_classic_lvl/
@@ -73,7 +70,7 @@ flutter:
     - assets/images/ui/egypt/egypt_transport_lvl/
     - assets/images/ui/egypt/egypt_unexpected_lvl/
     - assets/images/ui/egypt/egypt_history_personalities_lvl/
-    - assets/images/ui/egypt/egypt_architecture_lvl/   
+    - assets/images/ui/egypt/egypt_architecture_lvl/
     # папка с вопросами   
     - assets/questions/ru/brazil/
     - assets/questions/ru/japan/
